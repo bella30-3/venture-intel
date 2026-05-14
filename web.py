@@ -127,7 +127,7 @@ def render_match_card(m, idx, show_entity="both"):
     <div class="details-grid">
       <div class="detail-section">
         <h4>🏢 Founder</h4>
-        <p><strong>{m.founder.name}</strong> — {m.founder.role}<br>{m.founder.background[:200]}<br><br><strong>Traction:</strong> {m.founder.traction[:200]}<br><strong>Brand:</strong> {m.founder.brand_positioning[:150]}<br><strong>Location:</strong> {m.founder.location}</p>
+        <p><strong>{m.founder.name}</strong> — {m.founder.role}<br>{m.founder.background[:200]}<br><br><strong>Mission:</strong> {m.founder.mission[:200]}<br><strong>Traction:</strong> {m.founder.traction[:200]}<br><strong>Brand:</strong> {m.founder.brand_positioning[:150]}<br><strong>Location:</strong> {m.founder.location}<br><br><span class='detail-grid'><strong>Incorporated:</strong> {m.founder.year_incorporated} &nbsp;|&nbsp; <strong>Proj. Sales Y1:</strong> {m.founder.projected_sales_y1} &nbsp;|&nbsp; <strong>Growth (12mo):</strong> {m.founder.growth_last_12mo}</span></p>
       </div>
       <div class="detail-section">
         <h4>💰 Investor</h4>
@@ -293,6 +293,8 @@ input::placeholder{{color:var(--dim)}}
 .score-num{{font-size:12px;color:var(--muted)}}
 .intro-list{{list-style:none;padding:0}}.intro-item{{font-size:12px;color:var(--muted);padding:2px 0}}
 .email-draft{{background:var(--email-bg);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:12px;line-height:1.6;color:var(--muted);white-space:pre-wrap;font-family:'JetBrains Mono',monospace;max-height:180px;overflow-y:auto}}
+.detail-grid{{display:inline-flex;gap:8px;flex-wrap:wrap;background:var(--bg2);padding:6px 10px;border-radius:6px;border:1px solid var(--border);font-size:11px;margin-top:6px}}
+.detail-grid strong{{color:var(--muted)}}
 .footer{{text-align:center;padding:20px;color:var(--footer-color);font-size:11px;border-top:1px solid var(--border)}}
 .page-title{{font-size:16px;font-weight:600;margin-bottom:16px}}
 .saved-count{{position:absolute;top:-6px;right:-6px;background:var(--save-color);color:#000;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}}

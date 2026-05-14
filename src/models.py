@@ -50,6 +50,10 @@ class Founder:
     communication_style: str
     ideal_investor_profile: str
     warm_intro_needs: str
+    mission: str = ""  # What the organization is trying to achieve
+    projected_sales_y1: str = ""  # Projected first-year sales
+    year_incorporated: str = ""  # Year of incorporation
+    growth_last_12mo: str = ""  # Growth in last 12 months
     linkedin_url: Optional[str] = None
     twitter_url: Optional[str] = None
     website: Optional[str] = None
