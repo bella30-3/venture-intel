@@ -3,6 +3,7 @@
 import sys
 import os
 import json
+import re
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from urllib.parse import urlparse, parse_qs
 from datetime import datetime
@@ -17,25 +18,52 @@ from src.matcher import (
     get_all_matches_matrix,
 )
 
-# ── Load data once ──
 investors = load_investors()
 founders = load_founders()
 investor_map = {i.id: i for i in investors}
 founder_map = {f.id: f for f in founders}
 
 
+def extract_country(location):
+    """Extract country from location string."""
+    loc = location.lower().strip()
+    if "us" in loc or "san francisco" in loc or "new york" in loc or "palo alto" in loc or "seattle" in loc or "houston" in loc or "boston" in loc or "canton" in loc or "emeryville" in loc:
+        return "US"
+    if "uk" in loc or "london" in loc:
+        return "UK"
+    if "europe" in loc or "paris" in loc or "france" in loc:
+        return "Europe"
+    if "warsaw" in loc or "poland" in loc:
+        return "Poland"
+    if "india" in loc:
+        return "India"
+    if "singapore" in loc:
+        return "Singapore"
+    if "china" in loc:
+        return "China"
+    if "israel" in loc:
+        return "Israel"
+    return "Other"
+
+
+# Build country lists
+founder_countries = sorted(set(extract_country(f.location) for f in founders))
+investor_countries = sorted(set(extract_country(i.geography) for i in investors))
+all_countries = sorted(set(founder_countries + investor_countries))
+
+
 def score_bar(val, width=100):
     color = "#22c55e" if val >= 75 else "#eab308" if val >= 55 else "#ef4444"
-    return f'<div style="display:flex;align-items:center;gap:6px"><div style="width:{width}px;height:6px;background:#1e1e2e;border-radius:3px;overflow:hidden"><div style="width:{val}%;height:100%;background:{color};border-radius:3px"></div></div><span style="font-size:12px;color:#94a3b8">{val:.0f}</span></div>'
+    return f'<div style="display:flex;align-items:center;gap:6px"><div style="width:{width}px;height:6px;background:var(--bar-bg);border-radius:3px;overflow:hidden"><div style="width:{val}%;height:100%;background:{color};border-radius:3px"></div></div><span class="score-num">{val:.0f}</span></div>'
 
 
 def badge(score):
     if score >= 75:
-        return '<span style="padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;background:rgba(239,68,68,.15);color:#ef4444">🔥 HOT</span>'
+        return '<span class="badge badge-hot">🔥 HOT</span>'
     elif score >= 65:
-        return '<span style="padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;background:rgba(234,179,8,.15);color:#eab308">⚡ WARM</span>'
+        return '<span class="badge badge-warm">⚡ WARM</span>'
     else:
-        return '<span style="padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600;background:rgba(34,197,94,.15);color:#22c55e">✓ GOOD</span>'
+        return '<span class="badge badge-good">✓ GOOD</span>'
 
 
 def score_color(score):
@@ -66,6 +94,8 @@ Best,
 def render_match_card(m, idx, show_entity="both"):
     sc = m.total_score
     sc_col = score_color(sc)
+    f_country = extract_country(m.founder.location)
+    i_country = extract_country(m.investor.geography)
 
     if show_entity == "investor":
         title = f"{m.investor.firm}"
@@ -88,64 +118,68 @@ def render_match_card(m, idx, show_entity="both"):
     ]
 
     scores_html = "".join(
-        f'<div style="display:flex;align-items:center;gap:8px;font-size:12px">'
-        f'<div style="width:100px;color:#64748b;text-align:right;flex-shrink:0">{n}</div>'
-        f'{score_bar(v, 80)}</div>'
+        f'<div class="score-row"><div class="score-label">{n}</div>{score_bar(v, 80)}</div>'
         for n, v in dims
     )
 
-    intros = "".join(f"<li style='font-size:12px;color:#64748b;padding:2px 0'>→ {p}</li>" for p in m.warm_intro_pathways)
+    intros = "".join(f"<li class='intro-item'>→ {p}</li>" for p in m.warm_intro_pathways)
 
     return f'''
-<div class="match-card" data-score="{sc}" data-investor="{m.investor.firm}" data-founder="{m.founder.company}" style="background:#12121a;border:1px solid #1e1e2e;border-radius:12px;margin-bottom:12px;overflow:hidden">
-  <div onclick="this.nextElementSibling.classList.toggle('open')" style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;cursor:pointer">
-    <div style="font-size:13px;font-weight:700;color:#6366f1;min-width:35px">#{idx}</div>
-    <div style="flex:1">
-      <div style="font-size:15px;font-weight:600">{title}</div>
-      <div style="color:#64748b;font-size:12px;margin-top:3px">{sub}</div>
+<div class="match-card" data-score="{sc}" data-investor="{m.investor.firm}" data-founder="{m.founder.company}" data-fcountry="{f_country}" data-icountry="{i_country}">
+  <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
+    <div class="match-rank">#{idx}</div>
+    <div class="match-title">
+      <div class="match-name">{title}</div>
+      <div class="match-sub">{sub}</div>
     </div>
-    <div style="display:flex;align-items:center;gap:10px">
+    <div class="match-meta">
       {badge(sc)}
-      <div style="font-size:24px;font-weight:700;color:{sc_col};min-width:45px;text-align:right">{sc:.0f}</div>
+      <div class="match-score" style="color:{sc_col}">{sc:.0f}</div>
     </div>
   </div>
-  <div class="details" style="display:none;border-top:1px solid #1e1e2e;padding:20px;background:#0d0d14">
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px">
-      <div>
-        <h4 style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#64748b;margin-bottom:10px">🏢 Founder</h4>
-        <p style="font-size:13px;line-height:1.6"><strong>{m.founder.name}</strong> — {m.founder.role}<br>{m.founder.background[:200]}<br><br><strong>Traction:</strong> {m.founder.traction[:200]}<br><strong>Brand:</strong> {m.founder.brand_positioning[:150]}</p>
+  <div class="details">
+    <div class="details-grid">
+      <div class="detail-section">
+        <h4>🏢 Founder</h4>
+        <p><strong>{m.founder.name}</strong> — {m.founder.role}<br>{m.founder.background[:200]}<br><br><strong>Traction:</strong> {m.founder.traction[:200]}<br><strong>Brand:</strong> {m.founder.brand_positioning[:150]}<br><strong>Location:</strong> {m.founder.location}</p>
       </div>
-      <div>
-        <h4 style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#64748b;margin-bottom:10px">💰 Investor</h4>
-        <p style="font-size:13px;line-height:1.6"><strong>{m.investor.name}</strong> — {m.investor.firm}<br>{m.investor.type} · {m.investor.check_size}<br><br><strong>Focus:</strong> {', '.join(m.investor.ai_focus)}<br><strong>Stages:</strong> {', '.join(m.investor.stage_focus)}<br><strong>Speed:</strong> {m.investor.decision_speed}</p>
-      </div>
-    </div>
-    <div style="margin-top:16px">
-      <h4 style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#64748b;margin-bottom:10px">📊 Score Breakdown</h4>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px">{scores_html}</div>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:16px">
-      <div>
-        <h4 style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#64748b;margin-bottom:10px">🎯 Intelligence</h4>
-        <p style="font-size:13px;line-height:1.6"><strong>Meeting Acceptance:</strong> {m.meeting_acceptance_likelihood:.0f}%<br><strong>Investment Probability:</strong> {m.investment_probability:.0f}%<br><strong>Timing:</strong> {m.best_timing}<br><strong>Style:</strong> {m.ideal_communication_style}</p>
-      </div>
-      <div>
-        <h4 style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#64748b;margin-bottom:10px">🔗 Warm Intro Pathways</h4>
-        <ul style="list-style:none;padding:0">{intros}</ul>
+      <div class="detail-section">
+        <h4>💰 Investor</h4>
+        <p><strong>{m.investor.name}</strong> — {m.investor.firm}<br>{m.investor.type} · {m.investor.check_size}<br><br><strong>Focus:</strong> {', '.join(m.investor.ai_focus)}<br><strong>Stages:</strong> {', '.join(m.investor.stage_focus)}<br><strong>Speed:</strong> {m.investor.decision_speed}<br><strong>Location:</strong> {m.investor.geography}</p>
       </div>
     </div>
-    <div style="margin-top:16px">
-      <h4 style="font-size:12px;text-transform:uppercase;letter-spacing:1px;color:#64748b;margin-bottom:8px">📧 Draft Email</h4>
-      <div style="background:#0a0a12;border:1px solid #1e1e2e;border-radius:8px;padding:14px;font-size:12px;line-height:1.6;color:#64748b;white-space:pre-wrap;font-family:monospace;max-height:180px;overflow-y:auto">{email_draft(m)}</div>
+    <div class="detail-section" style="margin-top:16px">
+      <h4>📊 Score Breakdown</h4>
+      <div class="scores-grid">{scores_html}</div>
+    </div>
+    <div class="details-grid" style="margin-top:16px">
+      <div class="detail-section">
+        <h4>🎯 Intelligence</h4>
+        <p><strong>Meeting Acceptance:</strong> {m.meeting_acceptance_likelihood:.0f}%<br><strong>Investment Probability:</strong> {m.investment_probability:.0f}%<br><strong>Timing:</strong> {m.best_timing}<br><strong>Style:</strong> {m.ideal_communication_style}</p>
+      </div>
+      <div class="detail-section">
+        <h4>🔗 Warm Intro Pathways</h4>
+        <ul class="intro-list">{intros}</ul>
+      </div>
+    </div>
+    <div class="detail-section" style="margin-top:16px">
+      <h4>📧 Draft Email</h4>
+      <div class="email-draft">{email_draft(m)}</div>
     </div>
   </div>
 </div>'''
 
 
-def render_page(view="all", entity_id=None, top_n=20):
+# ── Country filter dropdown ──
+country_options = '<option value="all">All Countries</option>' + "".join(
+    f'<option value="{c}">{c}</option>' for c in all_countries
+)
+
+
+# ── Full page ──
+def render_page(view="all", entity_id=None, top_n=30):
     now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
 
-    # Determine matches based on view
     if view == "founder" and entity_id and entity_id in founder_map:
         f = founder_map[entity_id]
         matches = find_top_matches_for_founder(f, investors, top_n=top_n)
@@ -158,10 +192,9 @@ def render_page(view="all", entity_id=None, top_n=20):
         show_entity = "founder"
     else:
         matches = find_top_matches(founders, investors, top_n=top_n)
-        page_title = f"Top {len(matches)} Matches Across All"
+        page_title = f"Top {len(matches)} Matches"
         show_entity = "both"
 
-    # Build founder/investor selector lists
     founder_options = "".join(
         f'<option value="{f.id}" {"selected" if entity_id == f.id else ""}>{f.company} ({f.name[:20]})</option>'
         for f in sorted(founders, key=lambda x: x.company)
@@ -171,100 +204,248 @@ def render_page(view="all", entity_id=None, top_n=20):
         for i in sorted(investors, key=lambda x: x.firm)
     )
 
-    # Match cards
     cards = "".join(render_match_card(m, idx, show_entity) for idx, m in enumerate(matches, 1))
 
-    # Stats
     avg_score = sum(m.total_score for m in matches) / len(matches) if matches else 0
     hot_count = sum(1 for m in matches if m.total_score >= 75)
     warm_count = sum(1 for m in matches if 65 <= m.total_score < 75)
 
-    return f'''<!DOCTYPE html>
+    return '''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>🤖 AI Venture Intel</title>
+
+<!-- Google Font: VT323 for geeky mode -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=VT323&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
-*{{margin:0;padding:0;box-sizing:border-box}}
-body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0a0a0f;color:#e2e8f0;min-height:100vh}}
-.open{{display:block!important}}
-select,input,button{{font-family:inherit}}
-</style></head><body>
+/* ── BASE ── */
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:all .3s}
 
-<div style="background:linear-gradient(135deg,#0f0f1a,#1a1033);border-bottom:1px solid #1e1e2e;padding:20px 0">
-<div style="max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px">
+/* ── DARK THEME (default) ── */
+:root, [data-theme="dark"] {
+  --bg:#0a0a0f; --bg2:#0d0d14; --card:#12121a; --border:#1e1e2e;
+  --accent:#6366f1; --accent2:#8b5cf6; --text:#e2e8f0; --muted:#64748b; --dim:#334155;
+  --bar-bg:#1e1e2e; --header-bg:linear-gradient(135deg,#0f0f1a,#1a1033);
+  --btn-bg:#12121a; --btn-border:#1e1e2e; --btn-active-bg:#6366f1; --btn-active-text:#fff;
+  --input-bg:#12121a; --input-border:#1e1e2e;
+  --badge-hot-bg:rgba(239,68,68,.15); --badge-hot-color:#ef4444;
+  --badge-warm-bg:rgba(234,179,8,.15); --badge-warm-color:#eab308;
+  --badge-good-bg:rgba(34,197,94,.15); --badge-good-color:#22c55e;
+  --email-bg:#0a0a12; --footer-color:#334155;
+}
+
+/* ── GEEKY THEME ── */
+[data-theme="geeky"] {
+  --bg:#000000; --bg2:#001100; --card:#001a00; --border:#00ff4133;
+  --accent:#00ff41; --accent2:#39ff14; --text:#00ff41; --muted:#00aa2a; --dim:#005500;
+  --bar-bg:#003300; --header-bg:linear-gradient(135deg,#000000,#001a00);
+  --btn-bg:#001a00; --btn-border:#00ff4133; --btn-active-bg:#00ff41; --btn-active-text:#000;
+  --input-bg:#001a00; --input-border:#00ff4133;
+  --badge-hot-bg:rgba(255,0,0,.2); --badge-hot-color:#ff0040;
+  --badge-warm-bg:rgba(255,255,0,.15); --badge-warm-color:#ffff00;
+  --badge-good-bg:rgba(0,255,65,.15); --badge-good-color:#00ff41;
+  --email-bg:#000a00; --footer-color:#005500;
+  font-family:'VT323',monospace!important;
+}
+
+[data-theme="geeky"] body,
+[data-theme="geeky"] * { font-family:'VT323',monospace!important; }
+
+[data-theme="geeky"] .match-card { border:1px solid #00ff4133; text-shadow:0 0 5px #00ff4133; }
+[data-theme="geeky"] .match-card:hover { border-color:#00ff41; box-shadow:0 0 15px #00ff4122; }
+[data-theme="geeky"] .match-name { text-shadow:0 0 10px #00ff4155; }
+[data-theme="geeky"] .match-score { text-shadow:0 0 15px currentColor; font-size:28px!important; }
+[data-theme="geeky"] .stat-num { text-shadow:0 0 10px var(--accent); }
+[data-theme="geeky"] .logo { 
+  background:linear-gradient(135deg,#00ff41,#39ff14);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  text-shadow:none; animation:glitch 2s infinite;
+}
+[data-theme="geeky"] .email-draft { border:1px solid #00ff4133; background:#000a00; }
+[data-theme="geeky"] .score-row:hover { background:#00ff4111; }
+[data-theme="geeky"] .badge { border:1px solid currentColor; }
+[data-theme="geeky"] .details { background:#000a00; }
+
+@keyframes glitch {
+  0%,100%{transform:translate(0)}
+  20%{transform:translate(-2px,2px)}
+  40%{transform:translate(2px,-2px)}
+  60%{transform:translate(-1px,1px)}
+  80%{transform:translate(1px,-1px)}
+}
+
+/* ── COMPONENTS ── */
+.header{background:var(--header-bg);border-bottom:1px solid var(--border);padding:20px 0}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.logo{font-size:22px;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:var(--muted);font-size:12px;margin-top:2px}
+.stats{display:flex;gap:20px}
+.stat{text-align:center}.stat-num{font-size:24px;font-weight:700;color:var(--accent)}.stat-label{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:1px}
+
+.controls{max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:var(--bg2);border-bottom:1px solid var(--border)}
+.btn{padding:7px 14px;border-radius:8px;border:1px solid var(--btn-border);background:var(--btn-bg);color:var(--text);cursor:pointer;font-size:12px;font-weight:600;transition:all .15s}
+.btn:hover{border-color:var(--accent)}
+.btn.active{background:var(--btn-active-bg);border-color:var(--btn-active-bg);color:var(--btn-active-text)}
+.btn-theme{position:relative;overflow:hidden}
+.btn-theme.geeky-active{animation:glitch 3s infinite}
+input,select{padding:7px 12px;border-radius:8px;border:1px solid var(--input-border);background:var(--input-bg);color:var(--text);cursor:pointer;font-size:12px;outline:none}
+input:focus,select:focus{border-color:var(--accent)}
+input::placeholder{color:var(--dim)}
+.search-box{flex:1;min-width:180px}
+
+.match-card{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;transition:all .2s}
+.match-card:hover{border-color:var(--accent)}
+.match-header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;cursor:pointer}
+.match-rank{font-size:13px;font-weight:700;color:var(--accent);min-width:35px}
+.match-title{flex:1}.match-name{font-size:15px;font-weight:600}.match-sub{color:var(--muted);font-size:12px;margin-top:3px}
+.match-meta{display:flex;align-items:center;gap:10px}
+.match-score{font-size:24px;font-weight:700;min-width:45px;text-align:right}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600}
+.badge-hot{background:var(--badge-hot-bg);color:var(--badge-hot-color)}
+.badge-warm{background:var(--badge-warm-bg);color:var(--badge-warm-color)}
+.badge-good{background:var(--badge-good-bg);color:var(--badge-good-color)}
+.details{display:none;border-top:1px solid var(--border);padding:20px;background:var(--bg2)}
+.open{display:block!important}
+.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.detail-section h4{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--muted);margin-bottom:10px}
+.detail-section p{font-size:13px;line-height:1.6}
+.scores-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.score-row{display:flex;align-items:center;gap:8px;font-size:12px;padding:3px 6px;border-radius:4px;transition:background .15s}
+.score-row:hover{background:rgba(99,102,241,.05)}
+.score-label{width:100px;color:var(--muted);text-align:right;flex-shrink:0}
+.score-num{font-size:12px;color:var(--muted)}
+.intro-list{list-style:none;padding:0}.intro-item{font-size:12px;color:var(--muted);padding:2px 0}
+.email-draft{background:var(--email-bg);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:12px;line-height:1.6;color:var(--muted);white-space:pre-wrap;font-family:'JetBrains Mono',monospace;max-height:180px;overflow-y:auto}
+.footer{text-align:center;padding:20px;color:var(--footer-color);font-size:11px;border-top:1px solid var(--border)}
+.page-title{font-size:16px;font-weight:600;margin-bottom:16px}
+
+@media(max-width:768px){.details-grid,.scores-grid{grid-template-columns:1fr}.header-inner{flex-direction:column;gap:12px}.controls{flex-direction:column}}
+</style>
+</head><body>
+
+<div class="header">
+<div class="header-inner">
 <div>
-<div style="font-size:22px;font-weight:700;background:linear-gradient(135deg,#6366f1,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent">🤖 AI Venture Intelligence</div>
-<div style="color:#64748b;font-size:12px;margin-top:2px">Many-to-Many Match Engine · {len(founders)} founders · {len(investors)} investors · {len(founders)*len(investors)} pairs analyzed · {now}</div>
+<div class="logo">🤖 AI Venture Intelligence</div>
+<div class="subtitle">''' + f"Many-to-Many · {len(founders)} founders · {len(investors)} investors · {len(founders)*len(investors)} pairs · {now}" + '''</div>
 </div>
-<div style="display:flex;gap:20px">
-<div style="text-align:center"><div style="font-size:24px;font-weight:700;color:#6366f1">{len(matches)}</div><div style="font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:1px">Matches</div></div>
-<div style="text-align:center"><div style="font-size:24px;font-weight:700;color:#ef4444">{hot_count}</div><div style="font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:1px">🔥 Hot</div></div>
-<div style="text-align:center"><div style="font-size:24px;font-weight:700;color:#eab308">{warm_count}</div><div style="font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:1px">⚡ Warm</div></div>
-<div style="text-align:center"><div style="font-size:24px;font-weight:700;color:#22c55e">{avg_score:.0f}</div><div style="font-size:10px;color:#64748b;text-transform:uppercase;letter-spacing:1px">Avg Score</div></div>
-</div></div></div>
+<div class="stats">
+<div class="stat"><div class="stat-num">''' + str(len(matches)) + '''</div><div class="stat-label">Matches</div></div>
+<div class="stat"><div class="stat-num">''' + str(hot_count) + '''</div><div class="stat-label">🔥 Hot</div></div>
+<div class="stat"><div class="stat-num">''' + str(warm_count) + '''</div><div class="stat-label">⚡ Warm</div></div>
+<div class="stat"><div class="stat-num">''' + f"{avg_score:.0f}" + '''</div><div class="stat-label">Avg</div></div>
+</div>
+</div>
+</div>
 
-<div style="max-width:1200px;margin:0 auto;padding:16px 24px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;background:#0d0d14;border-bottom:1px solid #1e1e2e">
-<button onclick="setView('all')" id="btn-all" class="vbtn" style="padding:7px 14px;border-radius:8px;border:1px solid {'#6366f1' if view=='all' else '#1e1e2e'};background:{'#6366f1' if view=='all' else '#12121a'};color:{'#fff' if view=='all' else '#e2e8f0'};cursor:pointer;font-size:12px;font-weight:600">All Matches</button>
-<button onclick="setView('by-founder')" id="btn-founder" class="vbtn" style="padding:7px 14px;border-radius:8px;border:1px solid {'#6366f1' if view=='founder' else '#1e1e2e'};background:{'#6366f1' if view=='founder' else '#12121a'};color:{'#fff' if view=='founder' else '#e2e8f0'};cursor:pointer;font-size:12px;font-weight:600">By Founder</button>
-<button onclick="setView('by-investor')" id="btn-investor" class="vbtn" style="padding:7px 14px;border-radius:8px;border:1px solid {'#6366f1' if view=='investor' else '#1e1e2e'};background:{'#6366f1' if view=='investor' else '#12121a'};color:{'#fff' if view=='investor' else '#e2e8f0'};cursor:pointer;font-size:12px;font-weight:600">By Investor</button>
+<div class="controls">
+<button class="btn btn-theme" id="btn-dark" onclick="setTheme('dark')" title="Clean dark theme">🌙 Dark</button>
+<button class="btn btn-theme" id="btn-geeky" onclick="setTheme('geeky')" title="Retro terminal hacker theme">👾 Geeky</button>
 
-<select id="entity-select" onchange="goToEntity()" style="display:{'block' if view in ('founder','investor') else 'none'};padding:7px 12px;border-radius:8px;border:1px solid #1e1e2e;background:#12121a;color:#e2e8f0;cursor:pointer;font-size:12px;min-width:250px">
+<button class="btn" id="btn-all" onclick="setView('all')">All Matches</button>
+<button class="btn" id="btn-founder" onclick="setView('by-founder')">By Founder</button>
+<button class="btn" id="btn-investor" onclick="setView('by-investor')">By Investor</button>
+
+<select id="entity-select" onchange="goToEntity()" style="display:none;min-width:250px">
 <option value="">Select...</option>
-{'<optgroup label="Founders">' + founder_options + '</optgroup>' if view == 'founder' else '<optgroup label="Investors">' + investor_options + '</optgroup>' if view == 'investor' else founder_options}
+''' + f'<optgroup label="Founders">{founder_options}</optgroup><optgroup label="Investors">{investor_options}</optgroup>' + '''
 </select>
 
-<input type="text" id="search" placeholder="🔍 Search..." style="flex:1;min-width:180px;padding:7px 12px;border-radius:8px;border:1px solid #1e1e2e;background:#12121a;color:#e2e8f0;font-size:12px;outline:none">
-<select id="sort" style="padding:7px 12px;border-radius:8px;border:1px solid #1e1e2e;background:#12121a;color:#e2e8f0;cursor:pointer;font-size:12px">
+<select id="country-filter" onchange="filterCountry()">
+''' + country_options + '''
+</select>
+
+<input type="text" id="search" class="search-box" placeholder="🔍 Search investors, founders, companies...">
+<select id="sort" onchange="sortCards()">
 <option value="score">Score ↓</option><option value="score-asc">Score ↑</option><option value="investor">Investor</option><option value="founder">Founder</option></select>
-<select id="filter" style="padding:7px 12px;border-radius:8px;border:1px solid #1e1e2e;background:#12121a;color:#e2e8f0;cursor:pointer;font-size:12px">
+<select id="filter" onchange="filterScore()">
 <option value="all">All</option><option value="hot">🔥 Hot (75+)</option><option value="warm">⚡ Warm (65-74)</option><option value="good">✓ Good (55-64)</option></select>
-<button onclick="document.querySelectorAll('.details').forEach(d=>d.classList.add('open'))" style="padding:7px 14px;border-radius:8px;border:1px solid #1e1e2e;background:#12121a;color:#e2e8f0;cursor:pointer;font-size:12px">Expand All</button>
-<button onclick="document.querySelectorAll('.details').forEach(d=>d.classList.remove('open'))" style="padding:7px 14px;border-radius:8px;border:1px solid #1e1e2e;background:#12121a;color:#e2e8f0;cursor:pointer;font-size:12px">Collapse</button>
+<button class="btn" onclick="document.querySelectorAll('.details').forEach(d=>d.classList.add('open'))">Expand All</button>
+<button class="btn" onclick="document.querySelectorAll('.details').forEach(d=>d.classList.remove('open'))">Collapse</button>
 </div>
 
 <div style="max-width:1200px;margin:0 auto;padding:16px 24px 40px">
-<div style="font-size:16px;font-weight:600;margin-bottom:16px;color:#e2e8f0">{page_title}</div>
-<div id="matches">{cards}</div>
+<div class="page-title">''' + page_title + '''</div>
+<div id="matches">''' + cards + '''</div>
 </div>
 
-<div style="text-align:center;padding:20px;color:#334155;font-size:11px;border-top:1px solid #1e1e2e">
-AI Venture Intelligence v2.0 · {len(founders)} founders × {len(investors)} investors = {len(founders)*len(investors)} pairs · 14-dimension scoring · Many-to-many matching
+<div class="footer">
+AI Venture Intelligence v2.0 · ''' + f"{len(founders)} founders × {len(investors)} investors = {len(founders)*len(investors)} pairs" + ''' · 14-dimension scoring · Many-to-many matching
 </div>
 
 <script>
-function setView(v){{
+// Theme
+function setTheme(t){
+  document.documentElement.setAttribute('data-theme',t);
+  localStorage.setItem('theme',t);
+  document.getElementById('btn-dark').classList.toggle('active',t==='dark');
+  document.getElementById('btn-geeky').classList.toggle('active',t==='geeky');
+  document.getElementById('btn-geeky').classList.toggle('geeky-active',t==='geeky');
+}
+(function(){setTheme(localStorage.getItem('theme')||'dark')})();
+
+// Views
+function setView(v){
   if(v==='all')window.location.href='/';
-  else if(v==='by-founder'){{document.getElementById('entity-select').style.display='block';document.getElementById('entity-select').innerHTML='<option value="">Select founder...</option>{founder_options}';}}
-  else if(v==='by-investor'){{document.getElementById('entity-select').style.display='block';document.getElementById('entity-select').innerHTML='<option value="">Select investor...</option>{investor_options}';}}
-}}
-function goToEntity(){{
+  else if(v==='by-founder'){
+    document.getElementById('entity-select').style.display='block';
+    document.getElementById('entity-select').innerHTML='<option value="">Select founder...</option>''' + founder_options.replace("'", "\\'") + '''';
+  } else if(v==='by-investor'){
+    document.getElementById('entity-select').style.display='block';
+    document.getElementById('entity-select').innerHTML='<option value="">Select investor...</option>''' + investor_options.replace("'", "\\'") + '''';
+  }
+}
+function goToEntity(){
   const v=document.getElementById('entity-select').value;
   if(!v)return;
-  const isFounder=document.getElementById('entity-select').querySelector('option[value="'+v+'"]').closest('optgroup').label==='Founders';
-  window.location.href='/?view='+(isFounder?'founder':'investor')+'&id='+v;
-}}
-document.getElementById('search').addEventListener('input',function(q){{
+  const og=document.getElementById('entity-select').querySelector('option[value="'+v+'"]');
+  if(!og)return;
+  const isF=og.closest('optgroup').label==='Founders';
+  window.location.href='/?view='+(isF?'founder':'investor')+'&id='+v;
+}
+
+// Search
+document.getElementById('search').addEventListener('input',function(q){
   const t=q.target.value.toLowerCase();
-  document.querySelectorAll('.match-card').forEach(c=>{{c.style.display=c.textContent.toLowerCase().includes(t)?'':'none'}});
-}});
-document.getElementById('sort').addEventListener('change',function(v){{
+  document.querySelectorAll('.match-card').forEach(c=>{c.style.display=c.textContent.toLowerCase().includes(t)?'':'none'});
+});
+
+// Sort
+function sortCards(){
+  const v=document.getElementById('sort').value;
   const c=document.getElementById('matches'),cards=[...c.children];
-  cards.sort((a,b)=>{{
-    if(v.target.value==='score')return b.dataset.score-a.dataset.score;
-    if(v.target.value==='score-asc')return a.dataset.score-b.dataset.score;
-    if(v.target.value==='investor')return a.dataset.investor.localeCompare(b.dataset.investor);
+  cards.sort((a,b)=>{
+    if(v==='score')return b.dataset.score-a.dataset.score;
+    if(v==='score-asc')return a.dataset.score-b.dataset.score;
+    if(v==='investor')return a.dataset.investor.localeCompare(b.dataset.investor);
     return a.dataset.founder.localeCompare(b.dataset.founder);
-  }});
+  });
   cards.forEach(x=>c.appendChild(x));
-  [...c.children].forEach((x,i)=>{{const r=x.querySelector('div div');if(r)r.textContent='#'+(i+1)}});
-}});
-document.getElementById('filter').addEventListener('change',function(v){{
-  const m=v.target.value;
-  document.querySelectorAll('.match-card').forEach(c=>{{
+  [...c.children].forEach((x,i)=>{const r=x.querySelector('.match-rank');if(r)r.textContent='#'+(i+1)});
+}
+
+// Filter by score
+function filterScore(){
+  const m=document.getElementById('filter').value;
+  document.querySelectorAll('.match-card').forEach(c=>{
     const s=parseFloat(c.dataset.score);
     c.style.display=(m==='all')?'':(m==='hot'&&s>=75)?'':(m==='warm'&&s>=65&&s<75)?'':(m==='good'&&s>=55&&s<65)?'':'none';
-  }});
-}});
-</script></body></html>'''
+  });
+}
+
+// Filter by country
+function filterCountry(){
+  const country=document.getElementById('country-filter').value;
+  document.querySelectorAll('.match-card').forEach(c=>{
+    if(country==='all'){c.style.display='';return;}
+    const fc=c.dataset.fcountry||'';const ic=c.dataset.icountry||'';
+    c.style.display=(fc===country||ic===country)?'':'none';
+  });
+}
+</script>
+</body></html>'''
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -290,15 +471,7 @@ class Handler(BaseHTTPRequestHandler):
 
         elif path == "/api/matches":
             matches = find_top_matches(founders, investors, top_n=30)
-            data = [
-                {
-                    "rank": i + 1,
-                    "founder": {"id": m.founder.id, "company": m.founder.company, "name": m.founder.name, "stage": m.founder.stage},
-                    "investor": {"id": m.investor.id, "firm": m.investor.firm, "name": m.investor.name, "type": m.investor.type},
-                    "score": m.total_score,
-                }
-                for i, m in enumerate(matches)
-            ]
+            data = [{"rank": i+1, "founder": m.founder.company, "investor": m.investor.firm, "score": m.total_score} for i, m in enumerate(matches)]
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
             self.end_headers()
@@ -329,7 +502,6 @@ class Handler(BaseHTTPRequestHandler):
             else:
                 self.send_response(404)
                 self.end_headers()
-
         else:
             self.send_response(404)
             self.end_headers()
@@ -347,6 +519,4 @@ if __name__ == "__main__":
     server = HTTPServer((args.host, args.port), Handler)
     print(f"🚀 AI Venture Intel UI → http://localhost:{args.port}")
     print(f"   {len(founders)} founders × {len(investors)} investors = {len(founders)*len(investors)} pairs")
-    print(f"   Views: / (all) / ?view=founder&id=FOU-001 / ?view=investor&id=INV-015")
-    print(f"   API: /api/matches / /api/founder?id=... /api/investor?id=...")
     server.serve_forever()
