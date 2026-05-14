@@ -222,31 +222,44 @@ body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgro
   --email-bg:#0a0a12;--footer-color:#334155;--save-color:#fbbf24;
 }}
 
-[data-theme="geeky"]{{
-  --bg:#000;--bg2:#001100;--card:#001a00;--border:#00ff4133;
-  --accent:#00ff41;--accent2:#39ff14;--text:#00ff41;--muted:#00aa2a;--dim:#005500;
-  --bar-bg:#003300;--header-bg:linear-gradient(135deg,#000,#001a00);
-  --btn-bg:#001a00;--btn-border:#00ff4133;--btn-active-bg:#00ff41;--btn-active-text:#000;
-  --input-bg:#001a00;--input-border:#00ff4133;
-  --badge-hot-bg:rgba(255,0,0,.2);--badge-hot-color:#ff0040;
-  --badge-warm-bg:rgba(255,255,0,.15);--badge-warm-color:#ffff00;
-  --badge-good-bg:rgba(0,255,65,.15);--badge-good-color:#00ff41;
-  --email-bg:#000a00;--footer-color:#005500;--save-color:#ffff00;
-  font-family:'VT323',monospace!important;
+[data-theme="cyberpunk"]{{
+  --bg:#0a0014;--bg2:#0d001a;--card:#140020;--border:#ff2d9533;
+  --accent:#ff2d95;--accent2:#00f0ff;--text:#f0e0ff;--muted:#a080c0;--dim:#503070;
+  --bar-bg:#1a0030;--header-bg:linear-gradient(135deg,#0a0014,#1a0030);
+  --btn-bg:#140020;--btn-border:#ff2d9533;--btn-active-bg:#ff2d95;--btn-active-text:#fff;
+  --input-bg:#140020;--input-border:#ff2d9533;
+  --badge-hot-bg:rgba(255,45,149,.2);--badge-hot-color:#ff2d95;
+  --badge-warm-bg:rgba(0,240,255,.15);--badge-warm-color:#00f0ff;
+  --badge-good-bg:rgba(184,41,221,.15);--badge-good-color:#b829dd;
+  --email-bg:#0a0014;--footer-color:#503070;--save-color:#ff2d95;
 }}
-[data-theme="geeky"] body,[data-theme="geeky"] *{{font-family:'VT323',monospace!important}}
-[data-theme="geeky"] .match-card{{border:1px solid #00ff4133;text-shadow:0 0 5px #00ff4133}}
-[data-theme="geeky"] .match-card:hover{{border-color:#00ff41;box-shadow:0 0 15px #00ff4122}}
-[data-theme="geeky"] .match-name{{text-shadow:0 0 10px #00ff4155}}
-[data-theme="geeky"] .match-score{{text-shadow:0 0 15px currentColor;font-size:28px!important}}
-[data-theme="geeky"] .stat-num{{text-shadow:0 0 10px var(--accent)}}
-[data-theme="geeky"] .logo{{background:linear-gradient(135deg,#00ff41,#39ff14);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:none;animation:glitch 2s infinite}}
-[data-theme="geeky"] .email-draft{{border:1px solid #00ff4133;background:#000a00}}
-[data-theme="geeky"] .match-card{{text-shadow:none}}
-[data-theme="geeky"] .badge{{border:1px solid currentColor}}
-[data-theme="geeky"] .details{{background:#000a00}}
-[data-theme="geeky"] .save-btn{{color:var(--save-color);text-shadow:0 0 10px var(--save-color)}}
-@keyframes glitch{{0%,100%{{transform:translate(0)}}20%{{transform:translate(-2px,2px)}}40%{{transform:translate(2px,-2px)}}60%{{transform:translate(-1px,1px)}}80%{{transform:translate(1px,-1px)}}}}
+[data-theme="cyberpunk"] .match-card:hover{{box-shadow:0 0 20px rgba(255,45,149,.15)}}
+[data-theme="cyberpunk"] .match-name{{text-shadow:0 0 8px rgba(255,45,149,.3)}}
+[data-theme="cyberpunk"] .match-score{{text-shadow:0 0 12px currentColor}}
+[data-theme="cyberpunk"] .stat-num{{text-shadow:0 0 8px var(--accent)}}
+[data-theme="cyberpunk"] .logo{{background:linear-gradient(135deg,#ff2d95,#00f0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}}
+[data-theme="cyberpunk"] .badge{{border:1px solid currentColor}}
+[data-theme="cyberpunk"] .score-row:hover{{background:rgba(255,45,149,.05)}}
+[data-theme="cyberpunk"] .match-card{{border-color:#ff2d9522}}
+[data-theme="cyberpunk"] .match-card:hover{{border-color:#ff2d95}}
+
+[data-theme="pastel"]{{
+  --bg:#faf7f2;--bg2:#f5f0e8;--card:#ffffff;--border:#e0d8cc;
+  --accent:#9b8ec4;--accent2:#c4a0a0;--text:#3d3535;--muted:#8a7e7e;--dim:#b5abab;
+  --bar-bg:#e8e0d8;--header-bg:linear-gradient(135deg,#faf7f2,#f0e8e0);
+  --btn-bg:#ffffff;--btn-border:#e0d8cc;--btn-active-bg:#9b8ec4;--btn-active-text:#fff;
+  --input-bg:#ffffff;--input-border:#e0d8cc;
+  --badge-hot-bg:rgba(200,100,120,.12);--badge-hot-color:#c86478;
+  --badge-warm-bg:rgba(200,170,100,.12);--badge-warm-color:#c8aa64;
+  --badge-good-bg:rgba(120,170,140,.12);--badge-good-color:#6aaa7c;
+  --email-bg:#f8f4ee;--footer-color:#b5abab;--save-color:#d4a07c;
+}}
+[data-theme="pastel"] .match-card:hover{{box-shadow:0 2px 12px rgba(155,142,196,.12)}}
+[data-theme="pastel"] .match-card{{border-color:#e0d8cc}}
+[data-theme="pastel"] .match-card:hover{{border-color:#9b8ec4}}
+[data-theme="pastel"] .score-row:hover{{background:rgba(155,142,196,.06)}}
+[data-theme="pastel"] .badge{{border:1px solid currentColor}}
+[data-theme="pastel"] .logo{{background:linear-gradient(135deg,#9b8ec4,#c4a0a0);-webkit-background-clip:text;-webkit-text-fill-color:transparent}}
 
 .header{{background:var(--header-bg);border-bottom:1px solid var(--border);padding:20px 0}}
 .header-inner{{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}}
@@ -260,7 +273,8 @@ body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgro
 .btn:hover{{border-color:var(--accent)}}
 .btn.active{{background:var(--btn-active-bg);border-color:var(--btn-active-bg);color:var(--btn-active-text)}}
 .btn-theme{{position:relative}}
-[data-theme="geeky"] .btn-theme:last-of-type{{animation:glitch 3s infinite}}
+[data-theme="cyberpunk"] .refresh-badge{{background:rgba(255,45,149,.15);color:#ff2d95}}
+[data-theme="pastel"] .refresh-badge{{background:rgba(155,142,196,.12);color:#9b8ec4}}
 input,select{{padding:7px 12px;border-radius:8px;border:1px solid var(--input-border);background:var(--input-bg);color:var(--text);cursor:pointer;font-size:12px;outline:none}}
 input:focus,select:focus{{border-color:var(--accent)}}
 input::placeholder{{color:var(--dim)}}
@@ -318,7 +332,8 @@ input::placeholder{{color:var(--dim)}}
 
 <div class="controls">
 <button class="btn btn-theme" id="btn-dark" onclick="setTheme('dark')">🌙 Dark</button>
-<button class="btn btn-theme" id="btn-geeky" onclick="setTheme('geeky')">👾 Geeky</button>
+<button class="btn btn-theme" id="btn-cyberpunk" onclick="setTheme('cyberpunk')">💜 Cyberpunk</button>
+<button class="btn btn-theme" id="btn-pastel" onclick="setTheme('pastel')">🌸 Pastel</button>
 
 <button class="btn" id="btn-all" onclick="window.location.href='/'">All Matches</button>
 <button class="btn" id="btn-founder" onclick="showSelect('founder')">By Founder</button>
@@ -359,8 +374,10 @@ const ALL_MATCHES = {saved_data};
 function setTheme(t){{
   document.documentElement.setAttribute('data-theme',t);
   localStorage.setItem('theme',t);
-  document.getElementById('btn-dark').classList.toggle('active',t==='dark');
-  document.getElementById('btn-geeky').classList.toggle('active',t==='geeky');
+  ['dark','cyberpunk','pastel'].forEach(s=>{{
+    const b=document.getElementById('btn-'+s);
+    if(b)b.classList.toggle('active',t===s);
+  }});
 }}
 (function(){{setTheme(localStorage.getItem('theme')||'dark')}})();
 
