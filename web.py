@@ -26,13 +26,27 @@ founder_map = {f.id: f for f in founders}
 def extract_country(location):
     loc = location.lower().strip()
     for kw, country in [
-        (["san francisco","new york","palo alto","seattle","houston","boston","canton","emeryville","us"], "US"),
-        (["uk","london"], "UK"), (["paris","france"], "France"),
-        (["warsaw","poland"], "Poland"), (["india"], "India"),
-        (["singapore"], "Singapore"), (["china"], "China"),
-        (["israel"], "Israel"), (["europe"], "Europe"),
+        # Check country names FIRST (more specific, avoid false matches)
+        (["india"], "India"),
+        (["singapore"], "Singapore"),
+        (["china"], "China"),
+        (["israel"], "Israel"),
+        (["japan"], "Japan"),
+        (["canada"], "Canada"),
+        (["france"], "France"),
+        (["poland"], "Poland"),
+        (["uk","london"], "UK"),
+        (["warsaw"], "Poland"),
+        (["paris"], "France"),
+        (["europe"], "Europe"),
+        # US cities/states LAST (avoid matching "US" in "India + US")
+        (["san francisco","new york","palo alto","seattle","houston","boston","canton","emeryville","mountain view","san mateo","berkeley"], "US"),
+        (["middle east","dubai","uae","tel aviv"], "Israel"),
     ]:
         if any(k in loc for k in kw): return country
+    # Only match bare "us" if no other country was found
+    if "us" in loc and "india" not in loc and "singapore" not in loc and "china" not in loc:
+        return "US"
     return "Other"
 
 founder_countries = sorted(set(extract_country(f.location) for f in founders))
