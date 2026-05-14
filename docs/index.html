@@ -122,33 +122,38 @@ input::placeholder{color:var(--dim)}
 .chat-toggle .close-icon{display:none}
 .chat-toggle.open .chat-icon{display:none}
 .chat-toggle.open .close-icon{display:inline}
-.chat-window{position:fixed;bottom:90px;right:24px;width:380px;max-height:520px;background:var(--card);border:1px solid var(--border);border-radius:16px;z-index:998;display:none;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,.4)}
+.chat-window{position:fixed;bottom:90px;right:24px;width:400px;height:560px;background:var(--card);border:1px solid var(--border);border-radius:16px;z-index:998;display:none;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,.4)}
 .chat-window.open{display:flex}
-.chat-header{padding:16px 20px;background:var(--header-bg);border-bottom:1px solid var(--border);font-size:14px;font-weight:600;flex-shrink:0}
-.chat-messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:0}
-.chat-msg{max-width:85%;padding:10px 14px;border-radius:12px;font-size:13px;line-height:1.5;animation:fadeIn .3s}
+.chat-header{padding:12px 16px;background:var(--header-bg);border-bottom:1px solid var(--border);font-size:14px;font-weight:600;flex-shrink:0;display:flex;justify-content:space-between;align-items:center}
+.chat-header-btns{display:flex;gap:6px}
+.chat-header-btn{background:var(--btn-bg);border:1px solid var(--border);color:var(--muted);border-radius:6px;padding:4px 10px;font-size:11px;cursor:pointer;transition:all .15s}
+.chat-header-btn:hover{border-color:var(--accent);color:var(--accent)}
+.chat-body{flex:1;display:flex;flex-direction:column;overflow:hidden;min-height:0}
+.chat-messages{flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;min-height:0}
+.chat-msg{max-width:85%;padding:10px 14px;border-radius:12px;font-size:13px;line-height:1.5;animation:fadeIn .3s;flex-shrink:0}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 .chat-msg.bot{background:var(--bg2);border:1px solid var(--border);align-self:flex-start;border-bottom-left-radius:4px}
 .chat-msg.user{background:var(--accent);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
 .chat-msg.user .chat-msg-text{color:#fff}
-.chat-options{display:flex;flex-wrap:wrap;gap:6px;padding:8px 16px 12px;flex-shrink:0}
+.chat-options{display:flex;flex-wrap:wrap;gap:6px;padding:10px 14px;border-top:1px solid var(--border);flex-shrink:0;max-height:200px;overflow-y:auto;background:var(--bg2)}
 .chat-opt{padding:8px 14px;border-radius:20px;border:1px solid var(--border);background:var(--btn-bg);color:var(--text);cursor:pointer;font-size:12px;transition:all .15s}
 .chat-opt:hover{border-color:var(--accent);background:var(--accent);color:#fff}
 .chat-opt.selected{background:var(--accent);border-color:var(--accent);color:#fff}
-.chat-result{margin:8px 16px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--muted)}
+.chat-result{margin:0;padding:10px 14px;background:var(--bg2);border-top:1px solid var(--border);font-size:12px;color:var(--muted);flex-shrink:0}
+.chat-result-btns{display:flex;gap:6px;margin-top:8px}
 .chat-result strong{color:var(--text);font-size:13px}
-.chat-reset{margin:8px 16px 16px;padding:8px;border-radius:8px;border:1px solid var(--border);background:var(--btn-bg);color:var(--text);cursor:pointer;font-size:12px;text-align:center;transition:all .15s}
+.chat-reset{padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--btn-bg);color:var(--text);cursor:pointer;font-size:12px;transition:all .15s}
 .chat-reset:hover{border-color:var(--accent)}
 [data-theme="pastel"] .chat-toggle{box-shadow:0 2px 12px rgba(155,142,196,.3)}
 [data-theme="cyberpunk"] .chat-toggle{box-shadow:0 4px 20px rgba(255,45,149,.3)}
-@media(max-width:480px){.chat-window{right:8px;left:8px;width:auto;bottom:80px}}
+@media(max-width:480px){.chat-window{right:8px;left:8px;width:auto;bottom:80px;height:500px}}
 </style></head><body>
 
 <div class="header">
 <div class="header-inner">
 <div>
 <div class="logo">🤖 AI Venture Intelligence</div>
-<div class="subtitle">Many-to-Many · 100 founders · 100 investors · 10000 pairs · Last updated: 2026-05-14 17:41 UTC <span class="refresh-badge">🔄 Auto-refreshes every 48h</span></div>
+<div class="subtitle">Many-to-Many · 100 founders · 100 investors · 10000 pairs · Last updated: 2026-05-14 18:11 UTC <span class="refresh-badge">🔄 Auto-refreshes every 48h</span></div>
 </div>
 <div class="stats">
 <div class="stat"><div class="stat-num">30</div><div class="stat-label">Matches</div></div>
@@ -166,6 +171,7 @@ input::placeholder{color:var(--dim)}
 <button class="btn" id="btn-founder" onclick="showSelect('founder')">By Founder</button>
 <button class="btn" id="btn-investor" onclick="showSelect('investor')">By Investor</button>
 <button class="btn" id="btn-saved" onclick="filterSaved()" style="position:relative">⭐ Saved <span class="saved-count" id="saved-count" style="display:none">0</span></button>
+<button class="btn" onclick="location.reload()" title="Reload page with latest data">🔄 Refresh</button>
 
 <select id="entity-select" onchange="goToEntity()" style="display:none;min-width:250px">
 <option value="">Select...</option>
@@ -2310,11 +2316,21 @@ function toggleChat(){
   if(chatOpen && chatStep===0) startChat();
 }
 
+function restartChat(){
+  document.getElementById('chat-result').style.display='none';
+  document.getElementById('chat-options').innerHTML='';
+  // Reset all filters
+  document.querySelectorAll('.match-card').forEach(c=>c.style.display='');
+  document.getElementById('page-title').textContent='Top 30 Matches';
+  startChat();
+}
+
 function startChat(){
   chatStep=0; chatAnswers={};
   const msgs=document.getElementById('chat-messages');
-  const opts=document.getElementById('chat-options');
   msgs.innerHTML='';
+  document.getElementById('chat-options').innerHTML='';
+  document.getElementById('chat-result').style.display='none';
   addBotMsg('Hey! 👋 I can help you find the perfect AI startup matches. Let me ask you a few questions.');
   setTimeout(()=>showStep(0),600);
 }
@@ -2415,7 +2431,9 @@ function applyFilters(){
   // Show result
   const resultDiv=document.getElementById('chat-result');
   resultDiv.style.display='block';
-  resultDiv.innerHTML=`<strong>${visible} matches found</strong> for ${chatAnswers.sector||'All'} · ${chatAnswers.stage||'Any'} · ${chatAnswers.region||'Anywhere'}`;document.getElementById('page-title').textContent=`Filtered: ${visible} matches`;const opts=document.getElementById('chat-options');opts.innerHTML='';const resetBtn=document.createElement('button');resetBtn.className='chat-reset';resetBtn.textContent='🔄 Start Over';resetBtn.onclick=()=>{document.getElementById('chat-result').style.display='none';startChat();cards.forEach(c=>c.style.display='');document.getElementById('page-title').textContent='Top 30 Matches'};opts.appendChild(resetBtn);
+  resultDiv.innerHTML=`<strong>${visible} matches found</strong> for ${chatAnswers.sector||'All'} · ${chatAnswers.stage||'Any'} · ${chatAnswers.region||'Anywhere'}`;
+  document.getElementById('page-title').textContent=`Filtered: ${visible} matches`;
+  document.getElementById('chat-options').innerHTML='';
 }
 </script>
 
@@ -2425,10 +2443,18 @@ function applyFilters(){
   <span class="close-icon">✕</span>
 </button>
 <div class="chat-window" id="chat-window">
-  <div class="chat-header">🤖 Investment Preference Finder</div>
-  <div class="chat-messages" id="chat-messages"></div>
-  <div class="chat-options" id="chat-options"></div>
-  <div class="chat-result" id="chat-result" style="display:none"></div>
+  <div class="chat-header">
+    <span>🤖 Investment Preference Finder</span>
+    <div class="chat-header-btns">
+      <button class="chat-header-btn" onclick="restartChat()" title="Restart">🔄</button>
+      <button class="chat-header-btn" onclick="toggleChat()" title="Close">✕</button>
+    </div>
+  </div>
+  <div class="chat-body">
+    <div class="chat-messages" id="chat-messages"></div>
+    <div class="chat-options" id="chat-options"></div>
+    <div class="chat-result" id="chat-result" style="display:none"></div>
+  </div>
 </div>
 
 </body></html>
