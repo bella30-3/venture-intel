@@ -148,7 +148,7 @@ input::placeholder{color:var(--dim)}
 <div class="header-inner">
 <div>
 <div class="logo">🤖 AI Venture Intelligence</div>
-<div class="subtitle">Many-to-Many · 42 founders · 35 investors · 1470 pairs · Last updated: 2026-05-14 16:55 UTC <span class="refresh-badge">🔄 Auto-refreshes every 48h</span></div>
+<div class="subtitle">Many-to-Many · 42 founders · 35 investors · 1470 pairs · Last updated: 2026-05-14 17:01 UTC <span class="refresh-badge">🔄 Auto-refreshes every 48h</span></div>
 </div>
 <div class="stats">
 <div class="stat"><div class="stat-num">30</div><div class="stat-label">Matches</div></div>
@@ -162,7 +162,7 @@ input::placeholder{color:var(--dim)}
 <button class="btn btn-theme" id="btn-cyberpunk" onclick="setTheme('cyberpunk')">💜 Cyberpunk</button>
 <button class="btn btn-theme" id="btn-pastel" onclick="setTheme('pastel')">🌸 Pastel</button>
 
-<button class="btn" id="btn-all" onclick="window.location.href='/'">All Matches</button>
+<button class="btn" id="btn-all" onclick="window.location.href='?view=all'">All Matches</button>
 <button class="btn" id="btn-founder" onclick="showSelect('founder')">By Founder</button>
 <button class="btn" id="btn-investor" onclick="showSelect('investor')">By Investor</button>
 <button class="btn" id="btn-saved" onclick="filterSaved()" style="position:relative">⭐ Saved <span class="saved-count" id="saved-count" style="display:none">0</span></button>
@@ -187,7 +187,7 @@ input::placeholder{color:var(--dim)}
 <div style="max-width:1200px;margin:0 auto;padding:16px 24px 40px">
 <div class="page-title" id="page-title">Top 30 Matches</div>
 <div id="matches">
-<div class="match-card" data-score="72.9" data-investor="Base10 Partners" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-033">
+<div class="match-card" data-score="72.9" data-investor="Base10 Partners" data-founder="Harvey AI" data-investor-id="INV-033" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-033">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#1</div>
     <div class="match-title">
@@ -252,7 +252,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="72.2" data-investor="Sequoia Capital" data-founder="Mistral AI" data-fcountry="France" data-icountry="US" data-uid="FOU-042__INV-014">
+<div class="match-card" data-score="72.2" data-investor="Sequoia Capital" data-founder="Mistral AI" data-investor-id="INV-014" data-founder-id="FOU-042" data-fcountry="France" data-icountry="US" data-uid="FOU-042__INV-014">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#2</div>
     <div class="match-title">
@@ -317,7 +317,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="72.0" data-investor="Lightspeed Venture Partners" data-founder="Mistral AI" data-fcountry="France" data-icountry="US" data-uid="FOU-042__INV-004">
+<div class="match-card" data-score="72.0" data-investor="Lightspeed Venture Partners" data-founder="Mistral AI" data-investor-id="INV-004" data-founder-id="FOU-042" data-fcountry="France" data-icountry="US" data-uid="FOU-042__INV-004">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#3</div>
     <div class="match-title">
@@ -382,7 +382,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="71.9" data-investor="Andreessen Horowitz" data-founder="Judgment Labs" data-fcountry="US" data-icountry="US" data-uid="FOU-021__INV-015">
+<div class="match-card" data-score="71.9" data-investor="Andreessen Horowitz" data-founder="Judgment Labs" data-investor-id="INV-015" data-founder-id="FOU-021" data-fcountry="US" data-icountry="US" data-uid="FOU-021__INV-015">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#4</div>
     <div class="match-title">
@@ -447,7 +447,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="71.5" data-investor="General Catalyst" data-founder="NeoCognition" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-002">
+<div class="match-card" data-score="71.5" data-investor="General Catalyst" data-founder="NeoCognition" data-investor-id="INV-002" data-founder-id="FOU-001" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-002">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#5</div>
     <div class="match-title">
@@ -512,7 +512,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="71.5" data-investor="Andreessen Horowitz" data-founder="Parallel" data-fcountry="US" data-icountry="US" data-uid="FOU-002__INV-015">
+<div class="match-card" data-score="71.5" data-investor="Andreessen Horowitz" data-founder="Parallel" data-investor-id="INV-015" data-founder-id="FOU-002" data-fcountry="US" data-icountry="US" data-uid="FOU-002__INV-015">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#6</div>
     <div class="match-title">
@@ -577,7 +577,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="71.5" data-investor="General Catalyst" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-002">
+<div class="match-card" data-score="71.5" data-investor="General Catalyst" data-founder="Harvey AI" data-investor-id="INV-002" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-002">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#7</div>
     <div class="match-title">
@@ -642,7 +642,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="71.1" data-investor="Sapphire Ventures" data-founder="Scale AI" data-fcountry="US" data-icountry="US" data-uid="FOU-039__INV-029">
+<div class="match-card" data-score="71.1" data-investor="Sapphire Ventures" data-founder="Scale AI" data-investor-id="INV-029" data-founder-id="FOU-039" data-fcountry="US" data-icountry="US" data-uid="FOU-039__INV-029">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#8</div>
     <div class="match-title">
@@ -707,7 +707,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="71.0" data-investor="Wing Venture Capital" data-founder="NeoCognition" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-030">
+<div class="match-card" data-score="71.0" data-investor="Wing Venture Capital" data-founder="NeoCognition" data-investor-id="INV-030" data-founder-id="FOU-001" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-030">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#9</div>
     <div class="match-title">
@@ -772,7 +772,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="71.0" data-investor="General Catalyst" data-founder="Parallel" data-fcountry="US" data-icountry="US" data-uid="FOU-002__INV-002">
+<div class="match-card" data-score="71.0" data-investor="General Catalyst" data-founder="Parallel" data-investor-id="INV-002" data-founder-id="FOU-002" data-fcountry="US" data-icountry="US" data-uid="FOU-002__INV-002">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#10</div>
     <div class="match-title">
@@ -837,7 +837,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="71.0" data-investor="General Catalyst" data-founder="Judgment Labs" data-fcountry="US" data-icountry="US" data-uid="FOU-021__INV-002">
+<div class="match-card" data-score="71.0" data-investor="General Catalyst" data-founder="Judgment Labs" data-investor-id="INV-002" data-founder-id="FOU-021" data-fcountry="US" data-icountry="US" data-uid="FOU-021__INV-002">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#11</div>
     <div class="match-title">
@@ -902,7 +902,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="70.3" data-investor="Andreessen Horowitz" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-015">
+<div class="match-card" data-score="70.3" data-investor="Andreessen Horowitz" data-founder="Harvey AI" data-investor-id="INV-015" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-015">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#12</div>
     <div class="match-title">
@@ -967,7 +967,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="70.2" data-investor="Accel" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-005">
+<div class="match-card" data-score="70.2" data-investor="Accel" data-founder="Harvey AI" data-investor-id="INV-005" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-005">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#13</div>
     <div class="match-title">
@@ -1032,7 +1032,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="70.2" data-investor="Sapphire Ventures" data-founder="Glean" data-fcountry="US" data-icountry="US" data-uid="FOU-037__INV-029">
+<div class="match-card" data-score="70.2" data-investor="Sapphire Ventures" data-founder="Glean" data-investor-id="INV-029" data-founder-id="FOU-037" data-fcountry="US" data-icountry="US" data-uid="FOU-037__INV-029">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#14</div>
     <div class="match-title">
@@ -1097,7 +1097,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="70.2" data-investor="Coatue Management" data-founder="Scale AI" data-fcountry="US" data-icountry="US" data-uid="FOU-039__INV-019">
+<div class="match-card" data-score="70.2" data-investor="Coatue Management" data-founder="Scale AI" data-investor-id="INV-019" data-founder-id="FOU-039" data-fcountry="US" data-icountry="US" data-uid="FOU-039__INV-019">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#15</div>
     <div class="match-title">
@@ -1162,7 +1162,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="70.0" data-investor="Y Combinator" data-founder="NeoCognition" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-013">
+<div class="match-card" data-score="70.0" data-investor="Y Combinator" data-founder="NeoCognition" data-investor-id="INV-013" data-founder-id="FOU-001" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-013">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#16</div>
     <div class="match-title">
@@ -1227,7 +1227,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="70.0" data-investor="Menlo Ventures" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-009">
+<div class="match-card" data-score="70.0" data-investor="Menlo Ventures" data-founder="Harvey AI" data-investor-id="INV-009" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-009">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#17</div>
     <div class="match-title">
@@ -1292,7 +1292,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="70.0" data-investor="Index Ventures" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-026">
+<div class="match-card" data-score="70.0" data-investor="Index Ventures" data-founder="Harvey AI" data-investor-id="INV-026" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-026">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#18</div>
     <div class="match-title">
@@ -1357,7 +1357,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="69.9" data-investor="Khosla Ventures" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-016">
+<div class="match-card" data-score="69.9" data-investor="Khosla Ventures" data-founder="Harvey AI" data-investor-id="INV-016" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-016">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#19</div>
     <div class="match-title">
@@ -1422,7 +1422,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="69.9" data-investor="Thrive Capital" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-017">
+<div class="match-card" data-score="69.9" data-investor="Thrive Capital" data-founder="Harvey AI" data-investor-id="INV-017" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-017">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#20</div>
     <div class="match-title">
@@ -1487,7 +1487,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="69.9" data-investor="Sapphire Ventures" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-029">
+<div class="match-card" data-score="69.9" data-investor="Sapphire Ventures" data-founder="Harvey AI" data-investor-id="INV-029" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-029">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#21</div>
     <div class="match-title">
@@ -1552,7 +1552,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="69.8" data-investor="Angel / Ex-Google, Twitter" data-founder="NeoCognition" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-012">
+<div class="match-card" data-score="69.8" data-investor="Angel / Ex-Google, Twitter" data-founder="NeoCognition" data-investor-id="INV-012" data-founder-id="FOU-001" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-012">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#22</div>
     <div class="match-title">
@@ -1617,7 +1617,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="69.8" data-investor="GV" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-021">
+<div class="match-card" data-score="69.8" data-investor="GV" data-founder="Harvey AI" data-investor-id="INV-021" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-021">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#23</div>
     <div class="match-title">
@@ -1682,7 +1682,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="69.7" data-investor="Conviction" data-founder="Together AI" data-fcountry="US" data-icountry="US" data-uid="FOU-035__INV-001">
+<div class="match-card" data-score="69.7" data-investor="Conviction" data-founder="Together AI" data-investor-id="INV-001" data-founder-id="FOU-035" data-fcountry="US" data-icountry="US" data-uid="FOU-035__INV-001">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#24</div>
     <div class="match-title">
@@ -1747,7 +1747,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="69.7" data-investor="Spark Capital" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-025">
+<div class="match-card" data-score="69.7" data-investor="Spark Capital" data-founder="Harvey AI" data-investor-id="INV-025" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-025">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#25</div>
     <div class="match-title">
@@ -1812,7 +1812,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="69.6" data-investor="Accel" data-founder="NeoCognition" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-005">
+<div class="match-card" data-score="69.6" data-investor="Accel" data-founder="NeoCognition" data-investor-id="INV-005" data-founder-id="FOU-001" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-005">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#26</div>
     <div class="match-title">
@@ -1877,7 +1877,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="69.6" data-investor="Coatue Management" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-019">
+<div class="match-card" data-score="69.6" data-investor="Coatue Management" data-founder="Harvey AI" data-investor-id="INV-019" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-019">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#27</div>
     <div class="match-title">
@@ -1942,7 +1942,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="69.6" data-investor="Insight Partners" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-022">
+<div class="match-card" data-score="69.6" data-investor="Insight Partners" data-founder="Harvey AI" data-investor-id="INV-022" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-022">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#28</div>
     <div class="match-title">
@@ -2007,7 +2007,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="69.6" data-investor="Bessemer Venture Partners" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-027">
+<div class="match-card" data-score="69.6" data-investor="Bessemer Venture Partners" data-founder="Harvey AI" data-investor-id="INV-027" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-027">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#29</div>
     <div class="match-title">
@@ -2072,7 +2072,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="69.6" data-investor="NEA" data-founder="Harvey AI" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-028">
+<div class="match-card" data-score="69.6" data-investor="NEA" data-founder="Harvey AI" data-investor-id="INV-028" data-founder-id="FOU-036" data-fcountry="US" data-icountry="US" data-uid="FOU-036__INV-028">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#30</div>
     <div class="match-title">
@@ -2222,8 +2222,38 @@ function goToEntity(){
   const og=document.getElementById('entity-select').querySelector('option[value="'+v+'"]');
   if(!og)return;
   const isF=og.closest('optgroup').label==='Founders';
-  window.location.href='/?view='+(isF?'founder':'investor')+'&id='+v;
+  window.location.href='?view='+(isF?'founder':'investor')+'&id='+v;
 }
+
+// ── Client-side routing for static site ──
+(function(){
+  const params=new URLSearchParams(window.location.search);
+  const view=params.get('view');
+  const id=params.get('id');
+  if(!view||view==='all')return;
+  const cards=document.querySelectorAll('.match-card');
+  let count=0;
+  if(view==='founder'&&id){
+    cards.forEach(c=>{
+      if(c.dataset.founderId===id){c.style.display='';count++}
+      else c.style.display='none';
+    });
+    document.getElementById('page-title').textContent='🏢 '+id+' — Top '+count+' investor matches';
+  } else if(view==='investor'&&id){
+    cards.forEach(c=>{
+      if(c.dataset.investorId===id){c.style.display='';count++}
+      else c.style.display='none';
+    });
+    document.getElementById('page-title').textContent='💰 '+id+' — Top '+count+' founder matches';
+  }
+  if(count>0){
+    const notice=document.createElement('div');
+    notice.className='controls';
+    notice.style.cssText='justify-content:center;background:var(--bg2);margin:0 auto;max-width:1200px;padding:8px 24px';
+    notice.innerHTML='<span style="color:var(--muted);font-size:12px">Showing '+count+' matches · <a href="?view=all" style="color:var(--accent)">← Back to all matches</a></span>';
+    document.querySelector('.controls').after(notice);
+  }
+})();
 
 // ── Search ──
 document.getElementById('search').addEventListener('input',function(q){

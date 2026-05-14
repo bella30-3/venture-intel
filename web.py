@@ -126,7 +126,7 @@ def render_match_card(m, idx, show_entity="both"):
     intros = "".join(f"<li class='intro-item'>→ {p}</li>" for p in m.warm_intro_pathways)
 
     return f'''
-<div class="match-card" data-score="{sc}" data-investor="{m.investor.firm}" data-founder="{m.founder.company}" data-fcountry="{f_country}" data-icountry="{i_country}" data-uid="{uid}">
+<div class="match-card" data-score="{sc}" data-investor="{m.investor.firm}" data-founder="{m.founder.company}" data-investor-id="{m.investor.id}" data-founder-id="{m.founder.id}" data-fcountry="{f_country}" data-icountry="{i_country}" data-uid="{uid}">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#{idx}</div>
     <div class="match-title">
@@ -386,7 +386,7 @@ input::placeholder{{color:var(--dim)}}
 <button class="btn btn-theme" id="btn-cyberpunk" onclick="setTheme('cyberpunk')">💜 Cyberpunk</button>
 <button class="btn btn-theme" id="btn-pastel" onclick="setTheme('pastel')">🌸 Pastel</button>
 
-<button class="btn" id="btn-all" onclick="window.location.href='/'">All Matches</button>
+<button class="btn" id="btn-all" onclick="window.location.href='?view=all'">All Matches</button>
 <button class="btn" id="btn-founder" onclick="showSelect('founder')">By Founder</button>
 <button class="btn" id="btn-investor" onclick="showSelect('investor')">By Investor</button>
 <button class="btn" id="btn-saved" onclick="filterSaved()" style="position:relative">⭐ Saved <span class="saved-count" id="saved-count" style="display:none">0</span></button>
@@ -496,8 +496,38 @@ function goToEntity(){{
   const og=document.getElementById('entity-select').querySelector('option[value="'+v+'"]');
   if(!og)return;
   const isF=og.closest('optgroup').label==='Founders';
-  window.location.href='/?view='+(isF?'founder':'investor')+'&id='+v;
+  window.location.href='?view='+(isF?'founder':'investor')+'&id='+v;
 }}
+
+// ── Client-side routing for static site ──
+(function(){{
+  const params=new URLSearchParams(window.location.search);
+  const view=params.get('view');
+  const id=params.get('id');
+  if(!view||view==='all')return;
+  const cards=document.querySelectorAll('.match-card');
+  let count=0;
+  if(view==='founder'&&id){{
+    cards.forEach(c=>{{
+      if(c.dataset.founderId===id){{c.style.display='';count++}}
+      else c.style.display='none';
+    }});
+    document.getElementById('page-title').textContent='🏢 '+id+' — Top '+count+' investor matches';
+  }} else if(view==='investor'&&id){{
+    cards.forEach(c=>{{
+      if(c.dataset.investorId===id){{c.style.display='';count++}}
+      else c.style.display='none';
+    }});
+    document.getElementById('page-title').textContent='💰 '+id+' — Top '+count+' founder matches';
+  }}
+  if(count>0){{
+    const notice=document.createElement('div');
+    notice.className='controls';
+    notice.style.cssText='justify-content:center;background:var(--bg2);margin:0 auto;max-width:1200px;padding:8px 24px';
+    notice.innerHTML='<span style="color:var(--muted);font-size:12px">Showing '+count+' matches · <a href="?view=all" style="color:var(--accent)">← Back to all matches</a></span>';
+    document.querySelector('.controls').after(notice);
+  }}
+}})();
 
 // ── Search ──
 document.getElementById('search').addEventListener('input',function(q){{
