@@ -43,6 +43,10 @@ python main.py --match-only
 # Top 5 matches only
 python main.py --top 5
 
+# Web UI (no email config needed, works standalone)
+python web.py --port 8080
+# Open http://localhost:8080
+
 # Custom output path
 python main.py --output my-report.md
 ```
