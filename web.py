@@ -94,13 +94,29 @@ def render_match_card(m, idx, show_entity="both"):
         sub = f"{m.founder.name} · {m.founder.stage} · {m.founder.ai_subsector[:60]}"
 
     dims = [
-        ("Industry", m.score.industry_alignment), ("Stage", m.score.stage_compatibility),
-        ("Geography", m.score.geography_preference), ("Pedigree", m.score.founder_track_record),
-        ("Traction", m.score.startup_traction), ("Growth", m.score.growth_velocity),
-        ("Brand", m.score.brand_positioning), ("Comms", m.score.communication_style),
-        ("Social Proof", m.score.social_proof), ("Response", m.score.investor_response_behavior),
-        ("Portfolio", m.score.portfolio_similarity), ("Reputation", m.score.reputation_score),
-        ("Relationship", m.score.relationship_proximity), ("Conversion", m.score.conversion_likelihood),
+        # Core Fit
+        ("🏭 Industry Fit", m.score.industry_alignment),
+        ("📅 Stage Match", m.score.stage_compatibility),
+        ("🌍 Geography", m.score.geography_preference),
+        ("📊 Portfolio Fit", m.score.portfolio_similarity),
+        # Founder Strength
+        ("🏆 Pedigree", m.score.founder_pedigree),
+        ("👥 Team Balance", m.score.team_composition),
+        ("🔬 Tech Depth", m.score.technical_depth),
+        # Business Quality
+        ("💰 Revenue", m.score.revenue_traction),
+        ("📈 Growth", m.score.growth_momentum),
+        ("🛡️ Moat", m.score.moat_defensibility),
+        # Market & Signal
+        ("🎯 Positioning", m.score.market_positioning),
+        ("⭐ Social Proof", m.score.social_proof),
+        ("📋 Compliance", m.score.regulatory_readiness),
+        # Relationship
+        ("💬 Comms Fit", m.score.communication_fit),
+        ("⚡ Responsiveness", m.score.investor_responsiveness),
+        ("🌟 Reputation", m.score.investor_reputation),
+        ("🤝 Intro Access", m.score.warm_intro_access),
+        ("🎯 Conversion", m.score.conversion_likelihood),
     ]
 
     scores_html = "".join(
@@ -127,7 +143,12 @@ def render_match_card(m, idx, show_entity="both"):
     <div class="details-grid">
       <div class="detail-section">
         <h4>🏢 Founder</h4>
-        <p><strong>{m.founder.name}</strong> — {m.founder.role}<br>{m.founder.background[:200]}<br><br><strong>Mission:</strong> {m.founder.mission[:200]}<br><strong>Traction:</strong> {m.founder.traction[:200]}<br><strong>Brand:</strong> {m.founder.brand_positioning[:150]}<br><strong>Location:</strong> {m.founder.location}<br><br><span class='detail-grid'><strong>Incorporated:</strong> {m.founder.year_incorporated} &nbsp;|&nbsp; <strong>Proj. Sales Y1:</strong> {m.founder.projected_sales_y1} &nbsp;|&nbsp; <strong>Growth (12mo):</strong> {m.founder.growth_last_12mo}</span></p>
+        <p><strong>{m.founder.name}</strong> — {m.founder.role}<br>{m.founder.background[:200]}</p>
+        {f'<div class="founder-links"><a href="{m.founder.website}" target="_blank" class="link-btn">🌐 Website</a>' if m.founder.website else ''}{f' <a href="{m.founder.linkedin_url}" target="_blank" class="link-btn">💼 LinkedIn</a>' if m.founder.linkedin_url else ''}{f' <a href="{m.founder.twitter_url}" target="_blank" class="link-btn">🐦 Twitter</a>' if m.founder.twitter_url else ''}{'</div>' if (m.founder.website or m.founder.linkedin_url or m.founder.twitter_url) else ''}
+        <p><strong>Mission:</strong> {m.founder.mission[:200]}<br><strong>Traction:</strong> {m.founder.traction[:200]}<br><strong>Brand:</strong> {m.founder.brand_positioning[:150]}<br><strong>Location:</strong> {m.founder.location}</p>
+        <div class='detail-grid'><strong>Incorporated:</strong> {m.founder.year_incorporated} &nbsp;|&nbsp; <strong>Proj. Sales Y1:</strong> {m.founder.projected_sales_y1} &nbsp;|&nbsp; <strong>Growth (12mo):</strong> {m.founder.growth_last_12mo}</div>
+        {f'<p style="margin-top:8px"><strong>🔬 Tech:</strong> {m.founder.technical_depth[:180]}</p>' if m.founder.technical_depth else ''}
+        {f'<p><strong>🛡️ Moat:</strong> {m.founder.moat[:180]}</p>' if m.founder.moat else ''}
       </div>
       <div class="detail-section">
         <h4>💰 Investor</h4>
@@ -309,6 +330,9 @@ input::placeholder{{color:var(--dim)}}
 .email-draft{{background:var(--email-bg);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:12px;line-height:1.6;color:var(--muted);white-space:pre-wrap;font-family:'JetBrains Mono',monospace;max-height:180px;overflow-y:auto}}
 .detail-grid{{display:inline-flex;gap:8px;flex-wrap:wrap;background:var(--bg2);padding:6px 10px;border-radius:6px;border:1px solid var(--border);font-size:11px;margin-top:6px}}
 .detail-grid strong{{color:var(--muted)}}
+.founder-links{{margin:8px 0;display:flex;gap:6px;flex-wrap:wrap}}
+.link-btn{{display:inline-block;padding:5px 12px;border-radius:6px;border:1px solid var(--border);background:var(--btn-bg);color:var(--accent);text-decoration:none;font-size:11px;font-weight:600;transition:all .15s}}
+.link-btn:hover{{border-color:var(--accent);background:var(--accent);color:#fff}}
 .footer{{text-align:center;padding:20px;color:var(--footer-color);font-size:11px;border-top:1px solid var(--border)}}
 .page-title{{font-size:16px;font-weight:600;margin-bottom:16px}}
 .saved-count{{position:absolute;top:-6px;right:-6px;background:var(--save-color);color:#000;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}}

@@ -54,6 +54,10 @@ class Founder:
     projected_sales_y1: str = ""  # Projected first-year sales
     year_incorporated: str = ""  # Year of incorporation
     growth_last_12mo: str = ""  # Growth in last 12 months
+    technical_depth: str = ""  # Model architecture, proprietary data, self-hosted vs API
+    moat: str = ""  # Data moats, network effects, IP, domain expertise
+    team_composition: str = ""  # AI PhDs + domain experts + GTM balance
+    regulatory_readiness: str = ""  # Compliance, ethics, data governance
     linkedin_url: Optional[str] = None
     twitter_url: Optional[str] = None
     website: Optional[str] = None
@@ -62,41 +66,61 @@ class Founder:
 
 @dataclass
 class MatchScore:
-    industry_alignment: float = 0.0
-    stage_compatibility: float = 0.0
-    geography_preference: float = 0.0
-    founder_track_record: float = 0.0
-    startup_traction: float = 0.0
-    growth_velocity: float = 0.0
-    brand_positioning: float = 0.0
-    communication_style: float = 0.0
-    social_proof: float = 0.0
-    investor_response_behavior: float = 0.0
-    portfolio_similarity: float = 0.0
-    reputation_score: float = 0.0
-    relationship_proximity: float = 0.0
-    conversion_likelihood: float = 0.0
+    # ── Core Fit (40% of total) ──
+    industry_alignment: float = 0.0       # Sector & subsector overlap
+    stage_compatibility: float = 0.0      # Funding stage match
+    geography_preference: float = 0.0     # Geographic alignment
+    portfolio_similarity: float = 0.0     # Overlap with investor portfolio
+
+    # ── Founder Strength (25% of total) ──
+    founder_pedigree: float = 0.0         # Track record, big tech, serial exits
+    team_composition: float = 0.0         # AI PhDs + domain + GTM balance
+    technical_depth: float = 0.0          # Real AI vs wrapper, proprietary models
+
+    # ── Business Quality (20% of total) ──
+    revenue_traction: float = 0.0         # Revenue, customers, growth metrics
+    growth_momentum: float = 0.0          # 12-month growth, velocity
+    moat_defensibility: float = 0.0       # Data moats, IP, network effects
+
+    # ── Market & Signal (15% of total) ──
+    market_positioning: float = 0.0       # Brand, category leadership
+    social_proof: float = 0.0             # Media, accelerators, notable backers
+    regulatory_readiness: float = 0.0     # Compliance, ethics, data governance
+
+    # ── Relationship Factors ──
+    communication_fit: float = 0.0        # Style compatibility
+    investor_responsiveness: float = 0.0  # Response behavior
+    investor_reputation: float = 0.0      # Fund reputation
+    warm_intro_access: float = 0.0        # Introduction pathway availability
+    conversion_likelihood: float = 0.0    # Overall probability estimate
 
     @property
     def total(self) -> float:
         weights = {
-            "industry_alignment": 0.15,
+            # Core Fit (40%)
+            "industry_alignment": 0.14,
             "stage_compatibility": 0.12,
-            "geography_preference": 0.05,
-            "founder_track_record": 0.12,
-            "startup_traction": 0.10,
-            "growth_velocity": 0.08,
-            "brand_positioning": 0.05,
-            "communication_style": 0.05,
-            "social_proof": 0.05,
-            "investor_response_behavior": 0.05,
-            "portfolio_similarity": 0.05,
-            "reputation_score": 0.05,
-            "relationship_proximity": 0.05,
-            "conversion_likelihood": 0.03,
+            "geography_preference": 0.06,
+            "portfolio_similarity": 0.08,
+            # Founder Strength (25%)
+            "founder_pedigree": 0.10,
+            "team_composition": 0.07,
+            "technical_depth": 0.08,
+            # Business Quality (20%)
+            "revenue_traction": 0.08,
+            "growth_momentum": 0.06,
+            "moat_defensibility": 0.06,
+            # Market & Signal (15%)
+            "market_positioning": 0.04,
+            "social_proof": 0.04,
+            "regulatory_readiness": 0.03,
+            # Relationship
+            "communication_fit": 0.02,
+            "investor_responsiveness": 0.015,
+            "investor_reputation": 0.015,
+            "warm_intro_access": 0.015,
+            "conversion_likelihood": 0.015,
         }
-        # Scores are already 0-100, weights sum to 1.0
-        # Result is weighted average, also 0-100
         return round(
             sum(getattr(self, k) * v for k, v in weights.items()), 1
         )

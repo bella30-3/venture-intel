@@ -88,20 +88,24 @@ def generate_markdown_report(matches: List[Match], report_date: str = None) -> s
         lines.append("|-----------|-------|---|")
         score = match.score
         dimensions = [
-            ("Industry Alignment", score.industry_alignment),
-            ("Stage Compatibility", score.stage_compatibility),
-            ("Geography", score.geography_preference),
-            ("Founder Track Record", score.founder_track_record),
-            ("Traction", score.startup_traction),
-            ("Growth Velocity", score.growth_velocity),
-            ("Brand Positioning", score.brand_positioning),
-            ("Communication Style", score.communication_style),
-            ("Social Proof", score.social_proof),
-            ("Investor Response", score.investor_response_behavior),
-            ("Portfolio Similarity", score.portfolio_similarity),
-            ("Reputation", score.reputation_score),
-            ("Relationship Proximity", score.relationship_proximity),
-            ("Conversion Likelihood", score.conversion_likelihood),
+            ("🏭 Industry Fit", score.industry_alignment),
+            ("📅 Stage Match", score.stage_compatibility),
+            ("🌍 Geography", score.geography_preference),
+            ("📊 Portfolio Fit", score.portfolio_similarity),
+            ("🏆 Founder Pedigree", score.founder_pedigree),
+            ("👥 Team Balance", score.team_composition),
+            ("🔬 Tech Depth", score.technical_depth),
+            ("💰 Revenue Traction", score.revenue_traction),
+            ("📈 Growth Momentum", score.growth_momentum),
+            ("🛡️ Moat & Defensibility", score.moat_defensibility),
+            ("🎯 Market Positioning", score.market_positioning),
+            ("⭐ Social Proof", score.social_proof),
+            ("📋 Regulatory Readiness", score.regulatory_readiness),
+            ("💬 Communication Fit", score.communication_fit),
+            ("⚡ Responsiveness", score.investor_responsiveness),
+            ("🌟 Reputation", score.investor_reputation),
+            ("🤝 Intro Access", score.warm_intro_access),
+            ("🎯 Conversion", score.conversion_likelihood),
         ]
         for dim_name, dim_score in dimensions:
             lines.append(f"| {dim_name} | {dim_score:.0f} | {_score_bar(dim_score)} |")

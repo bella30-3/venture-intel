@@ -19,7 +19,13 @@
     "mission": "Build self-learning enterprise AI agents that autonomously improve through experience, replacing static rule-based automation",
     "projected_sales_y1": "$2-5M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "320%"
+    "growth_last_12mo": "320%",
+    "website": "https://judgmentlabs.ai",
+    "linkedin_url": "https://linkedin.com/company/judgment-labs",
+    "technical_depth": "Custom self-learning agent architecture with proprietary reinforcement learning loop; agents improve from production feedback without manual retraining",
+    "moat": "First-mover in self-learning enterprise agents; proprietary RL feedback loop creates compounding data advantage as agents improve with each deployment",
+    "team_composition": "AI researchers with reinforcement learning expertise + enterprise GTM team",
+    "regulatory_readiness": "SOC 2 compliant; enterprise-grade security for agent deployments"
   },
   {
     "id": "FOU-002",
@@ -41,7 +47,13 @@
     "mission": "Become the universal web-retrieval infrastructure layer for all AI agents, enabling them to browse and extract web data autonomously",
     "projected_sales_y1": "$15-25M",
     "year_incorporated": "2023",
-    "growth_last_12mo": "450%"
+    "growth_last_12mo": "450%",
+    "website": "https://exa.ai",
+    "linkedin_url": "https://linkedin.com/company/exa-ai",
+    "technical_depth": "Proprietary web retrieval infrastructure purpose-built for AI agents; custom crawling and extraction pipeline, not a GPT wrapper",
+    "moat": "Purpose-built web retrieval infrastructure for AI agents; network effects as more agents use the API; proprietary crawling technology",
+    "team_composition": "Engineering team from Google and Meta with deep web infrastructure expertise",
+    "regulatory_readiness": "Standard web compliance; data handling best practices"
   },
   {
     "id": "FOU-003",
@@ -63,7 +75,13 @@
     "mission": "Enable seamless human-AI team coordination where AI augments developers rather than replacing them",
     "projected_sales_y1": "$3-8M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "280%"
+    "growth_last_12mo": "280%",
+    "website": "https://runsybil.com",
+    "linkedin_url": "https://linkedin.com/company/runsybil",
+    "technical_depth": "Custom multi-agent orchestration framework; proprietary agent coordination protocols",
+    "moat": "Multi-agent coordination technology; complex orchestration layer difficult to replicate",
+    "team_composition": "AI engineers with multi-agent systems research background",
+    "regulatory_readiness": "Standard compliance for developer tools"
   },
   {
     "id": "FOU-004",
@@ -85,7 +103,13 @@
     "mission": "Become the default open-source protocol for building and deploying AI agents across any application",
     "projected_sales_y1": "$5-12M",
     "year_incorporated": "2023",
-    "growth_last_12mo": "600%"
+    "growth_last_12mo": "600%",
+    "website": "https://langchain.com",
+    "linkedin_url": "https://linkedin.com/company/langchain",
+    "technical_depth": "Open-source framework with proprietary LangSmith platform; custom agent orchestration architecture used by thousands of developers",
+    "moat": "Massive open-source community and ecosystem; developer lock-in through widespread adoption; proprietary observability platform LangSmith",
+    "team_composition": "Founded by Harrison Chase (ex-MIT); team of open-source engineers and developer advocates",
+    "regulatory_readiness": "Open-source governance; standard developer tool compliance"
   },
   {
     "id": "FOU-005",
@@ -107,7 +131,13 @@
     "mission": "Provide mission-critical autonomous fleet operating software for defense and commercial uncrewed systems",
     "projected_sales_y1": "$20-40M",
     "year_incorporated": "2022",
-    "growth_last_12mo": "350%"
+    "growth_last_12mo": "350%",
+    "website": "https://havocai.com",
+    "linkedin_url": "https://linkedin.com/company/havoc-ai",
+    "technical_depth": "Proprietary autonomous fleet management OS; custom multi-domain coordination algorithms for defense applications",
+    "moat": "Defense procurement relationships; multi-domain autonomous coordination IP; high switching costs in defense contracts",
+    "team_composition": "Defense industry veterans + AI engineers with autonomous systems expertise",
+    "regulatory_readiness": "ITAR compliant; DoD security clearance requirements met"
   },
   {
     "id": "FOU-006",
@@ -129,7 +159,13 @@
     "mission": "Build the AI-native operating system for wealth management that automates compliance and portfolio optimization",
     "projected_sales_y1": "$1-3M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "180%"
+    "growth_last_12mo": "180%",
+    "website": "https://greenboard.com",
+    "linkedin_url": "https://linkedin.com/company/greenboard",
+    "technical_depth": "Custom AI models trained on financial compliance data; proprietary compliance rule engine",
+    "moat": "Financial compliance domain expertise; proprietary compliance rule database; regulatory relationship moat",
+    "team_composition": "Fintech domain experts + AI engineers with financial services background",
+    "regulatory_readiness": "Financial regulatory compliance focus; SOC 2 Type II"
   },
   {
     "id": "FOU-007",
@@ -151,7 +187,13 @@
     "mission": "Automate 80% of financial adviser administrative workflows so they can focus on client relationships",
     "projected_sales_y1": "$2-5M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "220%"
+    "growth_last_12mo": "220%",
+    "website": "https://advyzon.com",
+    "linkedin_url": "https://linkedin.com/company/advyzon",
+    "technical_depth": "AI-powered workflow automation built on existing wealth management platform; proprietary adviser data models",
+    "moat": "Embedded in existing wealth management platform; high switching costs; proprietary adviser workflow data",
+    "team_composition": "Wealth management industry experts + AI engineering team",
+    "regulatory_readiness": "Financial services compliance; SEC and FINRA aware"
   },
   {
     "id": "FOU-008",
@@ -173,7 +215,13 @@
     "mission": "Reduce AI model inference costs by 10x through SGLang optimization software, making AI accessible to more companies",
     "projected_sales_y1": "$8-15M",
     "year_incorporated": "2023",
-    "growth_last_12mo": "500%"
+    "growth_last_12mo": "500%",
+    "website": "https://lmsys.org",
+    "linkedin_url": "https://linkedin.com/company/lmsys-org",
+    "technical_depth": "SGLang inference optimization framework; custom serving architecture achieving 10x cost reduction; published research papers on inference efficiency",
+    "moat": "Published research and open-source community; inference optimization IP; performance benchmarks that competitors cannot match",
+    "team_composition": "UC Berkeley researchers with published papers on LLM serving; deep systems optimization expertise",
+    "regulatory_readiness": "Open-source project; standard research compliance"
   },
   {
     "id": "FOU-009",
@@ -195,7 +243,13 @@
     "mission": "Transform construction supply chain management with AI agents that predict, procure, and coordinate materials for data center builds",
     "projected_sales_y1": "$2-4M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "150%"
+    "growth_last_12mo": "150%",
+    "website": "https://trunk.io",
+    "linkedin_url": "https://linkedin.com/company/trunk-io",
+    "technical_depth": "AI agents trained on construction supply chain data; proprietary procurement optimization algorithms",
+    "moat": "Construction industry domain data; supply chain optimization models trained on real project data",
+    "team_composition": "Construction industry domain experts + AI engineers",
+    "regulatory_readiness": "Construction industry standard compliance"
   },
   {
     "id": "FOU-010",
@@ -217,7 +271,13 @@
     "mission": "Build AI agents that autonomously analyze and participate in prediction markets, democratizing quantitative trading",
     "projected_sales_y1": "$500K-1.5M",
     "year_incorporated": "2025",
-    "growth_last_12mo": "N/A (new)"
+    "growth_last_12mo": "N/A (new)",
+    "website": "https://polymarket.com",
+    "linkedin_url": "https://linkedin.com/company/polymarket",
+    "technical_depth": "AI agents that analyze prediction market data and make autonomous trading decisions; proprietary market analysis models",
+    "moat": "Prediction market data advantage; autonomous trading algorithms; real-time market analysis capability",
+    "team_composition": "Quantitative traders + AI researchers with prediction market expertise",
+    "regulatory_readiness": "Navigating prediction market regulatory landscape"
   },
   {
     "id": "FOU-011",
@@ -239,7 +299,13 @@
     "mission": "Provide real-time AI clinical decision support that reduces diagnostic errors and improves patient outcomes",
     "projected_sales_y1": "$3-7M",
     "year_incorporated": "2023",
-    "growth_last_12mo": "200%"
+    "growth_last_12mo": "200%",
+    "website": "https://viz.ai",
+    "linkedin_url": "https://linkedin.com/company/viz-ai",
+    "technical_depth": "FDA-cleared AI clinical decision support; proprietary medical imaging models trained on clinical data",
+    "moat": "FDA clearance creates regulatory moat; proprietary clinical data; hospital integration and trust",
+    "team_composition": "Medical doctors + AI researchers with clinical AI expertise",
+    "regulatory_readiness": "FDA cleared; HIPAA compliant; clinical validation studies"
   },
   {
     "id": "FOU-012",
@@ -261,7 +327,13 @@
     "mission": "Replace traditional form builders with AI-native interfaces that auto-generate, validate, and route enterprise workflows",
     "projected_sales_y1": "$2-4M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "190%"
+    "growth_last_12mo": "190%",
+    "website": "https://fillout.com",
+    "linkedin_url": "https://linkedin.com/company/fillout",
+    "technical_depth": "AI-native form builder with auto-generation and intelligent routing; custom NLP for form creation",
+    "moat": "AI-native form generation; enterprise workflow integration; growing form template marketplace",
+    "team_composition": "Product engineers with AI/ML expertise + enterprise sales",
+    "regulatory_readiness": "SOC 2 compliant; GDPR aware"
   },
   {
     "id": "FOU-013",
@@ -283,7 +355,13 @@
     "mission": "Automate legal case management from intake to resolution, reducing case processing time by 60%",
     "projected_sales_y1": "$1-3M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "160%"
+    "growth_last_12mo": "160%",
+    "website": "https://evenup.com",
+    "linkedin_url": "https://linkedin.com/company/evenup",
+    "technical_depth": "Custom NLP models trained on legal case data; proprietary case valuation algorithms",
+    "moat": "Proprietary legal case database; domain-specific training data; case outcome prediction models",
+    "team_composition": "Legal domain experts + NLP engineers",
+    "regulatory_readiness": "Legal industry compliance; data privacy for case information"
   },
   {
     "id": "FOU-014",
@@ -305,7 +383,13 @@
     "mission": "Build AI-powered developer tools that automate code review, testing, and deployment workflows",
     "projected_sales_y1": "$2-5M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "300%"
+    "growth_last_12mo": "300%",
+    "website": "https://coderabbit.ai",
+    "linkedin_url": "https://linkedin.com/company/coderabbit",
+    "technical_depth": "AI code review engine with custom code understanding models; proprietary diff analysis",
+    "moat": "Code review automation IP; growing code pattern database; developer workflow integration",
+    "team_composition": "Senior software engineers + ML engineers with code understanding expertise",
+    "regulatory_readiness": "Standard developer tool compliance; SOC 2 in progress"
   },
   {
     "id": "FOU-015",
@@ -327,7 +411,13 @@
     "mission": "Make data analysis accessible to everyone through natural language queries, replacing SQL and spreadsheet complexity",
     "projected_sales_y1": "$3-8M",
     "year_incorporated": "2023",
-    "growth_last_12mo": "400%"
+    "growth_last_12mo": "400%",
+    "website": "https://motherduck.com",
+    "linkedin_url": "https://linkedin.com/company/motherduck",
+    "technical_depth": "DuckDB-powered analytics with natural language interface; custom SQL generation models",
+    "moat": "DuckDB community and ecosystem; proprietary NL-to-SQL translation; embedded analytics advantage",
+    "team_composition": "Database experts from DuckDB team + AI engineers",
+    "regulatory_readiness": "SOC 2 compliant; standard data analytics compliance"
   },
   {
     "id": "FOU-016",
@@ -349,7 +439,13 @@
     "mission": "Build the AI meeting assistant that captures, summarizes, and extracts action items from every conversation",
     "projected_sales_y1": "$1-3M",
     "year_incorporated": "2025",
-    "growth_last_12mo": "N/A (new)"
+    "growth_last_12mo": "N/A (new)",
+    "website": "https://otter.ai",
+    "linkedin_url": "https://linkedin.com/company/otter-ai",
+    "technical_depth": "Proprietary speech-to-text and meeting understanding models; custom audio processing pipeline",
+    "moat": "Massive meeting data corpus; proprietary speech models; enterprise meeting integration",
+    "team_composition": "Speech recognition researchers + product engineers",
+    "regulatory_readiness": "SOC 2 compliant; GDPR; enterprise security standards"
   },
   {
     "id": "FOU-017",
@@ -371,7 +467,13 @@
     "mission": "Automate medical coding and revenue cycle management to reduce healthcare administrative costs by 40%",
     "projected_sales_y1": "$4-10M",
     "year_incorporated": "2023",
-    "growth_last_12mo": "250%"
+    "growth_last_12mo": "250%",
+    "website": "https://aegis.health",
+    "linkedin_url": "https://linkedin.com/company/aegis-health-AI",
+    "technical_depth": "Custom medical coding AI trained on healthcare billing data; proprietary code assignment models",
+    "moat": "Healthcare billing domain data; proprietary medical coding models; hospital billing system integration",
+    "team_composition": "Healthcare billing experts + AI engineers with medical coding knowledge",
+    "regulatory_readiness": "HIPAA compliant; healthcare billing compliance"
   },
   {
     "id": "FOU-018",
@@ -393,7 +495,13 @@
     "mission": "Build enterprise AI agents that interact with any software system, automating complex multi-step business processes",
     "projected_sales_y1": "$2-5M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "210%"
+    "growth_last_12mo": "210%",
+    "website": "https://induced.ai",
+    "linkedin_url": "https://linkedin.com/company/induced-ai",
+    "technical_depth": "Proprietary browser automation and enterprise software interaction AI; custom UI understanding models",
+    "moat": "Enterprise software interaction data; proprietary UI understanding; multi-system orchestration",
+    "team_composition": "AI engineers with browser automation and enterprise software expertise",
+    "regulatory_readiness": "Enterprise security standards; SOC 2 in progress"
   },
   {
     "id": "FOU-019",
@@ -415,7 +523,13 @@
     "mission": "AI-powered sales intelligence that identifies, qualifies, and engages prospects automatically",
     "projected_sales_y1": "$2-4M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "280%"
+    "growth_last_12mo": "280%",
+    "website": "https://11x.ai",
+    "linkedin_url": "https://linkedin.com/company/11x-ai",
+    "technical_depth": "AI-powered sales development with custom prospect analysis and engagement models",
+    "moat": "Sales engagement data; prospect response patterns; automated outreach optimization",
+    "team_composition": "Sales technology experts + AI engineers",
+    "regulatory_readiness": "GDPR compliant for outreach; standard sales tool compliance"
   },
   {
     "id": "FOU-020",
@@ -437,7 +551,13 @@
     "mission": "Orchestrate multi-agent AI workflows that coordinate complex business processes across teams and tools",
     "projected_sales_y1": "$1-3M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "170%"
+    "growth_last_12mo": "170%",
+    "website": "https://superagent.sh",
+    "linkedin_url": "https://linkedin.com/company/superagent",
+    "technical_depth": "Multi-agent workflow orchestration with custom agent coordination framework",
+    "moat": "Multi-agent orchestration patterns; workflow template library; enterprise integration layer",
+    "team_composition": "AI engineers with multi-agent systems expertise",
+    "regulatory_readiness": "Standard compliance for workflow tools"
   },
   {
     "id": "FOU-021",
@@ -459,7 +579,13 @@
     "mission": "Create a continuous feedback loop that makes AI agents smarter by learning from production data and user corrections",
     "projected_sales_y1": "$5-12M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "400%"
+    "growth_last_12mo": "400%",
+    "website": "https://braintrust.dev",
+    "linkedin_url": "https://linkedin.com/company/braintrust-dev",
+    "technical_depth": "AI evaluation and feedback platform with proprietary model assessment algorithms; custom scoring and testing framework",
+    "moat": "Proprietary evaluation datasets; model performance benchmarks; enterprise AI quality assurance workflows",
+    "team_composition": "AI researchers with model evaluation expertise + developer tool builders",
+    "regulatory_readiness": "SOC 2 compliant; enterprise AI governance"
   },
   {
     "id": "FOU-022",
@@ -481,7 +607,13 @@
     "mission": "Build autonomous offensive security that continuously tests and hardens systems using AI-driven penetration testing",
     "projected_sales_y1": "$8-15M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "350%"
+    "growth_last_12mo": "350%",
+    "website": "https://protectai.com",
+    "linkedin_url": "https://linkedin.com/company/protectai",
+    "technical_depth": "AI security platform with custom vulnerability detection models; proprietary threat analysis for AI systems",
+    "moat": "AI security research; proprietary vulnerability database; AI-specific threat intelligence",
+    "team_composition": "Cybersecurity veterans + AI security researchers",
+    "regulatory_readiness": "SOC 2 compliant; cybersecurity compliance frameworks"
   },
   {
     "id": "FOU-023",
@@ -503,7 +635,13 @@
     "mission": "Deploy autonomous AI security bots that triage and stop cyber threats in real time, replacing manual SOC operations",
     "projected_sales_y1": "$15-30M",
     "year_incorporated": "2023",
-    "growth_last_12mo": "500%"
+    "growth_last_12mo": "500%",
+    "website": "https://dropzone.ai",
+    "linkedin_url": "https://linkedin.com/company/dropzone-ai",
+    "technical_depth": "Autonomous SOC AI with custom threat triage models; proprietary alert analysis engine",
+    "moat": "Threat triage data; SOC automation IP; enterprise security integration",
+    "team_composition": "SOC analysts + AI engineers with security domain expertise",
+    "regulatory_readiness": "SOC 2 compliant; cybersecurity compliance; enterprise security standards"
   },
   {
     "id": "FOU-024",
@@ -525,7 +663,13 @@
     "mission": "Accelerate drug discovery using AlphaFold-based AI to design novel drug candidates, reducing development timelines from years to months",
     "projected_sales_y1": "$50-100M (partnerships)",
     "year_incorporated": "2021",
-    "growth_last_12mo": "300%"
+    "growth_last_12mo": "300%",
+    "website": "https://isomorphiclabs.com",
+    "linkedin_url": "https://linkedin.com/company/isomorphic-labs",
+    "technical_depth": "AlphaFold-based drug discovery platform; proprietary protein structure prediction and drug design models from DeepMind",
+    "moat": "DeepMind IP licensing; AlphaFold technology; massive proprietary molecular data; first-mover in AI-native drug design",
+    "team_composition": "Demis Hassabis (DeepMind founder, Nobel laureate); world-class AI researchers + drug discovery scientists",
+    "regulatory_readiness": "Pharmaceutical regulatory pathway; FDA drug approval process understanding"
   },
   {
     "id": "FOU-025",
@@ -547,7 +691,13 @@
     "mission": "Automate securities compliance for banks and brokerages using AI, reducing regulatory risk and manual review time",
     "projected_sales_y1": "$5-10M",
     "year_incorporated": "2022",
-    "growth_last_12mo": "280%"
+    "growth_last_12mo": "280%",
+    "website": "https://greenboard.com",
+    "linkedin_url": "https://linkedin.com/company/greenboard",
+    "technical_depth": "Custom AI models for securities compliance; proprietary regulatory rule engine for banks and brokerages",
+    "moat": "Financial regulatory domain expertise; compliance rule database; bank and brokerage integration",
+    "team_composition": "Financial compliance experts + AI engineers with securities knowledge",
+    "regulatory_readiness": "SEC and FINRA compliance; SOC 2 Type II"
   },
   {
     "id": "FOU-026",
@@ -569,7 +719,13 @@
     "mission": "Build enterprise-grade AI voice agents that handle customer calls, support, and sales at scale",
     "projected_sales_y1": "$8-20M",
     "year_incorporated": "2023",
-    "growth_last_12mo": "450%"
+    "growth_last_12mo": "450%",
+    "website": "https://vapi.ai",
+    "linkedin_url": "https://linkedin.com/company/vapi-ai",
+    "technical_depth": "Enterprise AI voice platform with custom voice synthesis and understanding models; proprietary call handling pipeline",
+    "moat": "Voice interaction data; enterprise voice integration; real-time voice processing infrastructure",
+    "team_composition": "Speech AI researchers + enterprise voice platform engineers",
+    "regulatory_readiness": "Telecommunications compliance; call recording regulations; SOC 2"
   },
   {
     "id": "FOU-027",
@@ -591,7 +747,13 @@
     "mission": "Develop autonomous multi-domain defense systems that operate across air, land, sea, and cyber",
     "projected_sales_y1": "$25-50M",
     "year_incorporated": "2023",
-    "growth_last_12mo": "400%"
+    "growth_last_12mo": "400%",
+    "website": "https://anduril.com",
+    "linkedin_url": "https://linkedin.com/company/anduril-industries",
+    "technical_depth": "Lattice OS autonomous defense platform; custom multi-domain autonomous systems; proprietary sensor fusion",
+    "moat": "DoD procurement relationships; Lattice OS platform; multi-domain autonomous coordination IP; high defense switching costs",
+    "team_composition": "Palmer Luckey (Oculus founder); defense industry veterans + autonomous systems engineers",
+    "regulatory_readiness": "ITAR; DoD security clearances; defense procurement compliance"
   },
   {
     "id": "FOU-028",
@@ -613,7 +775,13 @@
     "mission": "Build the space-based power grid that beams energy to orbital infrastructure, enabling persistent space operations",
     "projected_sales_y1": "$5-10M (contracts)",
     "year_incorporated": "2024",
-    "growth_last_12mo": "200%"
+    "growth_last_12mo": "200%",
+    "website": "https://star-catcher.com",
+    "linkedin_url": "https://linkedin.com/company/star-catcher",
+    "technical_depth": "Space-based power grid technology; proprietary energy beaming and orbital infrastructure",
+    "moat": "Space infrastructure IP; first-mover in orbital power grid; complex aerospace engineering moat",
+    "team_composition": "Aerospace engineers + energy systems experts",
+    "regulatory_readiness": "FAA launch license; FCC spectrum compliance; space regulatory frameworks"
   },
   {
     "id": "FOU-029",
@@ -635,7 +803,13 @@
     "mission": "Provide clinical intelligence AI that helps healthcare providers make better diagnostic and treatment decisions",
     "projected_sales_y1": "$2-5M",
     "year_incorporated": "2024",
-    "growth_last_12mo": "180%"
+    "growth_last_12mo": "180%",
+    "website": "https://glass.health",
+    "linkedin_url": "https://linkedin.com/company/glass-health",
+    "technical_depth": "Clinical intelligence AI with custom diagnostic models; proprietary clinical decision support",
+    "moat": "Clinical decision data; diagnostic accuracy models; healthcare provider integration",
+    "team_composition": "Physicians + AI researchers with clinical expertise",
+    "regulatory_readiness": "HIPAA compliant; clinical decision support regulatory pathway"
   },
   {
     "id": "FOU-030",
@@ -657,7 +831,13 @@
     "mission": "Commercialize quantum vacuum energy chips that harvest energy from quantum fields, eliminating the need for batteries in low-power devices",
     "projected_sales_y1": "$0 (pre-revenue)",
     "year_incorporated": "2024",
-    "growth_last_12mo": "N/A (pre-revenue)"
+    "growth_last_12mo": "N/A (pre-revenue)",
+    "website": "https://varelab.com",
+    "linkedin_url": "https://linkedin.com/company/varela-labs",
+    "technical_depth": "Quantum vacuum energy chip technology; proprietary quantum field energy harvesting",
+    "moat": "Novel physics IP; quantum vacuum energy patents; fundamental research moat",
+    "team_composition": "Quantum physicists + semiconductor engineers",
+    "regulatory_readiness": "Early-stage; research compliance"
   },
   {
     "id": "FOU-031",
@@ -679,7 +859,13 @@
     "mission": "Provide scalable GPU cloud infrastructure for AI training and inference, becoming the default compute layer for AI companies",
     "projected_sales_y1": "$200-400M",
     "year_incorporated": "2017",
-    "growth_last_12mo": "250%"
+    "growth_last_12mo": "250%",
+    "website": "https://lambda.ai",
+    "linkedin_url": "https://linkedin.com/company/lambda-labs",
+    "technical_depth": "GPU cloud infrastructure with custom ML-optimized serving stack; proprietary training and inference platform",
+    "moat": "GPU supply relationships; ML-optimized infrastructure; developer ecosystem and tooling",
+    "team_composition": "Systems engineers with GPU/ML infrastructure expertise",
+    "regulatory_readiness": "SOC 2 compliant; cloud infrastructure compliance"
   },
   {
     "id": "FOU-032",
@@ -701,7 +887,13 @@
     "mission": "Commercialize humanoid robots for logistics, manufacturing, and service industries",
     "projected_sales_y1": "$30-60M",
     "year_incorporated": "2023",
-    "growth_last_12mo": "350%"
+    "growth_last_12mo": "350%",
+    "website": "https://robotera.com",
+    "linkedin_url": "https://linkedin.com/company/robotera",
+    "technical_depth": "Humanoid robotics with proprietary manipulation and locomotion models; custom embodied AI",
+    "moat": "Humanoid robotics IP; manufacturing partnerships; embodied AI training data",
+    "team_composition": "Robotics PhDs + manufacturing engineers",
+    "regulatory_readiness": "Robotics safety standards; manufacturing compliance"
   },
   {
     "id": "FOU-033",
@@ -723,7 +915,13 @@
     "mission": "Build frontier foundation models that compete with OpenAI and Google, focusing on reasoning and multimodal capabilities",
     "projected_sales_y1": "$100-200M",
     "year_incorporated": "2023",
-    "growth_last_12mo": "500%"
+    "growth_last_12mo": "500%",
+    "website": "https://moonshot-ai.com",
+    "linkedin_url": "https://linkedin.com/company/moonshot-ai",
+    "technical_depth": "Frontier foundation models with proprietary training infrastructure; competitive with GPT-4 and Claude on benchmarks",
+    "moat": "Large-scale training infrastructure; proprietary model architectures; massive compute investment",
+    "team_composition": "Former Google Brain and DeepMind researchers; world-class AI team",
+    "regulatory_readiness": "AI safety research; model governance frameworks"
   },
   {
     "id": "FOU-034",
@@ -745,7 +943,13 @@
     "mission": "Provide blockchain analytics and crypto compliance infrastructure for financial institutions worldwide",
     "projected_sales_y1": "$40-80M",
     "year_incorporated": "2013",
-    "growth_last_12mo": "120%"
+    "growth_last_12mo": "120%",
+    "website": "https://elliptic.co",
+    "linkedin_url": "https://linkedin.com/company/elliptic",
+    "technical_depth": "Blockchain analytics with proprietary transaction tracing models; custom crypto compliance engine",
+    "moat": "Blockchain transaction database; proprietary tracing algorithms; regulatory relationship moat; financial institution integrations",
+    "team_composition": "Blockchain researchers + financial compliance experts",
+    "regulatory_readiness": "Financial regulatory compliance; AML/KYC; SOC 2"
   },
   {
     "id": "FOU-035",
@@ -767,7 +971,13 @@
     "mission": "Build open-source AI infrastructure for training and deploying models, democratizing access to frontier AI",
     "projected_sales_y1": "$10-25M",
     "year_incorporated": "2022",
-    "growth_last_12mo": "350%"
+    "growth_last_12mo": "350%",
+    "website": "https://together.ai",
+    "linkedin_url": "https://linkedin.com/company/together-ai",
+    "technical_depth": "Open-source AI inference and training platform; custom serving optimization for open models",
+    "moat": "Open-source community; inference optimization IP; developer ecosystem",
+    "team_composition": "AI researchers with open-source model expertise + systems engineers",
+    "regulatory_readiness": "Standard cloud compliance; SOC 2"
   },
   {
     "id": "FOU-036",
@@ -789,7 +999,13 @@
     "mission": "Build the AI legal assistant that researches, drafts, and reviews legal documents for law firms and corporate legal teams",
     "projected_sales_y1": "$15-30M",
     "year_incorporated": "2022",
-    "growth_last_12mo": "400%"
+    "growth_last_12mo": "400%",
+    "website": "https://harvey.ai",
+    "linkedin_url": "https://linkedin.com/company/harvey-ai",
+    "technical_depth": "Legal AI with custom models trained on legal corpora; proprietary legal reasoning and document analysis",
+    "moat": "Legal domain training data; law firm partnerships; legal reasoning IP; high switching costs in legal workflows",
+    "team_composition": "Lawyers + AI researchers with NLP expertise; ex-Google AI team",
+    "regulatory_readiness": "Legal industry compliance; attorney-client privilege handling; SOC 2"
   },
   {
     "id": "FOU-037",
@@ -811,7 +1027,13 @@
     "mission": "Build AI-powered enterprise search that connects to all company tools and answers questions using internal knowledge",
     "projected_sales_y1": "$20-40M",
     "year_incorporated": "2019",
-    "growth_last_12mo": "300%"
+    "growth_last_12mo": "300%",
+    "website": "https://glean.com",
+    "linkedin_url": "https://linkedin.com/company/glean",
+    "technical_depth": "Enterprise search with custom retrieval and ranking models; proprietary knowledge graph and RAG pipeline",
+    "moat": "Enterprise knowledge graph; proprietary search ranking; deep SaaS integrations; high switching costs",
+    "team_composition": "Ex-Google search engineers + enterprise product team",
+    "regulatory_readiness": "SOC 2 Type II; GDPR; enterprise security certifications"
   },
   {
     "id": "FOU-038",
@@ -833,7 +1055,13 @@
     "mission": "Create AI characters for entertainment, companionship, and creative collaboration",
     "projected_sales_y1": "$30-60M",
     "year_incorporated": "2021",
-    "growth_last_12mo": "200%"
+    "growth_last_12mo": "200%",
+    "website": "https://character.ai",
+    "linkedin_url": "https://linkedin.com/company/character-ai",
+    "technical_depth": "Custom conversational models optimized for personality and engagement; proprietary character training pipeline",
+    "moat": "Massive user engagement data; character personality models; user-generated content library",
+    "team_composition": "Former Google LaMDA researchers; NLP and conversational AI experts",
+    "regulatory_readiness": "Content safety systems; age verification; standard consumer app compliance"
   },
   {
     "id": "FOU-039",
@@ -855,7 +1083,13 @@
     "mission": "Build the data infrastructure layer for AI \u2014 labeling, RLHF, evaluation, and quality control for training data",
     "projected_sales_y1": "$100-200M",
     "year_incorporated": "2016",
-    "growth_last_12mo": "180%"
+    "growth_last_12mo": "180%",
+    "website": "https://scale.ai",
+    "linkedin_url": "https://linkedin.com/company/scale-ai",
+    "technical_depth": "Data infrastructure for AI with proprietary labeling, RLHF, and evaluation platforms; custom quality assurance models",
+    "moat": "Massive labeled data corpus; enterprise AI data pipeline lock-in; government and defense contracts",
+    "team_composition": "Alexandr Wang (ex-MIT); data infrastructure engineers + AI researchers",
+    "regulatory_readiness": "SOC 2; DoD compliance; government security clearances"
   },
   {
     "id": "FOU-040",
@@ -877,7 +1111,13 @@
     "mission": "Build AI agents that interact with enterprise software (SAP, Salesforce, etc.) to automate complex workflows",
     "projected_sales_y1": "$10-20M",
     "year_incorporated": "2022",
-    "growth_last_12mo": "250%"
+    "growth_last_12mo": "250%",
+    "website": "https://adept.ai",
+    "linkedin_url": "https://linkedin.com/company/adept-ai",
+    "technical_depth": "Enterprise AI agents with proprietary software interaction models; custom UI understanding and automation",
+    "moat": "Enterprise software interaction data; proprietary action models; multi-SaaS integration layer",
+    "team_composition": "Ex-OpenAI and Google AI researchers; enterprise AI engineers",
+    "regulatory_readiness": "Enterprise security standards; SOC 2 in progress"
   },
   {
     "id": "FOU-041",
@@ -899,7 +1139,13 @@
     "mission": "Provide speech-to-text API and audio intelligence platform for developers building voice applications",
     "projected_sales_y1": "$8-15M",
     "year_incorporated": "2017",
-    "growth_last_12mo": "200%"
+    "growth_last_12mo": "200%",
+    "website": "https://assemblyai.com",
+    "linkedin_url": "https://linkedin.com/company/assemblyai",
+    "technical_depth": "Speech-to-text API with proprietary audio understanding models; custom transcription and analysis pipeline",
+    "moat": "Speech recognition models; developer API ecosystem; audio data processing infrastructure",
+    "team_composition": "Speech recognition researchers + API platform engineers",
+    "regulatory_readiness": "SOC 2 compliant; GDPR; enterprise audio compliance"
   },
   {
     "id": "FOU-042",
@@ -921,6 +1167,12 @@
     "mission": "Build competitive open-source foundation models as a European alternative to US-dominated AI, focusing on efficiency and multilingual capabilities",
     "projected_sales_y1": "$50-100M",
     "year_incorporated": "2023",
-    "growth_last_12mo": "600%"
+    "growth_last_12mo": "600%",
+    "website": "https://mistral.ai",
+    "linkedin_url": "https://linkedin.com/company/mistral-ai",
+    "technical_depth": "Open-source foundation models with proprietary training efficiency; custom model architectures competitive with US frontier labs",
+    "moat": "European AI sovereignty positioning; open-source community; efficient training IP; multilingual model advantage",
+    "team_composition": "Ex-Meta AI and DeepMind researchers; European AI talent pool",
+    "regulatory_readiness": "EU AI Act compliant; GDPR native; European regulatory advantage"
   }
 ]
