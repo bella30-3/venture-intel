@@ -1,37 +1,3581 @@
 [
-  {"id":"INV-001","name":"Sarah Guo","firm":"Conviction","type":"Solo GP / AI-Native Fund","check_size":"$500K–$3M","stage_focus":["Seed","Series A"],"ai_focus":["AI infrastructure","AI-native applications","developer tools","transformative AI platforms"],"geography":"US (Bay Area)","portfolio":["Stealth AI infrastructure cos","frontier application startups"],"decision_speed":"Fast (days to weeks)","communication_style":"Technical, direct, thesis-driven","response_behavior":"High for technical founders with strong demos","thought_leadership":"Highly active on LinkedIn/Twitter, respected solo GP voice in AI","warm_intro_paths":["Portfolio founders","AI researcher network","Twitter/X DMs"],"reputation_score":9,"last_activity":"2026-05 — Active seed investments in AI infra"},
-  {"id":"INV-002","name":"General Catalyst Team","firm":"General Catalyst","type":"Multi-Stage VC","check_size":"$3M–$25M","stage_focus":["Seed","Series A","Series B"],"ai_focus":["Healthcare AI","fintech AI","enterprise AI agents","infrastructure"],"geography":"US (Global offices)","portfolio":["Hippocratic AI","DataRobot","Shield AI","Concourse"],"decision_speed":"Moderate (weeks to months)","communication_style":"Partnership-oriented, long-term vision, operational support focus","response_behavior":"High for regulated-industry AI with clear category creation potential","thought_leadership":"Active conference presence, healthcare AI thought leadership","warm_intro_paths":["Startup success team","portfolio CEO introductions","academic advisors"],"reputation_score":9,"last_activity":"2026-05 — Co-led Hippocratic AI Series C"},
-  {"id":"INV-003","name":"NFX Team","firm":"NFX","type":"Seed-Stage VC","check_size":"$500K–$5M","stage_focus":["Pre-Seed","Seed"],"ai_focus":["AI platforms with network effects","vertical SaaS + AI","marketplace AI","infrastructure"],"geography":"US (Bay Area, Israel)","portfolio":["500+ AI seed investments via Signal platform","F2 (financial AI)"],"decision_speed":"Fast (weeks)","communication_style":"Network-effects thesis, data-driven, platform-oriented","response_behavior":"High for AI products with viral/growth mechanics","thought_leadership":"Signal platform, active blog/podcast on network effects","warm_intro_paths":["Signal platform","portfolio founders","YC network"],"reputation_score":8,"last_activity":"2026-05 — Co-led CopilotKit $27M round"},
-  {"id":"INV-004","name":"Lightspeed Venture Partners","firm":"Lightspeed Venture Partners","type":"Multi-Stage VC","check_size":"$2M–$30M","stage_focus":["Seed","Series A","Series B","Series C"],"ai_focus":["Foundation models","AI infrastructure","vertical AI applications","developer tools"],"geography":"US (Global)","portfolio":["Anthropic (early)","Unconventional AI","Mistral AI","Peec AI","Judgment Labs"],"decision_speed":"Moderate (deep technical diligence)","communication_style":"Technical depth, competitive analysis focus, hands-on partnership","response_behavior":"High for complex AI systems with clear differentiation","thought_leadership":"Active in AI infrastructure discourse","warm_intro_paths":["Sector-specific partners","portfolio CTOs","technical advisors"],"reputation_score":9,"last_activity":"2026-05 — Led Judgment Labs $32M, co-led Unconventional AI $475M"},
-  {"id":"INV-005","name":"Accel","firm":"Accel","type":"Multi-Stage VC","check_size":"$1M–$50M","stage_focus":["Seed","Series A","Series B"],"ai_focus":["Developer tools","AI infrastructure","enterprise AI","PLG companies"],"geography":"US (Global)","portfolio":["Cursor ($2.3B Series D co-lead)","multiple AI infra startups"],"decision_speed":"Moderate","communication_style":"Enterprise-focused, PLG-oriented, global expansion support","response_behavior":"High for developer-facing AI products with traction","thought_leadership":"Developer tools and PLG expertise","warm_intro_paths":["Portfolio founders","developer community connections","partner network"],"reputation_score":9,"last_activity":"2026-05 — Co-led Cursor $29.3B valuation"},
-  {"id":"INV-006","name":"Benchmark","firm":"Benchmark","type":"Seed/Early VC","check_size":"$500K–$3M","stage_focus":["Seed"],"ai_focus":["Consumer AI","enterprise software + AI","marketplace AI","developer tools"],"geography":"US (Bay Area)","portfolio":["Leya ($10.5M seed)","consumer and enterprise AI startups"],"decision_speed":"Moderate (deep engagement per investment)","communication_style":"Board-level involvement, equal partnership model, concentrated portfolio","response_behavior":"High for founders wanting deep investor engagement","thought_leadership":"Quiet but influential, known for concentrated bets","warm_intro_paths":["Portfolio founders","partner direct outreach","Silicon Valley network"],"reputation_score":9,"last_activity":"2026-05 — Active seed investments"},
-  {"id":"INV-007","name":"Kleiner Perkins","firm":"Kleiner Perkins","type":"Multi-Stage VC","check_size":"$2M–$20M","stage_focus":["Seed","Series A","Series B"],"ai_focus":["Healthcare AI","sustainability AI","consumer AI","regulated industry AI"],"geography":"US (Bay Area)","portfolio":["Desktop Metal","Livongo","Nest","multiple healthcare AI cos"],"decision_speed":"Slow (up to 6 months, thorough technical DD)","communication_style":"Impact-oriented, societal benefit focus, technical depth","response_behavior":"High for founders who articulate societal impact + commercial upside","thought_leadership":"Healthcare and climate AI thought leadership","warm_intro_paths":["Academic advisors","technical advisors","portfolio founders"],"reputation_score":8,"last_activity":"2026-05 — Active in healthcare and sustainability AI"},
-  {"id":"INV-008","name":"First Round Capital","firm":"First Round Capital","type":"Seed VC","check_size":"$500K–$2M","stage_focus":["Pre-Seed","Seed"],"ai_focus":["Developer tools","AI infrastructure","vertical enterprise AI","prosumer AI"],"geography":"US (Bay Area, NYC)","portfolio":["Multiple AI-native startups across developer tools"],"decision_speed":"Fast (founder-friendly terms)","communication_style":"Operational support, hands-on guidance, community-driven","response_behavior":"High for first-time founders with strong technical backgrounds","thought_leadership":"First Round Review, founder education content","warm_intro_paths":["First Round community","portfolio founders","angel network"],"reputation_score":8,"last_activity":"2026-05 — Active seed investments"},
-  {"id":"INV-009","name":"Menlo Ventures","firm":"Menlo Ventures","type":"Multi-Stage VC","check_size":"$5M–$50M","stage_focus":["Series A","Series B","Series C"],"ai_focus":["AI creators","enterprise applications","AI infrastructure"],"geography":"US (Bay Area)","portfolio":["Suno ($250M Series C co-lead)","multiple enterprise AI cos"],"decision_speed":"Moderate","communication_style":"Enterprise-focused, scaling expertise, operational partnership","response_behavior":"High for AI products with clear enterprise adoption signals","thought_leadership":"Active in AI creator tools and enterprise AI","warm_intro_paths":["Portfolio CEOs","partner network","industry conferences"],"reputation_score":8,"last_activity":"2026-05 — Co-led Suno Series C"},
-  {"id":"INV-010","name":"Felicis Ventures","firm":"Felicis Ventures","type":"Multi-Stage VC","check_size":"$2M–$30M","stage_focus":["Seed","Series A","Series B"],"ai_focus":["Biotech AI","scientific AI","AI infrastructure","frontier technology"],"geography":"US (Bay Area)","portfolio":["Periodic Labs ($300M seed)","biotech and scientific AI startups"],"decision_speed":"Fast for frontier tech","communication_style":"Science-first, technical depth, frontier technology orientation","response_behavior":"High for deep-tech AI with scientific applications","thought_leadership":"Biotech AI and scientific computing","warm_intro_paths":["Scientific advisory network","portfolio founders","academic connections"],"reputation_score":8,"last_activity":"2026-05 — Backed Periodic Labs $300M seed"},
-  {"id":"INV-011","name":"Reid Hoffman","firm":"Angel / Greylock","type":"Angel Investor","check_size":"$25K–$500K","stage_focus":["Pre-Seed","Seed"],"ai_focus":["AI that amplifies human potential","professional networking AI","workplace productivity AI"],"geography":"US (Bay Area)","portfolio":["OpenAI","Inflection AI","DeepMind","40+ AI startups since 2020"],"decision_speed":"Fast (days)","communication_style":"Network effects vision, human amplification thesis, LinkedIn-native","response_behavior":"High for AI with clear network effects","thought_leadership":"Extremely active on LinkedIn, podcast host","warm_intro_paths":["LinkedIn connections","mutual Greylock contacts","portfolio founders"],"reputation_score":10,"last_activity":"2026-05 — Active angel in AI"},
-  {"id":"INV-012","name":"Elad Gil","firm":"Angel / Ex-Google, Twitter","type":"Angel Investor","check_size":"$100K–$2M","stage_focus":["Seed","Series A"],"ai_focus":["AI infrastructure","developer tools","enterprise AI","scaling-stage AI"],"geography":"US (Bay Area)","portfolio":["Airbnb","Stripe","Notion","multiple AI infrastructure cos"],"decision_speed":"Very fast (days)","communication_style":"Technical depth, scaling expertise, concise and direct","response_behavior":"High for technical founders with clear scaling paths","thought_leadership":"Blog on scaling, active Twitter presence","warm_intro_paths":["Direct Twitter/X DMs","portfolio founder introductions","technical advisor network"],"reputation_score":10,"last_activity":"2026-05 — Active in AI infrastructure"},
-  {"id":"INV-013","name":"Y Combinator","firm":"Y Combinator","type":"Accelerator / Seed","check_size":"$500K standard","stage_focus":["Pre-Seed","Seed"],"ai_focus":["AI agents","developer tools","vertical enterprise AI","consumer AI"],"geography":"US (Bay Area) + Global","portfolio":["Scale AI","1,397+ AI companies","~40% of W24 batch was AI"],"decision_speed":"Batch cycles (biannual) + fast follow-on","communication_style":"Demo-driven, traction-focused, batch community model","response_behavior":"High during batch applications, strong for AI startups","thought_leadership":"YC blog, Demo Day coverage","warm_intro_paths":["YC application","alumni network","Demo Day exposure"],"reputation_score":10,"last_activity":"2026-05 — 40%+ AI batch"},
-  {"id":"INV-014","name":"Sequoia Capital","firm":"Sequoia Capital","type":"Multi-Stage VC","check_size":"$1M–$100M","stage_focus":["Seed","Series A","Series B","Series C","Series D"],"ai_focus":["Foundation models","vertical AI applications","developer tools","AI-native infrastructure"],"geography":"US (Global)","portfolio":["OpenAI","Hugging Face","Harvey","Character.ai","Vanta"],"decision_speed":"Moderate (thorough due diligence)","communication_style":"Long-term vision, patient capital, deep competitive analysis","response_behavior":"High for technical founders with ambitious multi-year visions","thought_leadership":"AI-first company thesis","warm_intro_paths":["Partner-level introductions","portfolio CEO connections","alumni network"],"reputation_score":10,"last_activity":"2026-05 — Portfolio raised $30B+ collectively"},
-  {"id":"INV-015","name":"Andreessen Horowitz (a16z)","firm":"Andreessen Horowitz","type":"Multi-Stage Mega-Fund","check_size":"$500K–$50M","stage_focus":["Seed","Series A","Series B","Series C"],"ai_focus":["Foundation models","vertical AI copilots","AI infrastructure","agent platforms"],"geography":"US (Bay Area, NYC, Miami)","portfolio":["OpenAI","Databricks","Mistral AI","Glean","Harvey","Hippocratic AI"],"decision_speed":"Fast when conviction is high (weeks)","communication_style":"Technical moat emphasis, massive market vision, operational support","response_behavior":"High for category-defining AI with experienced teams","thought_leadership":"Marc Andreessen AI thesis, extensive blog/media presence","warm_intro_paths":["Portfolio CEOs","operating partners","technical advisors","warm referral preferred"],"reputation_score":10,"last_activity":"2026-05 — 50+ AI deals in 2025, AUM $90B+"},
-  {"id":"INV-016","name":"Khosla Ventures","firm":"Khosla Ventures","type":"Deep-Tech VC","check_size":"$500K–$100M","stage_focus":["Seed","Series A","Series B","Growth"],"ai_focus":["AI infrastructure","foundational models","AI-native enterprise","deep tech"],"geography":"US (Bay Area)","portfolio":["OpenAI (early)","RunSybil","Exaforce","multiple AI infrastructure cos"],"decision_speed":"Fast for deep-tech conviction","communication_style":"Deep-tech thesis, contrarian, long-term infrastructure bets","response_behavior":"High for hard-tech AI with infrastructure play","thought_leadership":"Vinod Khosla AI thought leadership, active conference speaker","warm_intro_paths":["Partner network","portfolio founders","deep-tech advisor circle"],"reputation_score":9,"last_activity":"2026-05 — Led RunSybil $40M, backed Exaforce $125M"},
-  {"id":"INV-017","name":"Thrive Capital","firm":"Thrive Capital","type":"Growth-Stage VC","check_size":"$10M–$200M","stage_focus":["Series B","Series C","Growth"],"ai_focus":["AI applications","enterprise AI","consumer AI platforms","healthcare AI"],"geography":"US (NYC, Bay Area)","portfolio":["OpenAI","Isomorphic Labs","Stripe","Instagram","Airtable"],"decision_speed":"Fast for high-conviction deals","communication_style":"Growth-oriented, product-focused, NYC tech ecosystem","response_behavior":"High for AI products with proven product-market fit","thought_leadership":"NYC tech ecosystem leader","warm_intro_paths":["Portfolio CEOs","tech industry connections","partner network"],"reputation_score":9,"last_activity":"2026-05 — Led Isomorphic Labs $2.1B Series B"},
-  {"id":"INV-018","name":"Founders Fund","firm":"Founders Fund","type":"Multi-Stage VC","check_size":"$1M–$50M","stage_focus":["Seed","Series A","Series B"],"ai_focus":["Hard tech","AI infrastructure","defense AI","frontier technology"],"geography":"US (Bay Area)","portfolio":["SpaceX","Palantir","Anduril","Scale AI","Spotify"],"decision_speed":"Fast for contrarian bets","communication_style":"Contrarian, bold, technology-first, anti-consensus","response_behavior":"High for founders with unconventional technical approaches","thought_leadership":"Peter Thiel network, contrarian investment philosophy","warm_intro_paths":["Partner introductions","portfolio founder network","tech industry connections"],"reputation_score":9,"last_activity":"2026-05 — Active in hard-tech and defense AI"},
-  {"id":"INV-019","name":"Coatue Management","firm":"Coatue Management","type":"Crossover / Growth","check_size":"$10M–$200M","stage_focus":["Series B","Series C","Growth"],"ai_focus":["AI infrastructure","data platforms","enterprise software","public-private crossover"],"geography":"US (NYC, Bay Area)","portfolio":["Databricks","Chime","DoorDash","Snap","multiple AI infra cos"],"decision_speed":"Moderate (data-driven analysis)","communication_style":"Data-driven, quantitative analysis, public-private market crossover","response_behavior":"High for AI companies approaching IPO readiness","thought_leadership":"Data infrastructure and AI scaling thought leadership","warm_intro_paths":["Investment banking connections","portfolio CFO network","analyst team"],"reputation_score":8,"last_activity":"2026-05 — Active in AI infrastructure growth rounds"},
-  {"id":"INV-020","name":"Greylock Partners","firm":"Greylock Partners","type":"Early-Stage VC","check_size":"$1M–$15M","stage_focus":["Seed","Series A"],"ai_focus":["AI/ML platforms","enterprise software","developer tools","consumer AI"],"geography":"US (Bay Area, Boston)","portfolio":["LinkedIn","Airbnb","Adept AI","Atomic AI","Seven AI"],"decision_speed":"Moderate (deep partner engagement)","communication_style":"Enterprise-first, deep technical DD, long-term partnership","response_behavior":"High for enterprise AI with clear technical moats","thought_leadership":"Enterprise AI and developer tools expertise","warm_intro_paths":["Partner network","portfolio founders","academic connections"],"reputation_score":9,"last_activity":"2026-05 — Active in AI/ML early-stage"},
-  {"id":"INV-021","name":"GV (Google Ventures)","firm":"GV","type":"Corporate VC","check_size":"$1M–$25M","stage_focus":["Seed","Series A","Series B"],"ai_focus":["AI infrastructure","healthcare AI","developer tools","enterprise AI"],"geography":"US (Bay Area, NYC, London)","portfolio":["WitnessAI","Context.ai","Resistant AI","Isomorphic Labs","Slack","Uber"],"decision_speed":"Moderate (leverages Google expertise)","communication_style":"Technical depth, Google ecosystem integration, data-driven","response_behavior":"High for AI with clear Google ecosystem synergies","thought_leadership":"Google AI research connections","warm_intro_paths":["Google network","portfolio founders","developer relations"],"reputation_score":9,"last_activity":"2026-05 — Backed Isomorphic Labs $2.1B"},
-  {"id":"INV-022","name":"Insight Partners","firm":"Insight Partners","type":"Growth-Stage VC","check_size":"$10M–$100M","stage_focus":["Series B","Series C","Growth"],"ai_focus":["Enterprise AI","AI-powered SaaS","data platforms","scale-up AI"],"geography":"US (NYC, Global)","portfolio":["Sensi.Ai","Unlearn.AI","Builder.ai","Shopify","Twitter"],"decision_speed":"Moderate (data-driven, scaling analysis)","communication_style":"Growth-oriented, scaling expertise, operational support","response_behavior":"High for AI companies with proven revenue scaling","thought_leadership":"Scale-up expertise and growth metrics","warm_intro_paths":["Portfolio CEO network","投行 connections","partner intros"],"reputation_score":8,"last_activity":"2026-05 — Active in AI growth rounds"},
-  {"id":"INV-023","name":"Gradient Ventures","firm":"Gradient Ventures","type":"AI Seed Specialist","check_size":"$250K–$3M","stage_focus":["Pre-Seed","Seed"],"ai_focus":["AI infrastructure","ML tooling","AI-native applications","developer tools"],"geography":"US (Bay Area)","portfolio":["100+ AI seed investments","ML infrastructure cos"],"decision_speed":"Fast (AI-specialist DD)","communication_style":"AI-native, technical depth, founder-friendly","response_behavior":"High for AI-first technical founders","thought_leadership":"AI seed investing thought leader","warm_intro_paths":["AI researcher network","Google alumni","portfolio founders"],"reputation_score":8,"last_activity":"2026-03 — Closed $220M fifth fund"},
-  {"id":"INV-024","name":"DCVC (Data Collective)","firm":"DCVC","type":"Deep-Tech VC","check_size":"$2M–$30M","stage_focus":["Seed","Series A","Series B"],"ai_focus":["Deep tech AI","computational biology","AI infrastructure","scientific computing"],"geography":"US (Bay Area)","portfolio":["Unlearn.AI","NinjaTech AI","Zymergen","multiple deep-tech AI cos"],"decision_speed":"Moderate (deep scientific DD)","communication_style":"Science-first, deep technical expertise, computational focus","response_behavior":"High for computationally intensive AI with scientific applications","thought_leadership":"Deep tech and computational biology AI","warm_intro_paths":["Scientific advisory network","academic connections","portfolio founders"],"reputation_score":8,"last_activity":"2026-05 — Active in deep-tech AI"},
-  {"id":"INV-025","name":"Spark Capital","firm":"Spark Capital","type":"Early/Growth VC","check_size":"$1M–$20M","stage_focus":["Seed","Series A","Series B"],"ai_focus":["Consumer AI","developer tools","AI applications","social/productivity"],"geography":"US (Boston, Bay Area)","portfolio":["Slack","Discord","Affirm","Postmates","multiple AI cos"],"decision_speed":"Fast for consumer/product AI","communication_style":"Product-focused, consumer insight, design-oriented","response_behavior":"High for AI products with strong user experience","thought_leadership":"Consumer product and AI UX expertise","warm_intro_paths":["Portfolio founders","product community","design network"],"reputation_score":8,"last_activity":"2026-05 — Active in consumer AI"},
-  {"id":"INV-026","name":"Index Ventures","firm":"Index Ventures","type":"Multi-Stage VC","check_size":"$2M–$50M","stage_focus":["Seed","Series A","Series B","Growth"],"ai_focus":["European AI","enterprise AI","developer tools","AI infrastructure"],"geography":"US + Europe (Global)","portfolio":["Figma","Notion","Deliveroo","multiple European AI cos"],"decision_speed":"Moderate (transatlantic perspective)","communication_style":"Global perspective, European-US bridge, enterprise focus","response_behavior":"High for AI companies with transatlantic ambitions","thought_leadership":"European tech ecosystem and global AI trends","warm_intro_paths":["European network","portfolio founders","partner introductions"],"reputation_score":8,"last_activity":"2026-05 — Active in European AI"},
-  {"id":"INV-027","name":"Bessemer Venture Partners","firm":"Bessemer Venture Partners","type":"Multi-Stage VC","check_size":"$2M–$30M","stage_focus":["Seed","Series A","Series B","Growth"],"ai_focus":["Cloud AI","vertical SaaS","enterprise AI","AI infrastructure"],"geography":"US (Bay Area, NYC, Boston)","portfolio":["Shopify","LinkedIn","Canva","Toast","multiple cloud AI cos"],"decision_speed":"Moderate (cloud scaling expertise)","communication_style":"Cloud-first, scaling playbook, operational partnership","response_behavior":"High for cloud-native AI with strong metrics","thought_leadership":"Cloud scaling and enterprise SaaS thought leadership","warm_intro_paths":["Cloud ecosystem connections","portfolio founders","partner network"],"reputation_score":8,"last_activity":"2026-05 — Active in cloud AI"},
-  {"id":"INV-028","name":"NEA (New Enterprise Associates)","firm":"NEA","type":"Multi-Stage VC","check_size":"$2M–$50M","stage_focus":["Seed","Series A","Series B","Growth"],"ai_focus":["Healthcare AI","enterprise AI","consumer AI","AI infrastructure"],"geography":"US (Bay Area, NYC, DC)","portfolio":["Databricks","Cloudflare","Plaid","multiple healthcare AI cos"],"decision_speed":"Moderate (large partnership model)","communication_style":"Diversified approach, healthcare AI expertise, large fund flexibility","response_behavior":"High for AI with healthcare and enterprise applications","thought_leadership":"Healthcare AI and enterprise software","warm_intro_paths":["Healthcare network","portfolio founders","partner introductions"],"reputation_score":8,"last_activity":"2026-05 — Active across AI sectors"},
-  {"id":"INV-029","name":"Sapphire Ventures","firm":"Sapphire Ventures","type":"Growth VC","check_size":"$10M–$50M","stage_focus":["Series B","Series C","Growth"],"ai_focus":["Enterprise AI","AI-powered SaaS","data analytics","AI infrastructure"],"geography":"US (Bay Area)","portfolio":["Multiple enterprise AI cos","data platform companies"],"decision_speed":"Moderate (enterprise scaling analysis)","communication_style":"Enterprise-focused, scaling expertise, CIO network","response_behavior":"High for enterprise AI with strong CIO adoption","thought_leadership":"Enterprise AI adoption and scaling","warm_intro_paths":["CIO network","enterprise customer introductions","partner connections"],"reputation_score":7,"last_activity":"2026-05 — Active in enterprise AI growth"},
-  {"id":"INV-030","name":"Wing Venture Capital","firm":"Wing Venture Capital","type":"Early-Stage VC","check_size":"$1M–$10M","stage_focus":["Seed","Series A"],"ai_focus":["Enterprise AI","security AI","developer tools","AI infrastructure"],"geography":"US (Bay Area)","portfolio":["Multiple enterprise AI and security cos"],"decision_speed":"Fast (enterprise-focused)","communication_style":"Enterprise-first, security-minded, technical depth","response_behavior":"High for enterprise AI with security focus","thought_leadership":"Enterprise security and AI infrastructure","warm_intro_paths":["Enterprise CISO network","portfolio founders","technical advisors"],"reputation_score":7,"last_activity":"2026-05 — Active in enterprise AI seed"},
-  {"id":"INV-031","name":"AIX Ventures","firm":"AIX Ventures","type":"AI Specialist VC","check_size":"$500K–$5M","stage_focus":["Seed","Series A"],"ai_focus":["AI infrastructure","ML platforms","AI safety","foundation model applications"],"geography":"US (Bay Area)","portfolio":["Multiple AI infrastructure and safety cos"],"decision_speed":"Fast (AI-specialist DD)","communication_style":"AI-native, safety-conscious, technical depth","response_behavior":"High for AI infrastructure with safety considerations","thought_leadership":"AI safety and infrastructure thought leadership","warm_intro_paths":["AI researcher network","safety community","technical advisors"],"reputation_score":7,"last_activity":"2026-05 — Active in AI infrastructure and safety"},
-  {"id":"INV-032","name":"Peak XV Partners","firm":"Peak XV Partners","type":"Multi-Stage VC","check_size":"$2M–$30M","stage_focus":["Seed","Series A","Series B"],"ai_focus":["AI infrastructure","developer tools","enterprise AI","emerging market AI"],"geography":"India + Southeast Asia + US","portfolio":["Exaforce","multiple AI cos in India and US"],"decision_speed":"Moderate","communication_style":"Emerging market expertise, cross-border perspective","response_behavior":"High for AI with India/SEA expansion potential","thought_leadership":"Emerging market AI ecosystem","warm_intro_paths":["India tech network","portfolio founders","cross-border connections"],"reputation_score":8,"last_activity":"2026-05 — Co-led Exaforce $125M"},
-  {"id":"INV-033","name":"Base10 Partners","firm":"Base10 Partners","type":"Growth VC","check_size":"$5M–$30M","stage_focus":["Series A","Series B"],"ai_focus":["Fintech AI","compliance AI","enterprise automation","vertical AI"],"geography":"US (Bay Area, NYC)","portfolio":["Greenboard","multiple fintech AI cos"],"decision_speed":"Moderate","communication_style":"Fintech-focused, compliance expertise, vertical specialization","response_behavior":"High for fintech AI with regulatory compliance","thought_leadership":"Fintech AI and compliance automation","warm_intro_paths":["Fintech network","portfolio founders","compliance experts"],"reputation_score":7,"last_activity":"2026-05 — Led Greenboard $20M Series A"},
-  {"id":"INV-034","name":"Temasek","firm":"Temasek","type":"Sovereign Wealth Fund","check_size":"$20M–$500M","stage_focus":["Series B","Series C","Growth"],"ai_focus":["AI infrastructure","healthcare AI","deep tech","global AI platforms"],"geography":"Global (Singapore HQ)","portfolio":["Isomorphic Labs","multiple global AI cos"],"decision_speed":"Slow (thorough sovereign DD)","communication_style":"Long-term, global perspective, strategic alignment","response_behavior":"High for AI with global strategic significance","thought_leadership":"Global AI investment trends","warm_intro_paths":["Sovereign fund network","global advisory connections"],"reputation_score":9,"last_activity":"2026-05 — Backed Isomorphic Labs $2.1B"},
-  {"id":"INV-035","name":"Scout Ventures","firm":"Scout Ventures","type":"Deep-Tech Seed VC","check_size":"$500K–$5M","stage_focus":["Pre-Seed","Seed"],"ai_focus":["Deep tech AI","defense AI","energy AI","hard-tech applications"],"geography":"US (DC, Bay Area)","portfolio":["Casimir","multiple deep-tech cos"],"decision_speed":"Fast for hard-tech conviction","communication_style":"Hard-tech focus, defense connections, deep technical DD","response_behavior":"High for deep-tech AI with defense applications","thought_leadership":"Deep-tech and defense AI investing","warm_intro_paths":["Defense network","deep-tech founders","technical advisors"],"reputation_score":7,"last_activity":"2026-05 — Led Casimir $12M seed"}
+  {
+    "id": "INV-001",
+    "name": "Sarah Guo",
+    "firm": "Conviction",
+    "type": "Solo GP / AI-Native Fund",
+    "check_size": "$500K–$3M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "AI infrastructure",
+      "AI-native applications",
+      "developer tools",
+      "transformative AI platforms"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "Stealth AI infrastructure cos",
+      "frontier application startups"
+    ],
+    "decision_speed": "Fast (days to weeks)",
+    "communication_style": "Technical, direct, thesis-driven",
+    "response_behavior": "High for technical founders with strong demos",
+    "thought_leadership": "Highly active on LinkedIn/Twitter, respected solo GP voice in AI",
+    "warm_intro_paths": [
+      "Portfolio founders",
+      "AI researcher network",
+      "Twitter/X DMs"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Active seed investments in AI infra"
+  },
+  {
+    "id": "INV-002",
+    "name": "General Catalyst Team",
+    "firm": "General Catalyst",
+    "type": "Multi-Stage VC",
+    "check_size": "$3M–$25M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Healthcare AI",
+      "fintech AI",
+      "enterprise AI agents",
+      "infrastructure"
+    ],
+    "geography": "US (Global offices)",
+    "portfolio": [
+      "Hippocratic AI",
+      "DataRobot",
+      "Shield AI",
+      "Concourse"
+    ],
+    "decision_speed": "Moderate (weeks to months)",
+    "communication_style": "Partnership-oriented, long-term vision, operational support focus",
+    "response_behavior": "High for regulated-industry AI with clear category creation potential",
+    "thought_leadership": "Active conference presence, healthcare AI thought leadership",
+    "warm_intro_paths": [
+      "Startup success team",
+      "portfolio CEO introductions",
+      "academic advisors"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Co-led Hippocratic AI Series C"
+  },
+  {
+    "id": "INV-003",
+    "name": "NFX Team",
+    "firm": "NFX",
+    "type": "Seed-Stage VC",
+    "check_size": "$500K–$5M",
+    "stage_focus": [
+      "Pre-Seed",
+      "Seed"
+    ],
+    "ai_focus": [
+      "AI platforms with network effects",
+      "vertical SaaS + AI",
+      "marketplace AI",
+      "infrastructure"
+    ],
+    "geography": "US (Bay Area, Israel)",
+    "portfolio": [
+      "500+ AI seed investments via Signal platform",
+      "F2 (financial AI)"
+    ],
+    "decision_speed": "Fast (weeks)",
+    "communication_style": "Network-effects thesis, data-driven, platform-oriented",
+    "response_behavior": "High for AI products with viral/growth mechanics",
+    "thought_leadership": "Signal platform, active blog/podcast on network effects",
+    "warm_intro_paths": [
+      "Signal platform",
+      "portfolio founders",
+      "YC network"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Co-led CopilotKit $27M round"
+  },
+  {
+    "id": "INV-004",
+    "name": "Lightspeed Venture Partners",
+    "firm": "Lightspeed Venture Partners",
+    "type": "Multi-Stage VC",
+    "check_size": "$2M–$30M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B",
+      "Series C"
+    ],
+    "ai_focus": [
+      "Foundation models",
+      "AI infrastructure",
+      "vertical AI applications",
+      "developer tools"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Anthropic (early)",
+      "Unconventional AI",
+      "Mistral AI",
+      "Peec AI",
+      "Judgment Labs"
+    ],
+    "decision_speed": "Moderate (deep technical diligence)",
+    "communication_style": "Technical depth, competitive analysis focus, hands-on partnership",
+    "response_behavior": "High for complex AI systems with clear differentiation",
+    "thought_leadership": "Active in AI infrastructure discourse",
+    "warm_intro_paths": [
+      "Sector-specific partners",
+      "portfolio CTOs",
+      "technical advisors"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Led Judgment Labs $32M, co-led Unconventional AI $475M"
+  },
+  {
+    "id": "INV-005",
+    "name": "Accel",
+    "firm": "Accel",
+    "type": "Multi-Stage VC",
+    "check_size": "$1M–$50M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Developer tools",
+      "AI infrastructure",
+      "enterprise AI",
+      "PLG companies"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Cursor ($2.3B Series D co-lead)",
+      "multiple AI infra startups"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Enterprise-focused, PLG-oriented, global expansion support",
+    "response_behavior": "High for developer-facing AI products with traction",
+    "thought_leadership": "Developer tools and PLG expertise",
+    "warm_intro_paths": [
+      "Portfolio founders",
+      "developer community connections",
+      "partner network"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Co-led Cursor $29.3B valuation"
+  },
+  {
+    "id": "INV-006",
+    "name": "Benchmark",
+    "firm": "Benchmark",
+    "type": "Seed/Early VC",
+    "check_size": "$500K–$3M",
+    "stage_focus": [
+      "Seed"
+    ],
+    "ai_focus": [
+      "Consumer AI",
+      "enterprise software + AI",
+      "marketplace AI",
+      "developer tools"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "Leya ($10.5M seed)",
+      "consumer and enterprise AI startups"
+    ],
+    "decision_speed": "Moderate (deep engagement per investment)",
+    "communication_style": "Board-level involvement, equal partnership model, concentrated portfolio",
+    "response_behavior": "High for founders wanting deep investor engagement",
+    "thought_leadership": "Quiet but influential, known for concentrated bets",
+    "warm_intro_paths": [
+      "Portfolio founders",
+      "partner direct outreach",
+      "Silicon Valley network"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Active seed investments"
+  },
+  {
+    "id": "INV-007",
+    "name": "Kleiner Perkins",
+    "firm": "Kleiner Perkins",
+    "type": "Multi-Stage VC",
+    "check_size": "$2M–$20M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Healthcare AI",
+      "sustainability AI",
+      "consumer AI",
+      "regulated industry AI"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "Desktop Metal",
+      "Livongo",
+      "Nest",
+      "multiple healthcare AI cos"
+    ],
+    "decision_speed": "Slow (up to 6 months, thorough technical DD)",
+    "communication_style": "Impact-oriented, societal benefit focus, technical depth",
+    "response_behavior": "High for founders who articulate societal impact + commercial upside",
+    "thought_leadership": "Healthcare and climate AI thought leadership",
+    "warm_intro_paths": [
+      "Academic advisors",
+      "technical advisors",
+      "portfolio founders"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active in healthcare and sustainability AI"
+  },
+  {
+    "id": "INV-008",
+    "name": "First Round Capital",
+    "firm": "First Round Capital",
+    "type": "Seed VC",
+    "check_size": "$500K–$2M",
+    "stage_focus": [
+      "Pre-Seed",
+      "Seed"
+    ],
+    "ai_focus": [
+      "Developer tools",
+      "AI infrastructure",
+      "vertical enterprise AI",
+      "prosumer AI"
+    ],
+    "geography": "US (Bay Area, NYC)",
+    "portfolio": [
+      "Multiple AI-native startups across developer tools"
+    ],
+    "decision_speed": "Fast (founder-friendly terms)",
+    "communication_style": "Operational support, hands-on guidance, community-driven",
+    "response_behavior": "High for first-time founders with strong technical backgrounds",
+    "thought_leadership": "First Round Review, founder education content",
+    "warm_intro_paths": [
+      "First Round community",
+      "portfolio founders",
+      "angel network"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active seed investments"
+  },
+  {
+    "id": "INV-009",
+    "name": "Menlo Ventures",
+    "firm": "Menlo Ventures",
+    "type": "Multi-Stage VC",
+    "check_size": "$5M–$50M",
+    "stage_focus": [
+      "Series A",
+      "Series B",
+      "Series C"
+    ],
+    "ai_focus": [
+      "AI creators",
+      "enterprise applications",
+      "AI infrastructure"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "Suno ($250M Series C co-lead)",
+      "multiple enterprise AI cos"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Enterprise-focused, scaling expertise, operational partnership",
+    "response_behavior": "High for AI products with clear enterprise adoption signals",
+    "thought_leadership": "Active in AI creator tools and enterprise AI",
+    "warm_intro_paths": [
+      "Portfolio CEOs",
+      "partner network",
+      "industry conferences"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Co-led Suno Series C"
+  },
+  {
+    "id": "INV-010",
+    "name": "Felicis Ventures",
+    "firm": "Felicis Ventures",
+    "type": "Multi-Stage VC",
+    "check_size": "$2M–$30M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Biotech AI",
+      "scientific AI",
+      "AI infrastructure",
+      "frontier technology"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "Periodic Labs ($300M seed)",
+      "biotech and scientific AI startups"
+    ],
+    "decision_speed": "Fast for frontier tech",
+    "communication_style": "Science-first, technical depth, frontier technology orientation",
+    "response_behavior": "High for deep-tech AI with scientific applications",
+    "thought_leadership": "Biotech AI and scientific computing",
+    "warm_intro_paths": [
+      "Scientific advisory network",
+      "portfolio founders",
+      "academic connections"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Backed Periodic Labs $300M seed"
+  },
+  {
+    "id": "INV-011",
+    "name": "Reid Hoffman",
+    "firm": "Angel / Greylock",
+    "type": "Angel Investor",
+    "check_size": "$25K–$500K",
+    "stage_focus": [
+      "Pre-Seed",
+      "Seed"
+    ],
+    "ai_focus": [
+      "AI that amplifies human potential",
+      "professional networking AI",
+      "workplace productivity AI"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "OpenAI",
+      "Inflection AI",
+      "DeepMind",
+      "40+ AI startups since 2020"
+    ],
+    "decision_speed": "Fast (days)",
+    "communication_style": "Network effects vision, human amplification thesis, LinkedIn-native",
+    "response_behavior": "High for AI with clear network effects",
+    "thought_leadership": "Extremely active on LinkedIn, podcast host",
+    "warm_intro_paths": [
+      "LinkedIn connections",
+      "mutual Greylock contacts",
+      "portfolio founders"
+    ],
+    "reputation_score": 10,
+    "last_activity": "2026-05 — Active angel in AI"
+  },
+  {
+    "id": "INV-012",
+    "name": "Elad Gil",
+    "firm": "Angel / Ex-Google, Twitter",
+    "type": "Angel Investor",
+    "check_size": "$100K–$2M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "AI infrastructure",
+      "developer tools",
+      "enterprise AI",
+      "scaling-stage AI"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "Airbnb",
+      "Stripe",
+      "Notion",
+      "multiple AI infrastructure cos"
+    ],
+    "decision_speed": "Very fast (days)",
+    "communication_style": "Technical depth, scaling expertise, concise and direct",
+    "response_behavior": "High for technical founders with clear scaling paths",
+    "thought_leadership": "Blog on scaling, active Twitter presence",
+    "warm_intro_paths": [
+      "Direct Twitter/X DMs",
+      "portfolio founder introductions",
+      "technical advisor network"
+    ],
+    "reputation_score": 10,
+    "last_activity": "2026-05 — Active in AI infrastructure"
+  },
+  {
+    "id": "INV-013",
+    "name": "Y Combinator",
+    "firm": "Y Combinator",
+    "type": "Accelerator / Seed",
+    "check_size": "$500K standard",
+    "stage_focus": [
+      "Pre-Seed",
+      "Seed"
+    ],
+    "ai_focus": [
+      "AI agents",
+      "developer tools",
+      "vertical enterprise AI",
+      "consumer AI"
+    ],
+    "geography": "US (Bay Area) + Global",
+    "portfolio": [
+      "Scale AI",
+      "1,397+ AI companies",
+      "~40% of W24 batch was AI"
+    ],
+    "decision_speed": "Batch cycles (biannual) + fast follow-on",
+    "communication_style": "Demo-driven, traction-focused, batch community model",
+    "response_behavior": "High during batch applications, strong for AI startups",
+    "thought_leadership": "YC blog, Demo Day coverage",
+    "warm_intro_paths": [
+      "YC application",
+      "alumni network",
+      "Demo Day exposure"
+    ],
+    "reputation_score": 10,
+    "last_activity": "2026-05 — 40%+ AI batch"
+  },
+  {
+    "id": "INV-014",
+    "name": "Sequoia Capital",
+    "firm": "Sequoia Capital",
+    "type": "Multi-Stage VC",
+    "check_size": "$1M–$100M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B",
+      "Series C",
+      "Series D"
+    ],
+    "ai_focus": [
+      "Foundation models",
+      "vertical AI applications",
+      "developer tools",
+      "AI-native infrastructure"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "OpenAI",
+      "Hugging Face",
+      "Harvey",
+      "Character.ai",
+      "Vanta"
+    ],
+    "decision_speed": "Moderate (thorough due diligence)",
+    "communication_style": "Long-term vision, patient capital, deep competitive analysis",
+    "response_behavior": "High for technical founders with ambitious multi-year visions",
+    "thought_leadership": "AI-first company thesis",
+    "warm_intro_paths": [
+      "Partner-level introductions",
+      "portfolio CEO connections",
+      "alumni network"
+    ],
+    "reputation_score": 10,
+    "last_activity": "2026-05 — Portfolio raised $30B+ collectively"
+  },
+  {
+    "id": "INV-015",
+    "name": "Andreessen Horowitz (a16z)",
+    "firm": "Andreessen Horowitz",
+    "type": "Multi-Stage Mega-Fund",
+    "check_size": "$500K–$50M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B",
+      "Series C"
+    ],
+    "ai_focus": [
+      "Foundation models",
+      "vertical AI copilots",
+      "AI infrastructure",
+      "agent platforms"
+    ],
+    "geography": "US (Bay Area, NYC, Miami)",
+    "portfolio": [
+      "OpenAI",
+      "Databricks",
+      "Mistral AI",
+      "Glean",
+      "Harvey",
+      "Hippocratic AI"
+    ],
+    "decision_speed": "Fast when conviction is high (weeks)",
+    "communication_style": "Technical moat emphasis, massive market vision, operational support",
+    "response_behavior": "High for category-defining AI with experienced teams",
+    "thought_leadership": "Marc Andreessen AI thesis, extensive blog/media presence",
+    "warm_intro_paths": [
+      "Portfolio CEOs",
+      "operating partners",
+      "technical advisors",
+      "warm referral preferred"
+    ],
+    "reputation_score": 10,
+    "last_activity": "2026-05 — 50+ AI deals in 2025, AUM $90B+"
+  },
+  {
+    "id": "INV-016",
+    "name": "Khosla Ventures",
+    "firm": "Khosla Ventures",
+    "type": "Deep-Tech VC",
+    "check_size": "$500K–$100M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "AI infrastructure",
+      "foundational models",
+      "AI-native enterprise",
+      "deep tech"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "OpenAI (early)",
+      "RunSybil",
+      "Exaforce",
+      "multiple AI infrastructure cos"
+    ],
+    "decision_speed": "Fast for deep-tech conviction",
+    "communication_style": "Deep-tech thesis, contrarian, long-term infrastructure bets",
+    "response_behavior": "High for hard-tech AI with infrastructure play",
+    "thought_leadership": "Vinod Khosla AI thought leadership, active conference speaker",
+    "warm_intro_paths": [
+      "Partner network",
+      "portfolio founders",
+      "deep-tech advisor circle"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Led RunSybil $40M, backed Exaforce $125M"
+  },
+  {
+    "id": "INV-017",
+    "name": "Thrive Capital",
+    "firm": "Thrive Capital",
+    "type": "Growth-Stage VC",
+    "check_size": "$10M–$200M",
+    "stage_focus": [
+      "Series B",
+      "Series C",
+      "Growth"
+    ],
+    "ai_focus": [
+      "AI applications",
+      "enterprise AI",
+      "consumer AI platforms",
+      "healthcare AI"
+    ],
+    "geography": "US (NYC, Bay Area)",
+    "portfolio": [
+      "OpenAI",
+      "Isomorphic Labs",
+      "Stripe",
+      "Instagram",
+      "Airtable"
+    ],
+    "decision_speed": "Fast for high-conviction deals",
+    "communication_style": "Growth-oriented, product-focused, NYC tech ecosystem",
+    "response_behavior": "High for AI products with proven product-market fit",
+    "thought_leadership": "NYC tech ecosystem leader",
+    "warm_intro_paths": [
+      "Portfolio CEOs",
+      "tech industry connections",
+      "partner network"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Led Isomorphic Labs $2.1B Series B"
+  },
+  {
+    "id": "INV-018",
+    "name": "Founders Fund",
+    "firm": "Founders Fund",
+    "type": "Multi-Stage VC",
+    "check_size": "$1M–$50M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Hard tech",
+      "AI infrastructure",
+      "defense AI",
+      "frontier technology"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "SpaceX",
+      "Palantir",
+      "Anduril",
+      "Scale AI",
+      "Spotify"
+    ],
+    "decision_speed": "Fast for contrarian bets",
+    "communication_style": "Contrarian, bold, technology-first, anti-consensus",
+    "response_behavior": "High for founders with unconventional technical approaches",
+    "thought_leadership": "Peter Thiel network, contrarian investment philosophy",
+    "warm_intro_paths": [
+      "Partner introductions",
+      "portfolio founder network",
+      "tech industry connections"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Active in hard-tech and defense AI"
+  },
+  {
+    "id": "INV-019",
+    "name": "Coatue Management",
+    "firm": "Coatue Management",
+    "type": "Crossover / Growth",
+    "check_size": "$10M–$200M",
+    "stage_focus": [
+      "Series B",
+      "Series C",
+      "Growth"
+    ],
+    "ai_focus": [
+      "AI infrastructure",
+      "data platforms",
+      "enterprise software",
+      "public-private crossover"
+    ],
+    "geography": "US (NYC, Bay Area)",
+    "portfolio": [
+      "Databricks",
+      "Chime",
+      "DoorDash",
+      "Snap",
+      "multiple AI infra cos"
+    ],
+    "decision_speed": "Moderate (data-driven analysis)",
+    "communication_style": "Data-driven, quantitative analysis, public-private market crossover",
+    "response_behavior": "High for AI companies approaching IPO readiness",
+    "thought_leadership": "Data infrastructure and AI scaling thought leadership",
+    "warm_intro_paths": [
+      "Investment banking connections",
+      "portfolio CFO network",
+      "analyst team"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active in AI infrastructure growth rounds"
+  },
+  {
+    "id": "INV-020",
+    "name": "Greylock Partners",
+    "firm": "Greylock Partners",
+    "type": "Early-Stage VC",
+    "check_size": "$1M–$15M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "AI/ML platforms",
+      "enterprise software",
+      "developer tools",
+      "consumer AI"
+    ],
+    "geography": "US (Bay Area, Boston)",
+    "portfolio": [
+      "LinkedIn",
+      "Airbnb",
+      "Adept AI",
+      "Atomic AI",
+      "Seven AI"
+    ],
+    "decision_speed": "Moderate (deep partner engagement)",
+    "communication_style": "Enterprise-first, deep technical DD, long-term partnership",
+    "response_behavior": "High for enterprise AI with clear technical moats",
+    "thought_leadership": "Enterprise AI and developer tools expertise",
+    "warm_intro_paths": [
+      "Partner network",
+      "portfolio founders",
+      "academic connections"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Active in AI/ML early-stage"
+  },
+  {
+    "id": "INV-021",
+    "name": "GV (Google Ventures)",
+    "firm": "GV",
+    "type": "Corporate VC",
+    "check_size": "$1M–$25M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "AI infrastructure",
+      "healthcare AI",
+      "developer tools",
+      "enterprise AI"
+    ],
+    "geography": "US (Bay Area, NYC, London)",
+    "portfolio": [
+      "WitnessAI",
+      "Context.ai",
+      "Resistant AI",
+      "Isomorphic Labs",
+      "Slack",
+      "Uber"
+    ],
+    "decision_speed": "Moderate (leverages Google expertise)",
+    "communication_style": "Technical depth, Google ecosystem integration, data-driven",
+    "response_behavior": "High for AI with clear Google ecosystem synergies",
+    "thought_leadership": "Google AI research connections",
+    "warm_intro_paths": [
+      "Google network",
+      "portfolio founders",
+      "developer relations"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Backed Isomorphic Labs $2.1B"
+  },
+  {
+    "id": "INV-022",
+    "name": "Insight Partners",
+    "firm": "Insight Partners",
+    "type": "Growth-Stage VC",
+    "check_size": "$10M–$100M",
+    "stage_focus": [
+      "Series B",
+      "Series C",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Enterprise AI",
+      "AI-powered SaaS",
+      "data platforms",
+      "scale-up AI"
+    ],
+    "geography": "US (NYC, Global)",
+    "portfolio": [
+      "Sensi.Ai",
+      "Unlearn.AI",
+      "Builder.ai",
+      "Shopify",
+      "Twitter"
+    ],
+    "decision_speed": "Moderate (data-driven, scaling analysis)",
+    "communication_style": "Growth-oriented, scaling expertise, operational support",
+    "response_behavior": "High for AI companies with proven revenue scaling",
+    "thought_leadership": "Scale-up expertise and growth metrics",
+    "warm_intro_paths": [
+      "Portfolio CEO network",
+      "投行 connections",
+      "partner intros"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active in AI growth rounds"
+  },
+  {
+    "id": "INV-023",
+    "name": "Gradient Ventures",
+    "firm": "Gradient Ventures",
+    "type": "AI Seed Specialist",
+    "check_size": "$250K–$3M",
+    "stage_focus": [
+      "Pre-Seed",
+      "Seed"
+    ],
+    "ai_focus": [
+      "AI infrastructure",
+      "ML tooling",
+      "AI-native applications",
+      "developer tools"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "100+ AI seed investments",
+      "ML infrastructure cos"
+    ],
+    "decision_speed": "Fast (AI-specialist DD)",
+    "communication_style": "AI-native, technical depth, founder-friendly",
+    "response_behavior": "High for AI-first technical founders",
+    "thought_leadership": "AI seed investing thought leader",
+    "warm_intro_paths": [
+      "AI researcher network",
+      "Google alumni",
+      "portfolio founders"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-03 — Closed $220M fifth fund"
+  },
+  {
+    "id": "INV-024",
+    "name": "DCVC (Data Collective)",
+    "firm": "DCVC",
+    "type": "Deep-Tech VC",
+    "check_size": "$2M–$30M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Deep tech AI",
+      "computational biology",
+      "AI infrastructure",
+      "scientific computing"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "Unlearn.AI",
+      "NinjaTech AI",
+      "Zymergen",
+      "multiple deep-tech AI cos"
+    ],
+    "decision_speed": "Moderate (deep scientific DD)",
+    "communication_style": "Science-first, deep technical expertise, computational focus",
+    "response_behavior": "High for computationally intensive AI with scientific applications",
+    "thought_leadership": "Deep tech and computational biology AI",
+    "warm_intro_paths": [
+      "Scientific advisory network",
+      "academic connections",
+      "portfolio founders"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active in deep-tech AI"
+  },
+  {
+    "id": "INV-025",
+    "name": "Spark Capital",
+    "firm": "Spark Capital",
+    "type": "Early/Growth VC",
+    "check_size": "$1M–$20M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Consumer AI",
+      "developer tools",
+      "AI applications",
+      "social/productivity"
+    ],
+    "geography": "US (Boston, Bay Area)",
+    "portfolio": [
+      "Slack",
+      "Discord",
+      "Affirm",
+      "Postmates",
+      "multiple AI cos"
+    ],
+    "decision_speed": "Fast for consumer/product AI",
+    "communication_style": "Product-focused, consumer insight, design-oriented",
+    "response_behavior": "High for AI products with strong user experience",
+    "thought_leadership": "Consumer product and AI UX expertise",
+    "warm_intro_paths": [
+      "Portfolio founders",
+      "product community",
+      "design network"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active in consumer AI"
+  },
+  {
+    "id": "INV-026",
+    "name": "Index Ventures",
+    "firm": "Index Ventures",
+    "type": "Multi-Stage VC",
+    "check_size": "$2M–$50M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "European AI",
+      "enterprise AI",
+      "developer tools",
+      "AI infrastructure"
+    ],
+    "geography": "US + Europe (Global)",
+    "portfolio": [
+      "Figma",
+      "Notion",
+      "Deliveroo",
+      "multiple European AI cos"
+    ],
+    "decision_speed": "Moderate (transatlantic perspective)",
+    "communication_style": "Global perspective, European-US bridge, enterprise focus",
+    "response_behavior": "High for AI companies with transatlantic ambitions",
+    "thought_leadership": "European tech ecosystem and global AI trends",
+    "warm_intro_paths": [
+      "European network",
+      "portfolio founders",
+      "partner introductions"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active in European AI"
+  },
+  {
+    "id": "INV-027",
+    "name": "Bessemer Venture Partners",
+    "firm": "Bessemer Venture Partners",
+    "type": "Multi-Stage VC",
+    "check_size": "$2M–$30M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Cloud AI",
+      "vertical SaaS",
+      "enterprise AI",
+      "AI infrastructure"
+    ],
+    "geography": "US (Bay Area, NYC, Boston)",
+    "portfolio": [
+      "Shopify",
+      "LinkedIn",
+      "Canva",
+      "Toast",
+      "multiple cloud AI cos"
+    ],
+    "decision_speed": "Moderate (cloud scaling expertise)",
+    "communication_style": "Cloud-first, scaling playbook, operational partnership",
+    "response_behavior": "High for cloud-native AI with strong metrics",
+    "thought_leadership": "Cloud scaling and enterprise SaaS thought leadership",
+    "warm_intro_paths": [
+      "Cloud ecosystem connections",
+      "portfolio founders",
+      "partner network"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active in cloud AI"
+  },
+  {
+    "id": "INV-028",
+    "name": "NEA (New Enterprise Associates)",
+    "firm": "NEA",
+    "type": "Multi-Stage VC",
+    "check_size": "$2M–$50M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Healthcare AI",
+      "enterprise AI",
+      "consumer AI",
+      "AI infrastructure"
+    ],
+    "geography": "US (Bay Area, NYC, DC)",
+    "portfolio": [
+      "Databricks",
+      "Cloudflare",
+      "Plaid",
+      "multiple healthcare AI cos"
+    ],
+    "decision_speed": "Moderate (large partnership model)",
+    "communication_style": "Diversified approach, healthcare AI expertise, large fund flexibility",
+    "response_behavior": "High for AI with healthcare and enterprise applications",
+    "thought_leadership": "Healthcare AI and enterprise software",
+    "warm_intro_paths": [
+      "Healthcare network",
+      "portfolio founders",
+      "partner introductions"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active across AI sectors"
+  },
+  {
+    "id": "INV-029",
+    "name": "Sapphire Ventures",
+    "firm": "Sapphire Ventures",
+    "type": "Growth VC",
+    "check_size": "$10M–$50M",
+    "stage_focus": [
+      "Series B",
+      "Series C",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Enterprise AI",
+      "AI-powered SaaS",
+      "data analytics",
+      "AI infrastructure"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "Multiple enterprise AI cos",
+      "data platform companies"
+    ],
+    "decision_speed": "Moderate (enterprise scaling analysis)",
+    "communication_style": "Enterprise-focused, scaling expertise, CIO network",
+    "response_behavior": "High for enterprise AI with strong CIO adoption",
+    "thought_leadership": "Enterprise AI adoption and scaling",
+    "warm_intro_paths": [
+      "CIO network",
+      "enterprise customer introductions",
+      "partner connections"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active in enterprise AI growth"
+  },
+  {
+    "id": "INV-030",
+    "name": "Wing Venture Capital",
+    "firm": "Wing Venture Capital",
+    "type": "Early-Stage VC",
+    "check_size": "$1M–$10M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "Enterprise AI",
+      "security AI",
+      "developer tools",
+      "AI infrastructure"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "Multiple enterprise AI and security cos"
+    ],
+    "decision_speed": "Fast (enterprise-focused)",
+    "communication_style": "Enterprise-first, security-minded, technical depth",
+    "response_behavior": "High for enterprise AI with security focus",
+    "thought_leadership": "Enterprise security and AI infrastructure",
+    "warm_intro_paths": [
+      "Enterprise CISO network",
+      "portfolio founders",
+      "technical advisors"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active in enterprise AI seed"
+  },
+  {
+    "id": "INV-031",
+    "name": "AIX Ventures",
+    "firm": "AIX Ventures",
+    "type": "AI Specialist VC",
+    "check_size": "$500K–$5M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "AI infrastructure",
+      "ML platforms",
+      "AI safety",
+      "foundation model applications"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "Multiple AI infrastructure and safety cos"
+    ],
+    "decision_speed": "Fast (AI-specialist DD)",
+    "communication_style": "AI-native, safety-conscious, technical depth",
+    "response_behavior": "High for AI infrastructure with safety considerations",
+    "thought_leadership": "AI safety and infrastructure thought leadership",
+    "warm_intro_paths": [
+      "AI researcher network",
+      "safety community",
+      "technical advisors"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active in AI infrastructure and safety"
+  },
+  {
+    "id": "INV-032",
+    "name": "Peak XV Partners",
+    "firm": "Peak XV Partners",
+    "type": "Multi-Stage VC",
+    "check_size": "$2M–$30M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "AI infrastructure",
+      "developer tools",
+      "enterprise AI",
+      "emerging market AI"
+    ],
+    "geography": "India + Southeast Asia + US",
+    "portfolio": [
+      "Exaforce",
+      "multiple AI cos in India and US"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Emerging market expertise, cross-border perspective",
+    "response_behavior": "High for AI with India/SEA expansion potential",
+    "thought_leadership": "Emerging market AI ecosystem",
+    "warm_intro_paths": [
+      "India tech network",
+      "portfolio founders",
+      "cross-border connections"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Co-led Exaforce $125M"
+  },
+  {
+    "id": "INV-033",
+    "name": "Base10 Partners",
+    "firm": "Base10 Partners",
+    "type": "Growth VC",
+    "check_size": "$5M–$30M",
+    "stage_focus": [
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Fintech AI",
+      "compliance AI",
+      "enterprise automation",
+      "vertical AI"
+    ],
+    "geography": "US (Bay Area, NYC)",
+    "portfolio": [
+      "Greenboard",
+      "multiple fintech AI cos"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Fintech-focused, compliance expertise, vertical specialization",
+    "response_behavior": "High for fintech AI with regulatory compliance",
+    "thought_leadership": "Fintech AI and compliance automation",
+    "warm_intro_paths": [
+      "Fintech network",
+      "portfolio founders",
+      "compliance experts"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Led Greenboard $20M Series A"
+  },
+  {
+    "id": "INV-034",
+    "name": "Temasek",
+    "firm": "Temasek",
+    "type": "Sovereign Wealth Fund",
+    "check_size": "$20M–$500M",
+    "stage_focus": [
+      "Series B",
+      "Series C",
+      "Growth"
+    ],
+    "ai_focus": [
+      "AI infrastructure",
+      "healthcare AI",
+      "deep tech",
+      "global AI platforms"
+    ],
+    "geography": "Global (Singapore HQ)",
+    "portfolio": [
+      "Isomorphic Labs",
+      "multiple global AI cos"
+    ],
+    "decision_speed": "Slow (thorough sovereign DD)",
+    "communication_style": "Long-term, global perspective, strategic alignment",
+    "response_behavior": "High for AI with global strategic significance",
+    "thought_leadership": "Global AI investment trends",
+    "warm_intro_paths": [
+      "Sovereign fund network",
+      "global advisory connections"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Backed Isomorphic Labs $2.1B"
+  },
+  {
+    "id": "INV-035",
+    "name": "Scout Ventures",
+    "firm": "Scout Ventures",
+    "type": "Deep-Tech Seed VC",
+    "check_size": "$500K–$5M",
+    "stage_focus": [
+      "Pre-Seed",
+      "Seed"
+    ],
+    "ai_focus": [
+      "Deep tech AI",
+      "defense AI",
+      "energy AI",
+      "hard-tech applications"
+    ],
+    "geography": "US (DC, Bay Area)",
+    "portfolio": [
+      "Casimir",
+      "multiple deep-tech cos"
+    ],
+    "decision_speed": "Fast for hard-tech conviction",
+    "communication_style": "Hard-tech focus, defense connections, deep technical DD",
+    "response_behavior": "High for deep-tech AI with defense applications",
+    "thought_leadership": "Deep-tech and defense AI investing",
+    "warm_intro_paths": [
+      "Defense network",
+      "deep-tech founders",
+      "technical advisors"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Led Casimir $12M seed"
+  },
+  {
+    "id": "INV-036",
+    "name": "Accel India Team",
+    "firm": "Accel India",
+    "type": "Multi-Stage VC",
+    "check_size": "$1M–$25M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "SaaS",
+      "AI infrastructure",
+      "fintech",
+      "developer tools"
+    ],
+    "geography": "India (Bangalore)",
+    "portfolio": [
+      "Flipkart",
+      "Freshworks",
+      "Swiggy",
+      "Chargebee",
+      "Zenoti"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Enterprise-focused, India market expertise, PLG-oriented",
+    "response_behavior": "High for India-market SaaS and AI with global ambition",
+    "thought_leadership": "India startup ecosystem thought leader",
+    "warm_intro_paths": [
+      "India portfolio founders",
+      "Bangalore tech network",
+      "Accel global connections"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Active India AI investments"
+  },
+  {
+    "id": "INV-037",
+    "name": "Lightspeed India Team",
+    "firm": "Lightspeed India",
+    "type": "Multi-Stage VC",
+    "check_size": "$2M–$30M",
+    "stage_focus": [
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Enterprise AI",
+      "consumer tech",
+      "SaaS",
+      "fintech"
+    ],
+    "geography": "India (Mumbai, Bangalore)",
+    "portfolio": [
+      "OYO",
+      "Byju's",
+      "Udaan",
+      "Lenskart",
+      "PhysicsWallah"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Growth-oriented, India market expertise, cross-border perspective",
+    "response_behavior": "High for India consumer and enterprise AI",
+    "thought_leadership": "India tech ecosystem thought leadership",
+    "warm_intro_paths": [
+      "Lightspeed global network",
+      "India tech founders",
+      "partner introductions"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Active India investments"
+  },
+  {
+    "id": "INV-038",
+    "name": "Nexus Venture Partners",
+    "firm": "Nexus Venture Partners",
+    "type": "Early/Growth VC",
+    "check_size": "$2M–$20M",
+    "stage_focus": [
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "SaaS",
+      "AI infrastructure",
+      "developer tools",
+      "enterprise software"
+    ],
+    "geography": "India (Mumbai, Bangalore) + US",
+    "portfolio": [
+      "Postman",
+      "Hasura",
+      "Druva",
+      "Unravel Data",
+      "H2O.ai"
+    ],
+    "decision_speed": "Moderate (deep technical DD)",
+    "communication_style": "Technical depth, India-US bridge, enterprise focus",
+    "response_behavior": "High for India-built global SaaS and AI",
+    "thought_leadership": "India SaaS ecosystem expertise",
+    "warm_intro_paths": [
+      "India SaaS founders",
+      "US-India corridor connections",
+      "partner network"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active India SaaS investments"
+  },
+  {
+    "id": "INV-039",
+    "name": "Blume Ventures",
+    "firm": "Blume Ventures",
+    "type": "Seed/Early VC",
+    "check_size": "$500K–$5M",
+    "stage_focus": [
+      "Pre-Seed",
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "Deep tech",
+      "AI",
+      "healthtech",
+      "fintech",
+      "consumer"
+    ],
+    "geography": "India (Mumbai, Bangalore)",
+    "portfolio": [
+      "Unacademy",
+      "Dunzo",
+      "Spinny",
+      "GreyOrange",
+      "Jupiter"
+    ],
+    "decision_speed": "Fast (founder-friendly)",
+    "communication_style": "Early-stage thesis, founder-first, India ecosystem builder",
+    "response_behavior": "High for first-time India founders with technical depth",
+    "thought_leadership": "India early-stage ecosystem thought leader",
+    "warm_intro_paths": [
+      "India founder network",
+      "IIT/IIM alumni",
+      "angel co-investors"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active seed investments in AI"
+  },
+  {
+    "id": "INV-040",
+    "name": "Matrix Partners India",
+    "firm": "Matrix Partners India",
+    "type": "Growth VC",
+    "check_size": "$5M–$30M",
+    "stage_focus": [
+      "Series A",
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Consumer tech",
+      "enterprise SaaS",
+      "fintech",
+      "AI applications"
+    ],
+    "geography": "India (Bangalore, Delhi)",
+    "portfolio": [
+      "Ola",
+      "Practo",
+      "Dailyhunt",
+      "Five Star Business Finance",
+      "Country Delight"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Growth-focused, operational support, India market expertise",
+    "response_behavior": "High for India consumer and fintech AI",
+    "thought_leadership": "India growth-stage investing",
+    "warm_intro_paths": [
+      "India growth founders",
+      "partner network",
+      "portfolio CEO introductions"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active India growth investments"
+  },
+  {
+    "id": "INV-041",
+    "name": "Kalaari Capital",
+    "firm": "Kalaari Capital",
+    "type": "Early-Stage VC",
+    "check_size": "$1M–$10M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "Technology",
+      "consumer",
+      "AI applications",
+      "deep tech"
+    ],
+    "geography": "India (Bangalore)",
+    "portfolio": [
+      "Dream11",
+      "Myntra",
+      "Cure.fit",
+      "Zivame",
+      "Simplilearn"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "India market thesis, technology-focused, hands-on support",
+    "response_behavior": "High for India-market technology innovations",
+    "thought_leadership": "India technology ecosystem",
+    "warm_intro_paths": [
+      "India tech founders",
+      "Bangalore startup network",
+      "partner connections"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active early-stage India investments"
+  },
+  {
+    "id": "INV-042",
+    "name": "Elevation Capital",
+    "firm": "Elevation Capital",
+    "type": "Multi-Stage VC",
+    "check_size": "$5M–$40M",
+    "stage_focus": [
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "SaaS",
+      "fintech",
+      "AI",
+      "enterprise software",
+      "consumer"
+    ],
+    "geography": "India (Delhi, Bangalore)",
+    "portfolio": [
+      "Paytm",
+      "Meesho",
+      "Unacademy",
+      "ShareChat",
+      "Xpressbees"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Growth-oriented, India market expertise, fintech focus",
+    "response_behavior": "High for India fintech and SaaS AI",
+    "thought_leadership": "India fintech and SaaS ecosystem",
+    "warm_intro_paths": [
+      "India fintech founders",
+      "Delhi NCR network",
+      "portfolio connections"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active Series A/B India investments"
+  },
+  {
+    "id": "INV-043",
+    "name": "Chiratae Ventures",
+    "firm": "Chiratae Ventures",
+    "type": "Early/Growth VC",
+    "check_size": "$2M–$15M",
+    "stage_focus": [
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Healthtech",
+      "deep tech",
+      "AI",
+      "SaaS",
+      "consumer"
+    ],
+    "geography": "India (Bangalore)",
+    "portfolio": [
+      "Lenskart",
+      "Myntra",
+      "PolicyBazaar",
+      "Flipkart",
+      "FirstCry"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Sector-focused, healthtech and deep tech expertise",
+    "response_behavior": "High for India healthtech and deep tech AI",
+    "thought_leadership": "India healthtech and deep tech ecosystem",
+    "warm_intro_paths": [
+      "India healthtech founders",
+      "Bangalore tech network",
+      "partner introductions"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active healthtech and deep tech investments"
+  },
+  {
+    "id": "INV-044",
+    "name": "3one4 Capital",
+    "firm": "3one4 Capital",
+    "type": "Seed/Early VC",
+    "check_size": "$500K–$5M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "Deep tech",
+      "SaaS",
+      "AI",
+      "developer tools",
+      "fintech"
+    ],
+    "geography": "India (Bangalore)",
+    "portfolio": [
+      "Razorpay",
+      "Licious",
+      "Dunzo",
+      "Open Financial",
+      "Kaleidoscope"
+    ],
+    "decision_speed": "Fast (seed-focused)",
+    "communication_style": "Technical, thesis-driven, deep tech oriented",
+    "response_behavior": "High for India deep tech and developer tools",
+    "thought_leadership": "India deep tech investing",
+    "warm_intro_paths": [
+      "IIT network",
+      "Bangalore AI community",
+      "founder introductions"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active seed/Series A investments"
+  },
+  {
+    "id": "INV-045",
+    "name": "Stellaris Venture Partners",
+    "firm": "Stellaris Venture Partners",
+    "type": "Early-Stage VC",
+    "check_size": "$2M–$15M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "SaaS",
+      "consumer",
+      "AI applications",
+      "enterprise"
+    ],
+    "geography": "India (Bangalore)",
+    "portfolio": [
+      "Whatfix",
+      "Mamaearth",
+      "Ninjacart",
+      "LoadShare",
+      "Milaap"
+    ],
+    "decision_speed": "Fast",
+    "communication_style": "Consumer and SaaS thesis, India market focus",
+    "response_behavior": "High for India SaaS and consumer AI",
+    "thought_leadership": "India consumer and SaaS ecosystem",
+    "warm_intro_paths": [
+      "India SaaS founders",
+      "Bangalore startup network",
+      "partner connections"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active early-stage India investments"
+  },
+  {
+    "id": "INV-046",
+    "name": "Prime Venture Partners",
+    "firm": "Prime Venture Partners",
+    "type": "Seed VC",
+    "check_size": "$500K–$3M",
+    "stage_focus": [
+      "Pre-Seed",
+      "Seed"
+    ],
+    "ai_focus": [
+      "SaaS",
+      "fintech",
+      "AI",
+      "developer tools",
+      "healthcare"
+    ],
+    "geography": "India (Bangalore)",
+    "portfolio": [
+      "MyGate",
+      "Quizizz",
+      "Kissht",
+      "HackerEarth",
+      "Signzy"
+    ],
+    "decision_speed": "Fast (seed specialist)",
+    "communication_style": "Seed-stage expertise, hands-on, founder-friendly",
+    "response_behavior": "High for India seed-stage SaaS and fintech",
+    "thought_leadership": "India seed investing",
+    "warm_intro_paths": [
+      "India seed founders",
+      "Bangalore tech community",
+      "angel network"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active seed investments"
+  },
+  {
+    "id": "INV-047",
+    "name": "pi Ventures",
+    "firm": "pi Ventures",
+    "type": "AI Specialist Seed VC",
+    "check_size": "$500K–$3M",
+    "stage_focus": [
+      "Pre-Seed",
+      "Seed"
+    ],
+    "ai_focus": [
+      "AI",
+      "deep tech",
+      "machine learning",
+      "computer vision",
+      "NLP"
+    ],
+    "geography": "India (Delhi, Bangalore)",
+    "portfolio": [
+      "SigTuple",
+      "Niramai",
+      "Locus",
+      "Detect Technologies",
+      "Wobot"
+    ],
+    "decision_speed": "Fast (AI-specialist DD)",
+    "communication_style": "AI-native, deep technical, thesis-driven",
+    "response_behavior": "High for India AI-first technical founders",
+    "thought_leadership": "India AI investing thought leader",
+    "warm_intro_paths": [
+      "India AI researcher network",
+      "IIT AI labs",
+      "technical advisor network"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active AI seed investments"
+  },
+  {
+    "id": "INV-048",
+    "name": "Together Fund",
+    "firm": "Together Fund",
+    "type": "Growth VC",
+    "check_size": "$5M–$25M",
+    "stage_focus": [
+      "Series A",
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "SaaS",
+      "enterprise",
+      "AI applications",
+      "B2B"
+    ],
+    "geography": "India (Bangalore) + US",
+    "portfolio": [
+      "Multiple India SaaS cos",
+      "B2B enterprise companies"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Growth-oriented, India-US bridge, SaaS expertise",
+    "response_behavior": "High for India SaaS with US expansion potential",
+    "thought_leadership": "India SaaS growth investing",
+    "warm_intro_paths": [
+      "India SaaS founders",
+      "US-India corridor",
+      "partner network"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active SaaS growth investments"
+  },
+  {
+    "id": "INV-049",
+    "name": "Ambition Capital",
+    "firm": "Ambition Capital",
+    "type": "Early-Stage VC",
+    "check_size": "$2M–$15M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "AI",
+      "deep tech",
+      "infrastructure",
+      "enterprise AI"
+    ],
+    "geography": "India (Bangalore)",
+    "portfolio": [
+      "AI infrastructure startups",
+      "deep tech companies"
+    ],
+    "decision_speed": "Fast",
+    "communication_style": "Ex-Peak XV expertise, AI thesis, founder-friendly",
+    "response_behavior": "High for India AI infrastructure and deep tech",
+    "thought_leadership": "India AI ecosystem (new fund, ex-Peak XV)",
+    "warm_intro_paths": [
+      "Peak XV network",
+      "India AI founders",
+      "Bangalore tech ecosystem"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — New fund by ex-Peak XV partners, active in AI"
+  },
+  {
+    "id": "INV-050",
+    "name": "Endiya Partners",
+    "firm": "Endiya Partners",
+    "type": "Seed/Early VC",
+    "check_size": "$1M–$5M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "Deep tech",
+      "healthtech",
+      "AI",
+      "enterprise software"
+    ],
+    "geography": "India (Hyderabad, Bangalore)",
+    "portfolio": [
+      "Sigmoid",
+      "CareSpace",
+      "ZestMoney",
+      "Signicent",
+      "Smytten"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Deep tech thesis, Hyderabad ecosystem, healthtech focus",
+    "response_behavior": "High for India deep tech and healthtech",
+    "thought_leadership": "India deep tech investing (Hyderabad ecosystem)",
+    "warm_intro_paths": [
+      "Hyderabad tech network",
+      "India deep tech founders",
+      "partner connections"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active deep tech investments"
+  },
+  {
+    "id": "INV-051",
+    "name": "Ideaspring Capital",
+    "firm": "Ideaspring Capital",
+    "type": "Seed VC",
+    "check_size": "$500K–$3M",
+    "stage_focus": [
+      "Seed"
+    ],
+    "ai_focus": [
+      "Enterprise",
+      "B2B",
+      "AI",
+      "developer tools",
+      "SaaS"
+    ],
+    "geography": "India (Bangalore)",
+    "portfolio": [
+      "Multiple B2B enterprise startups",
+      "India SaaS companies"
+    ],
+    "decision_speed": "Fast (seed specialist)",
+    "communication_style": "B2B thesis, enterprise focus, India SaaS expertise",
+    "response_behavior": "High for India B2B and enterprise AI",
+    "thought_leadership": "India B2B investing",
+    "warm_intro_paths": [
+      "India B2B founders",
+      "Bangalore enterprise network",
+      "partner connections"
+    ],
+    "reputation_score": 6,
+    "last_activity": "2026-05 — Active seed investments in enterprise/B2B"
+  },
+  {
+    "id": "INV-052",
+    "name": "Bharat Innovation Fund",
+    "firm": "Bharat Innovation Fund",
+    "type": "Deep-Tech VC",
+    "check_size": "$1M–$10M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "Deep tech",
+      "AI",
+      "computer vision",
+      "NLP",
+      "enterprise AI"
+    ],
+    "geography": "India (Bangalore)",
+    "portfolio": [
+      "Multiple deep-tech AI cos",
+      "India AI startups"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Deep-tech thesis, India AI ecosystem, technical depth",
+    "response_behavior": "High for India deep-tech AI innovations",
+    "thought_leadership": "India deep-tech AI investing",
+    "warm_intro_paths": [
+      "India AI research network",
+      "IIT connections",
+      "deep tech founders"
+    ],
+    "reputation_score": 6,
+    "last_activity": "2026-05 — Active deep-tech AI investments"
+  },
+  {
+    "id": "INV-053",
+    "name": "Omidyar Network India",
+    "firm": "Omidyar Network India",
+    "type": "Impact + Tech VC",
+    "check_size": "$1M–$15M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Impact tech",
+      "AI for inclusion",
+      "fintech",
+      "education",
+      "healthcare"
+    ],
+    "geography": "India (Bangalore)",
+    "portfolio": [
+      "Multiple impact-tech cos",
+      "India inclusion-focused startups"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Impact-oriented, inclusion thesis, technology for good",
+    "response_behavior": "High for AI with social impact in India",
+    "thought_leadership": "Impact tech investing in India",
+    "warm_intro_paths": [
+      "Impact tech network",
+      "India social entrepreneurs",
+      "partner connections"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active impact + tech investments in India"
+  },
+  {
+    "id": "INV-054",
+    "name": "Alteria Capital",
+    "firm": "Alteria Capital",
+    "type": "Venture Debt",
+    "check_size": "$1M–$20M",
+    "stage_focus": [
+      "Series A",
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Venture debt for AI companies",
+      "SaaS",
+      "fintech",
+      "enterprise"
+    ],
+    "geography": "India (Mumbai)",
+    "portfolio": [
+      "Multiple India venture debt recipients",
+      "SaaS and fintech cos"
+    ],
+    "decision_speed": "Fast (debt structuring)",
+    "communication_style": "Debt-focused, structured financing, India market expertise",
+    "response_behavior": "High for India AI companies needing non-dilutive capital",
+    "thought_leadership": "India venture debt ecosystem",
+    "warm_intro_paths": [
+      "India VC network",
+      "portfolio connections",
+      "banking relationships"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active venture debt for India AI companies"
+  },
+  {
+    "id": "INV-055",
+    "name": "Stride Ventures",
+    "firm": "Stride Ventures",
+    "type": "Venture Debt",
+    "check_size": "$1M–$15M",
+    "stage_focus": [
+      "Series A",
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Venture debt",
+      "SaaS",
+      "fintech",
+      "consumer",
+      "enterprise"
+    ],
+    "geography": "India (Delhi, Mumbai)",
+    "portfolio": [
+      "Multiple India venture debt recipients",
+      "consumer and SaaS cos"
+    ],
+    "decision_speed": "Fast (debt specialist)",
+    "communication_style": "Venture debt expertise, India market, growth financing",
+    "response_behavior": "High for India companies seeking non-dilutive capital",
+    "thought_leadership": "India venture debt",
+    "warm_intro_paths": [
+      "India VC network",
+      "growth-stage founders",
+      "banking connections"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active venture debt in India"
+  },
+  {
+    "id": "INV-056",
+    "name": "Vertex Ventures",
+    "firm": "Vertex Ventures",
+    "type": "Multi-Stage VC",
+    "check_size": "$2M–$30M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Deep tech",
+      "enterprise AI",
+      "SaaS",
+      "fintech",
+      "healthcare"
+    ],
+    "geography": "Singapore (Global)",
+    "portfolio": [
+      "Grab",
+      "PatSnap",
+      "Ninja Van",
+      "Moka",
+      "Kuku FM"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Global perspective, SEA expertise, deep tech thesis",
+    "response_behavior": "High for SEA AI with regional expansion potential",
+    "thought_leadership": "SEA tech ecosystem thought leader",
+    "warm_intro_paths": [
+      "SEA tech founders",
+      "Vertex global network",
+      "Singapore tech community"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Active SEA AI investments"
+  },
+  {
+    "id": "INV-057",
+    "name": "Monk's Hill Ventures",
+    "firm": "Monk's Hill Ventures",
+    "type": "Growth VC",
+    "check_size": "$5M–$25M",
+    "stage_focus": [
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Enterprise AI",
+      "SaaS",
+      "fintech",
+      "AI applications"
+    ],
+    "geography": "Singapore (SEA)",
+    "portfolio": [
+      "Ninja Van",
+      "Moka",
+      "Ajaib",
+      "Xendit",
+      "Spenmo"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Enterprise-focused, SEA market expertise, scaling support",
+    "response_behavior": "High for SEA enterprise AI with regional traction",
+    "thought_leadership": "SEA enterprise AI investing",
+    "warm_intro_paths": [
+      "SEA enterprise founders",
+      "Singapore tech network",
+      "partner introductions"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active Series A/B investments in SEA"
+  },
+  {
+    "id": "INV-058",
+    "name": "Golden Gate Ventures",
+    "firm": "Golden Gate Ventures",
+    "type": "Early-Stage VC",
+    "check_size": "$1M–$10M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "Consumer",
+      "enterprise",
+      "AI applications",
+      "fintech",
+      "SaaS"
+    ],
+    "geography": "Singapore (SEA)",
+    "portfolio": [
+      "Carousell",
+      "Coda Payments",
+      "Xendit",
+      "Moka",
+      "Alodokter"
+    ],
+    "decision_speed": "Fast",
+    "communication_style": "Early-stage thesis, SEA consumer and enterprise, founder-friendly",
+    "response_behavior": "High for SEA consumer and enterprise AI",
+    "thought_leadership": "SEA early-stage ecosystem",
+    "warm_intro_paths": [
+      "SEA startup founders",
+      "Singapore accelerator network",
+      "angel connections"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active early-stage SEA investments"
+  },
+  {
+    "id": "INV-059",
+    "name": "Jungle Ventures",
+    "firm": "Jungle Ventures",
+    "type": "Growth VC",
+    "check_size": "$5M–$20M",
+    "stage_focus": [
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Enterprise SaaS",
+      "AI",
+      "fintech",
+      "healthcare",
+      "consumer"
+    ],
+    "geography": "Singapore (SEA, India)",
+    "portfolio": [
+      "Moglix",
+      "Kredivo",
+      "Livspace",
+      "Capillary Technologies",
+      "BetterPlace"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Growth-oriented, India-SEA bridge, enterprise focus",
+    "response_behavior": "High for India-SEA enterprise AI",
+    "thought_leadership": "India-SEA tech corridor",
+    "warm_intro_paths": [
+      "India-SEA founders",
+      "Singapore tech network",
+      "partner connections"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active India-SEA investments"
+  },
+  {
+    "id": "INV-060",
+    "name": "East Ventures",
+    "firm": "East Ventures",
+    "type": "Seed/Early VC",
+    "check_size": "$500K–$5M",
+    "stage_focus": [
+      "Pre-Seed",
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "Consumer",
+      "SaaS",
+      "AI applications",
+      "fintech",
+      "logistics"
+    ],
+    "geography": "Indonesia (Jakarta) + Singapore",
+    "portfolio": [
+      "Tokopedia",
+      "Traveloka",
+      "Ruangguru",
+      "Xendit",
+      "Sicepat"
+    ],
+    "decision_speed": "Fast (seed specialist)",
+    "communication_style": "Indonesia-first, seed expertise, ecosystem builder",
+    "response_behavior": "High for Indonesia/SEA early-stage AI",
+    "thought_leadership": "Indonesia startup ecosystem",
+    "warm_intro_paths": [
+      "Indonesia founders",
+      "SEA accelerator network",
+      "angel connections"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active seed investments in SEA"
+  },
+  {
+    "id": "INV-061",
+    "name": "Quest Ventures",
+    "firm": "Quest Ventures",
+    "type": "Early-Stage VC",
+    "check_size": "$500K–$5M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "Deep tech",
+      "AI",
+      "B2B",
+      "enterprise",
+      "SaaS"
+    ],
+    "geography": "Singapore (SEA)",
+    "portfolio": [
+      "Multiple SEA AI cos",
+      "deep tech startups"
+    ],
+    "decision_speed": "Fast",
+    "communication_style": "Deep tech thesis, Singapore ecosystem, B2B focus",
+    "response_behavior": "High for SEA deep tech and B2B AI",
+    "thought_leadership": "Singapore deep tech investing",
+    "warm_intro_paths": [
+      "Singapore AI network",
+      "deep tech founders",
+      "NUS/NTU connections"
+    ],
+    "reputation_score": 6,
+    "last_activity": "2026-05 — Active deep tech investments in Singapore"
+  },
+  {
+    "id": "INV-062",
+    "name": "Wavemaker Partners",
+    "firm": "Wavemaker Partners",
+    "type": "Early-Stage VC",
+    "check_size": "$1M–$5M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "Deep tech",
+      "B2B",
+      "AI",
+      "enterprise software",
+      "logistics"
+    ],
+    "geography": "Singapore (SEA, US)",
+    "portfolio": [
+      "Multiple SEA B2B and deep tech cos",
+      "AI startups"
+    ],
+    "decision_speed": "Fast",
+    "communication_style": "Deep tech and B2B thesis, US-SEA bridge",
+    "response_behavior": "High for SEA B2B and deep tech AI",
+    "thought_leadership": "SEA B2B and deep tech investing",
+    "warm_intro_paths": [
+      "US-SEA corridor",
+      "Singapore tech founders",
+      "partner network"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active early-stage B2B investments"
+  },
+  {
+    "id": "INV-063",
+    "name": "EDBI",
+    "firm": "EDBI",
+    "type": "Sovereign VC",
+    "check_size": "$10M–$100M",
+    "stage_focus": [
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Deep tech",
+      "AI",
+      "biotech",
+      "fintech",
+      "strategic sectors"
+    ],
+    "geography": "Singapore (Global)",
+    "portfolio": [
+      "Multiple strategic AI investments",
+      "global deep tech cos"
+    ],
+    "decision_speed": "Slow (sovereign DD, strategic alignment)",
+    "communication_style": "Strategic, long-term, Singapore economic development focus",
+    "response_behavior": "High for AI with Singapore strategic significance",
+    "thought_leadership": "Singapore sovereign AI investment",
+    "warm_intro_paths": [
+      "Singapore government network",
+      "EDB connections",
+      "sovereign fund network"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active sovereign AI investments"
+  },
+  {
+    "id": "INV-064",
+    "name": "GIC",
+    "firm": "GIC",
+    "type": "Sovereign Wealth Fund",
+    "check_size": "$50M–$1B+",
+    "stage_focus": [
+      "Growth",
+      "Late Stage"
+    ],
+    "ai_focus": [
+      "AI infrastructure",
+      "enterprise software",
+      "global tech platforms",
+      "mega growth"
+    ],
+    "geography": "Global (Singapore HQ)",
+    "portfolio": [
+      "Multiple global AI mega-rounds",
+      "tech infrastructure cos"
+    ],
+    "decision_speed": "Slow (thorough sovereign DD)",
+    "communication_style": "Long-term, global perspective, mega-scale capital",
+    "response_behavior": "High for AI companies at mega-scale",
+    "thought_leadership": "Global sovereign AI investment trends",
+    "warm_intro_paths": [
+      "Global investment bank connections",
+      "sovereign fund network",
+      "mega-fund co-investors"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Active global AI mega-rounds"
+  },
+  {
+    "id": "INV-065",
+    "name": "Insignia Ventures Partners",
+    "firm": "Insignia Ventures Partners",
+    "type": "Early-Stage VC",
+    "check_size": "$1M–$15M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "SaaS",
+      "fintech",
+      "AI applications",
+      "enterprise",
+      "logistics"
+    ],
+    "geography": "Singapore (SEA)",
+    "portfolio": [
+      "Ajaib",
+      "Shipper",
+      "Moka",
+      "Ninja Van",
+      "Xendit"
+    ],
+    "decision_speed": "Fast",
+    "communication_style": "Early-stage thesis, SEA SaaS and fintech, founder-friendly",
+    "response_behavior": "High for SEA early-stage SaaS and fintech AI",
+    "thought_leadership": "SEA early-stage SaaS investing",
+    "warm_intro_paths": [
+      "SEA SaaS founders",
+      "Singapore startup network",
+      "partner connections"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active early-stage SEA investments"
+  },
+  {
+    "id": "INV-066",
+    "name": "Kadan VC",
+    "firm": "Kadan VC",
+    "type": "AI Specialist VC",
+    "check_size": "$500K–$5M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "AI",
+      "deep tech",
+      "machine learning",
+      "AI infrastructure",
+      "B2B"
+    ],
+    "geography": "Singapore",
+    "portfolio": [
+      "Multiple AI startups",
+      "Singapore deep tech cos"
+    ],
+    "decision_speed": "Fast (AI-specialist DD)",
+    "communication_style": "AI-native, technical depth, Singapore AI ecosystem",
+    "response_behavior": "High for Singapore AI-first founders",
+    "thought_leadership": "Singapore AI investing",
+    "warm_intro_paths": [
+      "Singapore AI researcher network",
+      "NUS/NTU AI labs",
+      "AI community"
+    ],
+    "reputation_score": 6,
+    "last_activity": "2026-05 — Active early-stage AI investments in Singapore"
+  },
+  {
+    "id": "INV-067",
+    "name": "TNB Aura",
+    "firm": "TNB Aura",
+    "type": "Growth VC",
+    "check_size": "$5M–$20M",
+    "stage_focus": [
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Enterprise AI",
+      "SaaS",
+      "AI applications",
+      "B2B"
+    ],
+    "geography": "Singapore (SEA, India)",
+    "portfolio": [
+      "Multiple enterprise AI cos",
+      "B2B SaaS companies"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Enterprise-focused, India-SEA bridge, AI thesis",
+    "response_behavior": "High for India-SEA enterprise AI",
+    "thought_leadership": "India-SEA enterprise AI investing",
+    "warm_intro_paths": [
+      "India-SEA enterprise founders",
+      "Singapore tech network",
+      "partner connections"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active Series A/B enterprise AI investments"
+  },
+  {
+    "id": "INV-068",
+    "name": "Vickers Venture Partners",
+    "firm": "Vickers Venture Partners",
+    "type": "Deep-Tech VC",
+    "check_size": "$5M–$30M",
+    "stage_focus": [
+      "Series A",
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Deep tech",
+      "biotech",
+      "AI",
+      "frontier technology",
+      "healthcare"
+    ],
+    "geography": "Singapore (Global)",
+    "portfolio": [
+      "Multiple deep tech cos",
+      "biotech and AI companies"
+    ],
+    "decision_speed": "Moderate (deep technical DD)",
+    "communication_style": "Deep tech thesis, frontier technology, global perspective",
+    "response_behavior": "High for frontier AI and biotech",
+    "thought_leadership": "Deep tech and biotech AI investing",
+    "warm_intro_paths": [
+      "Global deep tech network",
+      "Singapore tech connections",
+      "partner introductions"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active deep tech investments"
+  },
+  {
+    "id": "INV-069",
+    "name": "Qualgro Partners",
+    "firm": "Qualgro Partners",
+    "type": "Growth VC",
+    "check_size": "$5M–$20M",
+    "stage_focus": [
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "Enterprise SaaS",
+      "AI",
+      "B2B",
+      "data analytics",
+      "healthcare"
+    ],
+    "geography": "Singapore (SEA, Australia)",
+    "portfolio": [
+      "Multiple enterprise SaaS cos",
+      "SEA B2B companies"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Enterprise SaaS focus, data-driven, SEA-Australia perspective",
+    "response_behavior": "High for SEA enterprise SaaS AI",
+    "thought_leadership": "SEA enterprise SaaS investing",
+    "warm_intro_paths": [
+      "SEA enterprise founders",
+      "Singapore SaaS network",
+      "partner connections"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active enterprise SaaS investments"
+  },
+  {
+    "id": "INV-070",
+    "name": "General Catalyst Team",
+    "firm": "General Catalyst",
+    "type": "Multi-Stage VC",
+    "check_size": "$5M–$100M",
+    "stage_focus": [
+      "Series A",
+      "Series B",
+      "Series C",
+      "Growth"
+    ],
+    "ai_focus": [
+      "AI",
+      "healthcare",
+      "fintech",
+      "enterprise",
+      "consumer"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Stripe",
+      "Snap",
+      "Airbnb",
+      "Hippocratic AI",
+      "Lemonade"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Long-term partnership, operational support, multi-stage expertise",
+    "response_behavior": "High for category-defining AI companies",
+    "thought_leadership": "Multi-stage AI investing",
+    "warm_intro_paths": [
+      "Portfolio CEOs",
+      "partner network",
+      "tech industry connections"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — $25B+ AUM, active across all AI stages"
+  },
+  {
+    "id": "INV-071",
+    "name": "Lightspeed Venture Partners Global",
+    "firm": "Lightspeed Venture Partners",
+    "type": "Multi-Stage VC",
+    "check_size": "$5M–$100M",
+    "stage_focus": [
+      "Series A",
+      "Series B",
+      "Series C",
+      "Growth"
+    ],
+    "ai_focus": [
+      "AI infrastructure",
+      "enterprise AI",
+      "consumer AI",
+      "developer tools"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Anthropic",
+      "Mistral AI",
+      "Snap",
+      "Nutanix",
+      "AppDynamics"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Global perspective, technical depth, multi-stage expertise",
+    "response_behavior": "High for frontier AI infrastructure",
+    "thought_leadership": "Global AI investing trends",
+    "warm_intro_paths": [
+      "Global tech founders",
+      "partner network",
+      "portfolio connections"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — $18B+ AUM, active global AI investments"
+  },
+  {
+    "id": "INV-072",
+    "name": "Tiger Global Team",
+    "firm": "Tiger Global",
+    "type": "Crossover / Growth",
+    "check_size": "$20M–$500M",
+    "stage_focus": [
+      "Series C",
+      "Growth",
+      "Late Stage"
+    ],
+    "ai_focus": [
+      "Tech",
+      "AI",
+      "SaaS",
+      "consumer",
+      "enterprise"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Stripe",
+      "ByteDance",
+      "Flipkart",
+      "Databricks",
+      "Discord"
+    ],
+    "decision_speed": "Fast (data-driven, quick conviction)",
+    "communication_style": "Data-driven, growth-focused, speed-oriented",
+    "response_behavior": "High for high-growth tech companies with clear metrics",
+    "thought_leadership": "Growth-stage tech investing",
+    "warm_intro_paths": [
+      "Investment banking connections",
+      "growth founders",
+      "analyst network"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — $50B+ AUM, active growth investments"
+  },
+  {
+    "id": "INV-073",
+    "name": "SoftBank Vision Fund",
+    "firm": "SoftBank Vision Fund",
+    "type": "Mega Growth",
+    "check_size": "$50M–$1B+",
+    "stage_focus": [
+      "Growth",
+      "Late Stage"
+    ],
+    "ai_focus": [
+      "AI infrastructure",
+      "enterprise AI",
+      "mobility",
+      "fintech",
+      "frontier tech"
+    ],
+    "geography": "Global (Tokyo, London, SF)",
+    "portfolio": [
+      "ByteDance",
+      "Coupang",
+      "DoorDash",
+      "ARM",
+      "NVIDIA (early)"
+    ],
+    "decision_speed": "Fast for mega-deals",
+    "communication_style": "Mega-scale vision, technology transformation thesis",
+    "response_behavior": "High for AI companies with massive market potential",
+    "thought_leadership": "Mega-scale AI and tech transformation",
+    "warm_intro_paths": [
+      "SoftBank ecosystem",
+      "global tech CEOs",
+      "investment bank connections"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — $100B+ AUM, active mega-rounds"
+  },
+  {
+    "id": "INV-074",
+    "name": "Insight Partners Global",
+    "firm": "Insight Partners",
+    "type": "Growth-Stage VC",
+    "check_size": "$10M–$300M",
+    "stage_focus": [
+      "Series B",
+      "Series C",
+      "Growth",
+      "Late Stage"
+    ],
+    "ai_focus": [
+      "Enterprise AI",
+      "SaaS",
+      "data platforms",
+      "AI infrastructure",
+      "scale-ups"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Twitter",
+      "Shopify",
+      "Monday.com",
+      "Wiz",
+      "JFrog"
+    ],
+    "decision_speed": "Moderate (data-driven scaling analysis)",
+    "communication_style": "Growth-oriented, scaling expertise, operational support",
+    "response_behavior": "High for AI companies with proven revenue scaling",
+    "thought_leadership": "Scale-up AI investing",
+    "warm_intro_paths": [
+      "Portfolio CEO network",
+      "investment bank connections",
+      "partner introductions"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — $90B+ AUM, active AI growth rounds"
+  },
+  {
+    "id": "INV-075",
+    "name": "Dragoneer Investment Group",
+    "firm": "Dragoneer Investment Group",
+    "type": "Crossover / Growth",
+    "check_size": "$20M–$200M",
+    "stage_focus": [
+      "Series C",
+      "Growth",
+      "Late Stage"
+    ],
+    "ai_focus": [
+      "Tech",
+      "AI",
+      "SaaS",
+      "consumer",
+      "enterprise"
+    ],
+    "geography": "US (San Francisco)",
+    "portfolio": [
+      "Airbnb",
+      "DoorDash",
+      "Snowflake",
+      "Databricks",
+      "Stripe"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Growth-oriented, public-private crossover, data-driven",
+    "response_behavior": "High for AI companies approaching IPO",
+    "thought_leadership": "Crossover tech investing",
+    "warm_intro_paths": [
+      "Investment bank connections",
+      "growth founders",
+      "analyst network"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active crossover AI investments"
+  },
+  {
+    "id": "INV-076",
+    "name": "D1 Capital Partners",
+    "firm": "D1 Capital Partners",
+    "type": "Crossover / Growth",
+    "check_size": "$20M–$300M",
+    "stage_focus": [
+      "Series C",
+      "Growth",
+      "Late Stage"
+    ],
+    "ai_focus": [
+      "Tech",
+      "AI",
+      "infrastructure",
+      "enterprise",
+      "consumer"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Databricks",
+      "Stripe",
+      "Airbnb",
+      "Instacart",
+      "Discord"
+    ],
+    "decision_speed": "Fast for high-conviction deals",
+    "communication_style": "Concentrated bets, high-conviction, growth-oriented",
+    "response_behavior": "High for category-defining AI platforms",
+    "thought_leadership": "High-conviction growth investing",
+    "warm_intro_paths": [
+      "Portfolio CEOs",
+      "tech industry connections",
+      "partner network"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active high-conviction AI investments"
+  },
+  {
+    "id": "INV-077",
+    "name": "Altimeter Capital",
+    "firm": "Altimeter Capital",
+    "type": "Crossover / Growth",
+    "check_size": "$20M–$200M",
+    "stage_focus": [
+      "Series C",
+      "Growth",
+      "Late Stage"
+    ],
+    "ai_focus": [
+      "Enterprise SaaS",
+      "AI",
+      "cloud",
+      "data platforms"
+    ],
+    "geography": "US (Boston, SF)",
+    "portfolio": [
+      "Snowflake",
+      "Datadog",
+      "CrowdStrike",
+      "MongoDB",
+      "Confluent"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Enterprise SaaS focus, public-private crossover, data-driven",
+    "response_behavior": "High for enterprise AI approaching IPO",
+    "thought_leadership": "Enterprise SaaS and AI investing",
+    "warm_intro_paths": [
+      "Enterprise SaaS CEOs",
+      "investment bank connections",
+      "analyst network"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active enterprise AI investments"
+  },
+  {
+    "id": "INV-078",
+    "name": "ICONIQ Growth",
+    "firm": "ICONIQ Growth",
+    "type": "Growth VC",
+    "check_size": "$20M–$200M",
+    "stage_focus": [
+      "Series C",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Enterprise AI",
+      "SaaS",
+      "data platforms",
+      "AI infrastructure"
+    ],
+    "geography": "US (Bay Area)",
+    "portfolio": [
+      "Databricks",
+      "Adyen",
+      "Snowflake",
+      "Datadog",
+      "GitLab"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Enterprise-focused, long-term partnerships, operational support",
+    "response_behavior": "High for enterprise AI with strong metrics",
+    "thought_leadership": "Enterprise AI growth investing",
+    "warm_intro_paths": [
+      "Portfolio CEOs",
+      "tech industry connections",
+      "partner introductions"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active enterprise AI growth investments"
+  },
+  {
+    "id": "INV-079",
+    "name": "Addition",
+    "firm": "Addition",
+    "type": "Growth VC",
+    "check_size": "$10M–$100M",
+    "stage_focus": [
+      "Series B",
+      "Series C",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Tech",
+      "AI",
+      "enterprise",
+      "infrastructure",
+      "consumer"
+    ],
+    "geography": "US (NYC)",
+    "portfolio": [
+      "Multiple tech and AI cos",
+      "growth-stage companies"
+    ],
+    "decision_speed": "Fast for high-conviction",
+    "communication_style": "Lee Fixel thesis, concentrated bets, growth expertise",
+    "response_behavior": "High for high-growth tech companies",
+    "thought_leadership": "Growth-stage tech investing (ex-Tiger Global)",
+    "warm_intro_paths": [
+      "Tiger Global network",
+      "growth founders",
+      "investment connections"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — $1.5B+ fund, active growth investments"
+  },
+  {
+    "id": "INV-080",
+    "name": "Radical Ventures",
+    "firm": "Radical Ventures",
+    "type": "AI Specialist VC",
+    "check_size": "$5M–$50M",
+    "stage_focus": [
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "AI-first companies",
+      "foundation models",
+      "AI infrastructure",
+      "AI applications"
+    ],
+    "geography": "Canada (Toronto) + US",
+    "portfolio": [
+      "Cohere",
+      "Waabi",
+      "DeepMind (advisor)",
+      "multiple AI-first cos"
+    ],
+    "decision_speed": "Moderate (deep AI DD)",
+    "communication_style": "AI-native, deep technical expertise, thesis-driven",
+    "response_behavior": "High for AI-first companies with technical differentiation",
+    "thought_leadership": "AI-first investing thought leader",
+    "warm_intro_paths": [
+      "AI researcher network",
+      "Toronto AI community",
+      "technical advisors"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — $1B+ AUM, active AI-first investments"
+  },
+  {
+    "id": "INV-081",
+    "name": "AIR Capital",
+    "firm": "AIR Capital",
+    "type": "AI Specialist VC",
+    "check_size": "$2M–$20M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B"
+    ],
+    "ai_focus": [
+      "AI",
+      "deep tech",
+      "AI infrastructure",
+      "AI applications"
+    ],
+    "geography": "Middle East (Global)",
+    "portfolio": [
+      "Multiple AI cos",
+      "Middle East AI startups"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "AI-focused, Middle East perspective, global reach",
+    "response_behavior": "High for AI with Middle East/global expansion potential",
+    "thought_leadership": "AI investing from Middle East perspective",
+    "warm_intro_paths": [
+      "Middle East tech network",
+      "global AI founders",
+      "partner connections"
+    ],
+    "reputation_score": 6,
+    "last_activity": "2026-05 — Active AI investments from Middle East"
+  },
+  {
+    "id": "INV-082",
+    "name": "StepStone Group",
+    "firm": "StepStone Group",
+    "type": "Fund of Funds / Growth",
+    "check_size": "$20M–$200M",
+    "stage_focus": [
+      "Growth",
+      "Late Stage"
+    ],
+    "ai_focus": [
+      "Tech growth",
+      "AI",
+      "enterprise",
+      "infrastructure"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Multiple AI and tech growth cos",
+      "fund investments"
+    ],
+    "decision_speed": "Moderate (institutional DD)",
+    "communication_style": "Institutional, data-driven, diversified approach",
+    "response_behavior": "High for AI companies at institutional scale",
+    "thought_leadership": "Institutional AI investing",
+    "warm_intro_paths": [
+      "Fund manager network",
+      "institutional connections",
+      "portfolio introductions"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — $130B+ AUM, active growth investments"
+  },
+  {
+    "id": "INV-083",
+    "name": "Janus Henderson",
+    "firm": "Janus Henderson",
+    "type": "Public-Private Crossover",
+    "check_size": "$10M–$100M",
+    "stage_focus": [
+      "Growth",
+      "Late Stage"
+    ],
+    "ai_focus": [
+      "Tech",
+      "AI",
+      "enterprise software",
+      "public-private crossover"
+    ],
+    "geography": "Global (US, London)",
+    "portfolio": [
+      "Multiple public and private tech cos",
+      "AI companies"
+    ],
+    "decision_speed": "Slow (public market DD discipline)",
+    "communication_style": "Public-market discipline, fundamental analysis, long-term",
+    "response_behavior": "High for AI companies with public-market potential",
+    "thought_leadership": "Public-private tech crossover investing",
+    "warm_intro_paths": [
+      "Investment bank connections",
+      "public market analysts",
+      "portfolio introductions"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active public-private crossover investments"
+  },
+  {
+    "id": "INV-084",
+    "name": "TCV",
+    "firm": "TCV",
+    "type": "Growth VC",
+    "check_size": "$20M–$200M",
+    "stage_focus": [
+      "Series C",
+      "Growth",
+      "Late Stage"
+    ],
+    "ai_focus": [
+      "Tech",
+      "AI",
+      "SaaS",
+      "enterprise",
+      "consumer"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Netflix",
+      "Spotify",
+      "Airbnb",
+      "Facebook (early)",
+      "Zillow"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Growth expertise, tech scaling, long-term partnership",
+    "response_behavior": "High for high-growth tech companies",
+    "thought_leadership": "Tech growth investing",
+    "warm_intro_paths": [
+      "Portfolio CEOs",
+      "tech industry connections",
+      "partner network"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — $35B+ AUM, active tech growth investments"
+  },
+  {
+    "id": "INV-085",
+    "name": "Silver Lake",
+    "firm": "Silver Lake",
+    "type": "Mega Growth / PE",
+    "check_size": "$100M–$1B+",
+    "stage_focus": [
+      "Growth",
+      "Late Stage",
+      "PE"
+    ],
+    "ai_focus": [
+      "Tech mega-cap",
+      "AI infrastructure",
+      "enterprise software",
+      "digital transformation"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Dell",
+      "VMware",
+      "Twitter",
+      "Airbnb",
+      "McAfee"
+    ],
+    "decision_speed": "Slow (mega-deal DD)",
+    "communication_style": "Mega-scale, technology transformation, operational expertise",
+    "response_behavior": "High for tech companies at mega-scale",
+    "thought_leadership": "Mega-scale tech investing",
+    "warm_intro_paths": [
+      "Global tech CEOs",
+      "investment bank connections",
+      "mega-fund network"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — $70B+ AUM, active mega-tech investments"
+  },
+  {
+    "id": "INV-086",
+    "name": "Thoma Bravo",
+    "firm": "Thoma Bravo",
+    "type": "PE / Enterprise Software",
+    "check_size": "$50M–$1B+",
+    "stage_focus": [
+      "Growth",
+      "PE",
+      "Late Stage"
+    ],
+    "ai_focus": [
+      "Enterprise software",
+      "AI-powered SaaS",
+      "security",
+      "infrastructure"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Sophos",
+      "SailPoint",
+      "RealPage",
+      "Medallia",
+      "Proofpoint"
+    ],
+    "decision_speed": "Moderate (enterprise software DD)",
+    "communication_style": "Enterprise software expertise, operational improvement, buy-and-build",
+    "response_behavior": "High for enterprise software with AI differentiation",
+    "thought_leadership": "Enterprise software investing",
+    "warm_intro_paths": [
+      "Enterprise software CEOs",
+      "PE network",
+      "investment bank connections"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — $120B+ AUM, active enterprise software investments"
+  },
+  {
+    "id": "INV-087",
+    "name": "Vista Equity Partners",
+    "firm": "Vista Equity Partners",
+    "type": "PE / Enterprise Software",
+    "check_size": "$50M–$1B+",
+    "stage_focus": [
+      "Growth",
+      "PE",
+      "Late Stage"
+    ],
+    "ai_focus": [
+      "Enterprise software",
+      "AI-powered SaaS",
+      "data analytics",
+      "business intelligence"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Salesforce (investor)",
+      "Domo",
+      "Infoblox",
+      "TIBCO",
+      "Marketo"
+    ],
+    "decision_speed": "Moderate (enterprise software DD)",
+    "communication_style": "Enterprise software expertise, operational excellence, data-driven",
+    "response_behavior": "High for enterprise software companies",
+    "thought_leadership": "Enterprise software PE investing",
+    "warm_intro_paths": [
+      "Enterprise software CEOs",
+      "PE network",
+      "partner introductions"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — $96B+ AUM, active enterprise software investments"
+  },
+  {
+    "id": "INV-088",
+    "name": "Warburg Pincus",
+    "firm": "Warburg Pincus",
+    "type": "Growth PE",
+    "check_size": "$50M–$500M",
+    "stage_focus": [
+      "Growth",
+      "Late Stage",
+      "PE"
+    ],
+    "ai_focus": [
+      "Tech",
+      "AI",
+      "enterprise",
+      "healthcare",
+      "financial services"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Ant Financial",
+      "Bharti Airtel",
+      "Avalara",
+      "CIENA",
+      "WebMD"
+    ],
+    "decision_speed": "Moderate (global DD)",
+    "communication_style": "Global perspective, growth expertise, long-term partnership",
+    "response_behavior": "High for global-scale AI companies",
+    "thought_leadership": "Global growth investing",
+    "warm_intro_paths": [
+      "Global CEO network",
+      "investment bank connections",
+      "partner introductions"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — $75B+ AUM, active growth investments"
+  },
+  {
+    "id": "INV-089",
+    "name": "Advent International",
+    "firm": "Advent International",
+    "type": "Growth PE",
+    "check_size": "$50M–$500M",
+    "stage_focus": [
+      "Growth",
+      "Late Stage",
+      "PE"
+    ],
+    "ai_focus": [
+      "Tech",
+      "AI",
+      "enterprise",
+      "healthcare",
+      "financial services"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Oliver Wyman",
+      "Worldpay",
+      "Cobham",
+      "Definitive Healthcare",
+      "Nuveen"
+    ],
+    "decision_speed": "Moderate (global DD)",
+    "communication_style": "Global PE expertise, operational improvement, growth-oriented",
+    "response_behavior": "High for global-scale tech companies",
+    "thought_leadership": "Global PE tech investing",
+    "warm_intro_paths": [
+      "Global PE network",
+      "investment bank connections",
+      "CEO introductions"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — $80B+ AUM, active growth investments"
+  },
+  {
+    "id": "INV-090",
+    "name": "Hellman & Friedman",
+    "firm": "Hellman & Friedman",
+    "type": "Growth PE",
+    "check_size": "$100M–$1B+",
+    "stage_focus": [
+      "Growth",
+      "Late Stage",
+      "PE"
+    ],
+    "ai_focus": [
+      "Tech",
+      "enterprise software",
+      "financial services",
+      "AI"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Autodesk",
+      "Verisk",
+      "Nasdaq",
+      "Splunk",
+      "Getty Images"
+    ],
+    "decision_speed": "Slow (mega-deal DD)",
+    "communication_style": "Mega-scale PE, operational expertise, long-term value creation",
+    "response_behavior": "High for mega-scale tech companies",
+    "thought_leadership": "Mega-scale PE investing",
+    "warm_intro_paths": [
+      "Mega-cap CEO network",
+      "investment bank connections",
+      "PE network"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — $80B+ AUM, active mega-deal investments"
+  },
+  {
+    "id": "INV-091",
+    "name": "KKR Tech Growth",
+    "firm": "KKR",
+    "type": "Growth PE / Tech",
+    "check_size": "$50M–$500M",
+    "stage_focus": [
+      "Growth",
+      "Late Stage",
+      "PE"
+    ],
+    "ai_focus": [
+      "Tech growth",
+      "AI",
+      "enterprise software",
+      "infrastructure",
+      "digital transformation"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Epicor",
+      "Exact",
+      "BMC Software",
+      "GoDaddy",
+      "Trainline"
+    ],
+    "decision_speed": "Moderate (institutional DD)",
+    "communication_style": "Institutional PE, tech growth expertise, operational support",
+    "response_behavior": "High for tech companies with PE potential",
+    "thought_leadership": "Tech growth PE investing",
+    "warm_intro_paths": [
+      "PE network",
+      "investment bank connections",
+      "CEO introductions"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active tech growth investments"
+  },
+  {
+    "id": "INV-092",
+    "name": "Bain Capital Tech Growth",
+    "firm": "Bain Capital",
+    "type": "Growth PE / Tech",
+    "check_size": "$50M–$500M",
+    "stage_focus": [
+      "Growth",
+      "Late Stage",
+      "PE"
+    ],
+    "ai_focus": [
+      "Tech growth",
+      "AI",
+      "enterprise software",
+      "healthcare tech",
+      "digital transformation"
+    ],
+    "geography": "US (Global)",
+    "portfolio": [
+      "Dell Technologies",
+      "Canada Goose",
+      "Varsity Brands",
+      "Toshiba"
+    ],
+    "decision_speed": "Moderate (institutional DD)",
+    "communication_style": "Institutional PE, tech growth expertise, operational improvement",
+    "response_behavior": "High for tech companies with growth potential",
+    "thought_leadership": "Tech growth PE investing",
+    "warm_intro_paths": [
+      "PE network",
+      "investment bank connections",
+      "CEO introductions"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active tech growth investments"
+  },
+  {
+    "id": "INV-093",
+    "name": "Battery Ventures",
+    "firm": "Battery Ventures",
+    "type": "Multi-Stage VC",
+    "check_size": "$2M–$30M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Enterprise software",
+      "AI",
+      "SaaS",
+      "developer tools",
+      "infrastructure"
+    ],
+    "geography": "US (Boston, Bay Area)",
+    "portfolio": [
+      "Coinbase",
+      "Groupon",
+      "Wayfair",
+      "Glassdoor",
+      "Sprinklr"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Enterprise software expertise, SaaS focus, operational support",
+    "response_behavior": "High for enterprise AI and SaaS",
+    "thought_leadership": "Enterprise SaaS and AI investing",
+    "warm_intro_paths": [
+      "Enterprise SaaS founders",
+      "developer community",
+      "partner network"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — $10B+ AUM, active enterprise AI investments"
+  },
+  {
+    "id": "INV-094",
+    "name": "A91 Partners",
+    "firm": "A91 Partners",
+    "type": "Growth VC",
+    "check_size": "$10M–$40M",
+    "stage_focus": [
+      "Series B",
+      "Series C",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Enterprise SaaS",
+      "AI",
+      "fintech",
+      "healthcare",
+      "consumer"
+    ],
+    "geography": "India (Bangalore, Mumbai)",
+    "portfolio": [
+      "Digit Insurance",
+      "Atomberg",
+      "InCred",
+      "Mamaearth",
+      "Acko"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "Growth-focused, India consumer/enterprise, operational support",
+    "response_behavior": "High for India growth-stage companies with strong unit economics",
+    "thought_leadership": "India growth-stage investing",
+    "warm_intro_paths": [
+      "India growth founders",
+      "partner network",
+      "portfolio CEO connections"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active India growth investments"
+  },
+  {
+    "id": "INV-095",
+    "name": "Catamaran Ventures",
+    "firm": "Catamaran Ventures",
+    "type": "Growth VC",
+    "check_size": "$5M–$30M",
+    "stage_focus": [
+      "Series A",
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "Enterprise AI",
+      "SaaS",
+      "deep tech",
+      "healthcare",
+      "fintech"
+    ],
+    "geography": "India (Bangalore)",
+    "portfolio": [
+      "Multiple India enterprise cos",
+      "deep tech and healthcare startups"
+    ],
+    "decision_speed": "Moderate",
+    "communication_style": "India enterprise expertise, technology thesis, long-term partnership",
+    "response_behavior": "High for India enterprise technology companies",
+    "thought_leadership": "India enterprise technology investing",
+    "warm_intro_paths": [
+      "India tech founders",
+      "Infosys network (N. R. Narayana Murthy)",
+      "partner connections"
+    ],
+    "reputation_score": 8,
+    "last_activity": "2026-05 — Active India enterprise investments"
+  },
+  {
+    "id": "INV-096",
+    "name": "Sequoia Capital India (now Peak XV)",
+    "firm": "Sequoia Capital India",
+    "type": "Multi-Stage VC",
+    "check_size": "$2M–$50M",
+    "stage_focus": [
+      "Seed",
+      "Series A",
+      "Series B",
+      "Growth"
+    ],
+    "ai_focus": [
+      "SaaS",
+      "AI",
+      "fintech",
+      "healthtech",
+      "consumer",
+      "deeptech"
+    ],
+    "geography": "India + Southeast Asia",
+    "portfolio": [
+      "Byju's",
+      "Razorpay",
+      "Zomato",
+      "OYO",
+      "Freshworks",
+      "Unacademy"
+    ],
+    "decision_speed": "Moderate (thorough India DD)",
+    "communication_style": "India-first, multi-stage expertise, operational partnership",
+    "response_behavior": "High for India/SEA companies with category-creating potential",
+    "thought_leadership": "India/SEA startup ecosystem thought leader",
+    "warm_intro_paths": [
+      "India founder network",
+      "partner introductions",
+      "portfolio CEO connections"
+    ],
+    "reputation_score": 9,
+    "last_activity": "2026-05 — Active India/SEA multi-stage investments"
+  },
+  {
+    "id": "INV-097",
+    "name": "Inflection Point Ventures",
+    "firm": "Inflection Point Ventures",
+    "type": "Angel Network / Seed",
+    "check_size": "$100K–$2M",
+    "stage_focus": [
+      "Pre-Seed",
+      "Seed"
+    ],
+    "ai_focus": [
+      "AI",
+      "SaaS",
+      "healthtech",
+      "fintech",
+      "consumer"
+    ],
+    "geography": "India (Delhi, Bangalore)",
+    "portfolio": [
+      "Multiple India seed cos",
+      "AI and SaaS startups"
+    ],
+    "decision_speed": "Fast (angel network model)",
+    "communication_style": "Angel network, India seed ecosystem, founder community",
+    "response_behavior": "High for India seed-stage founders with strong domain expertise",
+    "thought_leadership": "India angel investing ecosystem",
+    "warm_intro_paths": [
+      "India angel network",
+      "CXO community",
+      "startup events"
+    ],
+    "reputation_score": 6,
+    "last_activity": "2026-05 — Active India angel investments"
+  },
+  {
+    "id": "INV-098",
+    "name": "Saison Capital",
+    "firm": "Saison Capital",
+    "type": "Early-Stage VC",
+    "check_size": "$500K–$5M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "Fintech",
+      "AI",
+      "SaaS",
+      "consumer",
+      "logistics"
+    ],
+    "geography": "Singapore (SEA, India)",
+    "portfolio": [
+      "Multiple SEA fintech cos",
+      "AI startups in SEA"
+    ],
+    "decision_speed": "Fast",
+    "communication_style": "Fintech-first, SEA expertise, Credit Saison ecosystem",
+    "response_behavior": "High for SEA fintech and AI with financial services angle",
+    "thought_leadership": "SEA fintech investing",
+    "warm_intro_paths": [
+      "Credit Saison network",
+      "SEA fintech founders",
+      "Singapore tech community"
+    ],
+    "reputation_score": 6,
+    "last_activity": "2026-05 — Active SEA fintech/AI investments"
+  },
+  {
+    "id": "INV-099",
+    "name": "Antler",
+    "firm": "Antler",
+    "type": "Accelerator / Pre-Seed",
+    "check_size": "$100K–$500K",
+    "stage_focus": [
+      "Pre-Seed",
+      "Seed"
+    ],
+    "ai_focus": [
+      "AI",
+      "SaaS",
+      "fintech",
+      "healthtech",
+      "consumer",
+      "deep tech"
+    ],
+    "geography": "Global (Singapore HQ, 20+ cities)",
+    "portfolio": [
+      "300+ portfolio companies globally",
+      "multiple AI cos"
+    ],
+    "decision_speed": "Fast (program cycles)",
+    "communication_style": "Global accelerator, founder-first, portfolio community",
+    "response_behavior": "High for pre-seed founders with strong backgrounds",
+    "thought_leadership": "Global pre-seed ecosystem",
+    "warm_intro_paths": [
+      "Antler alumni network",
+      "global founder community",
+      "partner connections"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active global pre-seed/seed investments"
+  },
+  {
+    "id": "INV-100",
+    "name": " BEENEXT",
+    "firm": "BEENEXT",
+    "type": "Early-Stage VC",
+    "check_size": "$1M–$10M",
+    "stage_focus": [
+      "Seed",
+      "Series A"
+    ],
+    "ai_focus": [
+      "SaaS",
+      "AI",
+      "fintech",
+      "healthcare",
+      "consumer",
+      "enterprise"
+    ],
+    "geography": "Singapore (SEA, India, Japan)",
+    "portfolio": [
+      "Multiple SEA and India cos",
+      "SaaS and fintech startups"
+    ],
+    "decision_speed": "Fast",
+    "communication_style": "Multi-market perspective, SEA-India-Japan bridge, founder-friendly",
+    "response_behavior": "High for SEA/India early-stage companies with cross-border potential",
+    "thought_leadership": "Multi-market early-stage investing (SEA-India-Japan)",
+    "warm_intro_paths": [
+      "SEA-India-Japan founder network",
+      "BEENEXT portfolio community",
+      "partner connections"
+    ],
+    "reputation_score": 7,
+    "last_activity": "2026-05 — Active early-stage investments across SEA, India, Japan"
+  }
 ]
