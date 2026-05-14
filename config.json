@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-05-14",
+  "criteria": {
+    "industry_alignment": { "weight": 0.15, "description": "AI sub-sector match (infra, agents, vertical, foundation models)" },
+    "stage_compatibility": { "weight": 0.12, "description": "Investor check size vs founder raise stage" },
+    "geography_preference": { "weight": 0.05, "description": "Geographic focus alignment" },
+    "founder_track_record": { "weight": 0.12, "description": "Previous exits, big-tech pedigree, academic credentials" },
+    "startup_traction": { "weight": 0.10, "description": "Revenue, users, pilots, partnerships" },
+    "growth_velocity": { "weight": 0.08, "description": "Speed of team/product/market development" },
+    "brand_positioning": { "weight": 0.05, "description": "Media presence, thought leadership, social proof" },
+    "communication_style": { "weight": 0.05, "description": "Founder-investor communication compatibility" },
+    "social_proof": { "weight": 0.05, "description": "Endorsements, angel co-investors, advisor quality" },
+    "investor_response_behavior": { "weight": 0.05, "description": "Historical response rate, decision speed" },
+    "portfolio_similarity": { "weight": 0.05, "description": "Overlap with investor's existing portfolio themes" },
+    "reputation_score": { "weight": 0.05, "description": "Industry reputation, thought leadership" },
+    "relationship_proximity": { "weight": 0.05, "description": "Mutual connections, warm intro pathways" },
+    "conversion_likelihood": { "weight": 0.03, "description": "Probability of meeting acceptance and investment" }
+  },
+  "scoring": {
+    "90-100": "Exceptional match — immediate outreach recommended",
+    "80-89": "Strong match — high priority outreach",
+    "70-79": "Good match — worth pursuing with warm intro",
+    "60-69": "Moderate match — consider after higher-priority targets",
+    "below_60": "Low priority — monitor for changes"
+  }
+}
