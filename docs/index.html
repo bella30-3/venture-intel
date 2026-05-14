@@ -1,70 +1,50 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>🤖 AI Venture Intel</title>
-
-<!-- Google Font: VT323 for geeky mode -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=VT323&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-
 <style>
-/* ── BASE ── */
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;transition:all .3s}
 
-/* ── DARK THEME (default) ── */
-:root, [data-theme="dark"] {
-  --bg:#0a0a0f; --bg2:#0d0d14; --card:#12121a; --border:#1e1e2e;
-  --accent:#6366f1; --accent2:#8b5cf6; --text:#e2e8f0; --muted:#64748b; --dim:#334155;
-  --bar-bg:#1e1e2e; --header-bg:linear-gradient(135deg,#0f0f1a,#1a1033);
-  --btn-bg:#12121a; --btn-border:#1e1e2e; --btn-active-bg:#6366f1; --btn-active-text:#fff;
-  --input-bg:#12121a; --input-border:#1e1e2e;
-  --badge-hot-bg:rgba(239,68,68,.15); --badge-hot-color:#ef4444;
-  --badge-warm-bg:rgba(234,179,8,.15); --badge-warm-color:#eab308;
-  --badge-good-bg:rgba(34,197,94,.15); --badge-good-color:#22c55e;
-  --email-bg:#0a0a12; --footer-color:#334155;
+:root,[data-theme="dark"]{
+  --bg:#0a0a0f;--bg2:#0d0d14;--card:#12121a;--border:#1e1e2e;
+  --accent:#6366f1;--accent2:#8b5cf6;--text:#e2e8f0;--muted:#64748b;--dim:#334155;
+  --bar-bg:#1e1e2e;--header-bg:linear-gradient(135deg,#0f0f1a,#1a1033);
+  --btn-bg:#12121a;--btn-border:#1e1e2e;--btn-active-bg:#6366f1;--btn-active-text:#fff;
+  --input-bg:#12121a;--input-border:#1e1e2e;
+  --badge-hot-bg:rgba(239,68,68,.15);--badge-hot-color:#ef4444;
+  --badge-warm-bg:rgba(234,179,8,.15);--badge-warm-color:#eab308;
+  --badge-good-bg:rgba(34,197,94,.15);--badge-good-color:#22c55e;
+  --email-bg:#0a0a12;--footer-color:#334155;--save-color:#fbbf24;
 }
 
-/* ── GEEKY THEME ── */
-[data-theme="geeky"] {
-  --bg:#000000; --bg2:#001100; --card:#001a00; --border:#00ff4133;
-  --accent:#00ff41; --accent2:#39ff14; --text:#00ff41; --muted:#00aa2a; --dim:#005500;
-  --bar-bg:#003300; --header-bg:linear-gradient(135deg,#000000,#001a00);
-  --btn-bg:#001a00; --btn-border:#00ff4133; --btn-active-bg:#00ff41; --btn-active-text:#000;
-  --input-bg:#001a00; --input-border:#00ff4133;
-  --badge-hot-bg:rgba(255,0,0,.2); --badge-hot-color:#ff0040;
-  --badge-warm-bg:rgba(255,255,0,.15); --badge-warm-color:#ffff00;
-  --badge-good-bg:rgba(0,255,65,.15); --badge-good-color:#00ff41;
-  --email-bg:#000a00; --footer-color:#005500;
+[data-theme="geeky"]{
+  --bg:#000;--bg2:#001100;--card:#001a00;--border:#00ff4133;
+  --accent:#00ff41;--accent2:#39ff14;--text:#00ff41;--muted:#00aa2a;--dim:#005500;
+  --bar-bg:#003300;--header-bg:linear-gradient(135deg,#000,#001a00);
+  --btn-bg:#001a00;--btn-border:#00ff4133;--btn-active-bg:#00ff41;--btn-active-text:#000;
+  --input-bg:#001a00;--input-border:#00ff4133;
+  --badge-hot-bg:rgba(255,0,0,.2);--badge-hot-color:#ff0040;
+  --badge-warm-bg:rgba(255,255,0,.15);--badge-warm-color:#ffff00;
+  --badge-good-bg:rgba(0,255,65,.15);--badge-good-color:#00ff41;
+  --email-bg:#000a00;--footer-color:#005500;--save-color:#ffff00;
   font-family:'VT323',monospace!important;
 }
+[data-theme="geeky"] body,[data-theme="geeky"] *{font-family:'VT323',monospace!important}
+[data-theme="geeky"] .match-card{border:1px solid #00ff4133;text-shadow:0 0 5px #00ff4133}
+[data-theme="geeky"] .match-card:hover{border-color:#00ff41;box-shadow:0 0 15px #00ff4122}
+[data-theme="geeky"] .match-name{text-shadow:0 0 10px #00ff4155}
+[data-theme="geeky"] .match-score{text-shadow:0 0 15px currentColor;font-size:28px!important}
+[data-theme="geeky"] .stat-num{text-shadow:0 0 10px var(--accent)}
+[data-theme="geeky"] .logo{background:linear-gradient(135deg,#00ff41,#39ff14);-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-shadow:none;animation:glitch 2s infinite}
+[data-theme="geeky"] .email-draft{border:1px solid #00ff4133;background:#000a00}
+[data-theme="geeky"] .match-card{text-shadow:none}
+[data-theme="geeky"] .badge{border:1px solid currentColor}
+[data-theme="geeky"] .details{background:#000a00}
+[data-theme="geeky"] .save-btn{color:var(--save-color);text-shadow:0 0 10px var(--save-color)}
+@keyframes glitch{0%,100%{transform:translate(0)}20%{transform:translate(-2px,2px)}40%{transform:translate(2px,-2px)}60%{transform:translate(-1px,1px)}80%{transform:translate(1px,-1px)}}
 
-[data-theme="geeky"] body,
-[data-theme="geeky"] * { font-family:'VT323',monospace!important; }
-
-[data-theme="geeky"] .match-card { border:1px solid #00ff4133; text-shadow:0 0 5px #00ff4133; }
-[data-theme="geeky"] .match-card:hover { border-color:#00ff41; box-shadow:0 0 15px #00ff4122; }
-[data-theme="geeky"] .match-name { text-shadow:0 0 10px #00ff4155; }
-[data-theme="geeky"] .match-score { text-shadow:0 0 15px currentColor; font-size:28px!important; }
-[data-theme="geeky"] .stat-num { text-shadow:0 0 10px var(--accent); }
-[data-theme="geeky"] .logo { 
-  background:linear-gradient(135deg,#00ff41,#39ff14);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
-  text-shadow:none; animation:glitch 2s infinite;
-}
-[data-theme="geeky"] .email-draft { border:1px solid #00ff4133; background:#000a00; }
-[data-theme="geeky"] .score-row:hover { background:#00ff4111; }
-[data-theme="geeky"] .badge { border:1px solid currentColor; }
-[data-theme="geeky"] .details { background:#000a00; }
-
-@keyframes glitch {
-  0%,100%{transform:translate(0)}
-  20%{transform:translate(-2px,2px)}
-  40%{transform:translate(2px,-2px)}
-  60%{transform:translate(-1px,1px)}
-  80%{transform:translate(1px,-1px)}
-}
-
-/* ── COMPONENTS ── */
 .header{background:var(--header-bg);border-bottom:1px solid var(--border);padding:20px 0}
 .header-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .logo{font-size:22px;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -76,8 +56,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
 .btn{padding:7px 14px;border-radius:8px;border:1px solid var(--btn-border);background:var(--btn-bg);color:var(--text);cursor:pointer;font-size:12px;font-weight:600;transition:all .15s}
 .btn:hover{border-color:var(--accent)}
 .btn.active{background:var(--btn-active-bg);border-color:var(--btn-active-bg);color:var(--btn-active-text)}
-.btn-theme{position:relative;overflow:hidden}
-.btn-theme.geeky-active{animation:glitch 3s infinite}
+.btn-theme{position:relative}
+[data-theme="geeky"] .btn-theme:last-of-type{animation:glitch 3s infinite}
 input,select{padding:7px 12px;border-radius:8px;border:1px solid var(--input-border);background:var(--input-bg);color:var(--text);cursor:pointer;font-size:12px;outline:none}
 input:focus,select:focus{border-color:var(--accent)}
 input::placeholder{color:var(--dim)}
@@ -85,11 +65,15 @@ input::placeholder{color:var(--dim)}
 
 .match-card{background:var(--card);border:1px solid var(--border);border-radius:12px;margin-bottom:12px;overflow:hidden;transition:all .2s}
 .match-card:hover{border-color:var(--accent)}
+.match-card.saved{border-left:3px solid var(--save-color)}
 .match-header{display:flex;justify-content:space-between;align-items:center;padding:16px 20px;cursor:pointer}
 .match-rank{font-size:13px;font-weight:700;color:var(--accent);min-width:35px}
 .match-title{flex:1}.match-name{font-size:15px;font-weight:600}.match-sub{color:var(--muted);font-size:12px;margin-top:3px}
 .match-meta{display:flex;align-items:center;gap:10px}
 .match-score{font-size:24px;font-weight:700;min-width:45px;text-align:right}
+.save-btn{background:none;border:none;font-size:20px;cursor:pointer;color:var(--dim);transition:all .2s;padding:4px}
+.save-btn:hover{transform:scale(1.2)}
+.save-btn.saved{color:var(--save-color);text-shadow:0 0 8px var(--save-color)}
 .badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600}
 .badge-hot{background:var(--badge-hot-bg);color:var(--badge-hot-color)}
 .badge-warm{background:var(--badge-warm-bg);color:var(--badge-warm-color)}
@@ -108,42 +92,41 @@ input::placeholder{color:var(--dim)}
 .email-draft{background:var(--email-bg);border:1px solid var(--border);border-radius:8px;padding:14px;font-size:12px;line-height:1.6;color:var(--muted);white-space:pre-wrap;font-family:'JetBrains Mono',monospace;max-height:180px;overflow-y:auto}
 .footer{text-align:center;padding:20px;color:var(--footer-color);font-size:11px;border-top:1px solid var(--border)}
 .page-title{font-size:16px;font-weight:600;margin-bottom:16px}
-
+.saved-count{position:absolute;top:-6px;right:-6px;background:var(--save-color);color:#000;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.refresh-badge{display:inline-block;padding:3px 8px;border-radius:6px;background:rgba(34,197,94,.15);color:#22c55e;font-size:10px;font-weight:600;margin-left:8px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
 @media(max-width:768px){.details-grid,.scores-grid{grid-template-columns:1fr}.header-inner{flex-direction:column;gap:12px}.controls{flex-direction:column}}
-</style>
-</head><body>
+</style></head><body>
 
 <div class="header">
 <div class="header-inner">
 <div>
 <div class="logo">🤖 AI Venture Intelligence</div>
-<div class="subtitle">Many-to-Many · 42 founders · 35 investors · 1470 pairs · 2026-05-14 16:27 UTC</div>
+<div class="subtitle">Many-to-Many · 42 founders · 35 investors · 1470 pairs · Last updated: 2026-05-14 16:31 UTC <span class="refresh-badge">🔄 Auto-refreshes every 48h</span></div>
 </div>
 <div class="stats">
 <div class="stat"><div class="stat-num">30</div><div class="stat-label">Matches</div></div>
 <div class="stat"><div class="stat-num">4</div><div class="stat-label">🔥 Hot</div></div>
 <div class="stat"><div class="stat-num">26</div><div class="stat-label">⚡ Warm</div></div>
 <div class="stat"><div class="stat-num">74</div><div class="stat-label">Avg</div></div>
-</div>
-</div>
-</div>
+</div></div></div>
 
 <div class="controls">
-<button class="btn btn-theme" id="btn-dark" onclick="setTheme('dark')" title="Clean dark theme">🌙 Dark</button>
-<button class="btn btn-theme" id="btn-geeky" onclick="setTheme('geeky')" title="Retro terminal hacker theme">👾 Geeky</button>
+<button class="btn btn-theme" id="btn-dark" onclick="setTheme('dark')">🌙 Dark</button>
+<button class="btn btn-theme" id="btn-geeky" onclick="setTheme('geeky')">👾 Geeky</button>
 
-<button class="btn" id="btn-all" onclick="setView('all')">All Matches</button>
-<button class="btn" id="btn-founder" onclick="setView('by-founder')">By Founder</button>
-<button class="btn" id="btn-investor" onclick="setView('by-investor')">By Investor</button>
+<button class="btn" id="btn-all" onclick="window.location.href='/'">All Matches</button>
+<button class="btn" id="btn-founder" onclick="showSelect('founder')">By Founder</button>
+<button class="btn" id="btn-investor" onclick="showSelect('investor')">By Investor</button>
+<button class="btn" id="btn-saved" onclick="filterSaved()" style="position:relative">⭐ Saved <span class="saved-count" id="saved-count" style="display:none">0</span></button>
 
 <select id="entity-select" onchange="goToEntity()" style="display:none;min-width:250px">
 <option value="">Select...</option>
-<optgroup label="Founders"><option value="FOU-040" >Adept AI (Founders)</option><option value="FOU-041" >AssemblyAI (Founders)</option><option value="FOU-013" >Caseflood.ai (Founders)</option><option value="FOU-030" >Casimir (Founders)</option><option value="FOU-018" >Cervo AI (Founders)</option><option value="FOU-038" >Character.ai (Founders)</option><option value="FOU-017" >Charta Health (Founders)</option><option value="FOU-004" >CopilotKit (Founders)</option><option value="FOU-011" >Counsel Health (Founders)</option><option value="FOU-010" >Elastics (Mati Staniszewski & )</option><option value="FOU-034" >Elliptic (Founders)</option><option value="FOU-023" >Exaforce (Founders)</option><option value="FOU-037" >Glean (Founders)</option><option value="FOU-025" >Greenboard (Founders)</option><option value="FOU-036" >Harvey AI (Founders)</option><option value="FOU-027" >Havoc (Founders)</option><option value="FOU-016" >Hyprnote (YC S25) (Founders)</option><option value="FOU-024" >Isomorphic Labs (Founders)</option><option value="FOU-021" >Judgment Labs (Alex Shan, Andrew Li)</option><option value="FOU-015" >Julius AI (Founders)</option><option value="FOU-029" >Knit Health (Founders)</option><option value="FOU-009" >Krane (Founders)</option><option value="FOU-031" >Lambda (Founders)</option><option value="FOU-007" >Marloo (Founders)</option><option value="FOU-012" >Metaforms (Founders)</option><option value="FOU-042" >Mistral AI (Founders)</option><option value="FOU-033" >Moonshot AI (Founders)</option><option value="FOU-001" >NeoCognition (Yu Su)</option><option value="FOU-002" >Parallel (Founders (ex-Paralle)</option><option value="FOU-006" >Performativ (Founders)</option><option value="FOU-020" >Questflow (Founders)</option><option value="FOU-032" >ROBOTERA (Founders)</option><option value="FOU-008" >RadixArk (Founders)</option><option value="FOU-022" >RunSybil (Founders)</option><option value="FOU-014" >Runloop AI (Founders)</option><option value="FOU-003" >SageOx (Founders (Amazon & A)</option><option value="FOU-039" >Scale AI (Founders)</option><option value="FOU-005" >Scout AI (Founders)</option><option value="FOU-028" >Star Catcher Industries (Founders)</option><option value="FOU-035" >Together AI (Founders)</option><option value="FOU-026" >Vapi (Founders)</option><option value="FOU-019" >Volca (Founders)</option></optgroup><optgroup label="Investors"><option value="INV-031" >AIX Ventures</option><option value="INV-005" >Accel</option><option value="INV-015" >Andreessen Horowitz</option><option value="INV-012" >Angel / Ex-Google, Twitter</option><option value="INV-011" >Angel / Greylock</option><option value="INV-033" >Base10 Partners</option><option value="INV-006" >Benchmark</option><option value="INV-027" >Bessemer Venture Partners</option><option value="INV-019" >Coatue Management</option><option value="INV-001" >Conviction</option><option value="INV-024" >DCVC</option><option value="INV-010" >Felicis Ventures</option><option value="INV-008" >First Round Capital</option><option value="INV-018" >Founders Fund</option><option value="INV-021" >GV</option><option value="INV-002" >General Catalyst</option><option value="INV-023" >Gradient Ventures</option><option value="INV-020" >Greylock Partners</option><option value="INV-026" >Index Ventures</option><option value="INV-022" >Insight Partners</option><option value="INV-016" >Khosla Ventures</option><option value="INV-007" >Kleiner Perkins</option><option value="INV-004" >Lightspeed Venture Partners</option><option value="INV-009" >Menlo Ventures</option><option value="INV-028" >NEA</option><option value="INV-003" >NFX</option><option value="INV-032" >Peak XV Partners</option><option value="INV-029" >Sapphire Ventures</option><option value="INV-035" >Scout Ventures</option><option value="INV-014" >Sequoia Capital</option><option value="INV-025" >Spark Capital</option><option value="INV-034" >Temasek</option><option value="INV-017" >Thrive Capital</option><option value="INV-030" >Wing Venture Capital</option><option value="INV-013" >Y Combinator</option></optgroup>
+<optgroup label="Founders"><option value="FOU-040" >Adept AI (Founders)</option><option value="FOU-041" >AssemblyAI (Founders)</option><option value="FOU-013" >Caseflood.ai (Founders)</option><option value="FOU-030" >Casimir (Founders)</option><option value="FOU-018" >Cervo AI (Founders)</option><option value="FOU-038" >Character.ai (Founders)</option><option value="FOU-017" >Charta Health (Founders)</option><option value="FOU-004" >CopilotKit (Founders)</option><option value="FOU-011" >Counsel Health (Founders)</option><option value="FOU-010" >Elastics (Mati Staniszewski & )</option><option value="FOU-034" >Elliptic (Founders)</option><option value="FOU-023" >Exaforce (Founders)</option><option value="FOU-037" >Glean (Founders)</option><option value="FOU-025" >Greenboard (Founders)</option><option value="FOU-036" >Harvey AI (Founders)</option><option value="FOU-027" >Havoc (Founders)</option><option value="FOU-016" >Hyprnote (YC S25) (Founders)</option><option value="FOU-024" >Isomorphic Labs (Founders)</option><option value="FOU-021" >Judgment Labs (Alex Shan, Andrew Li)</option><option value="FOU-015" >Julius AI (Founders)</option><option value="FOU-029" >Knit Health (Founders)</option><option value="FOU-009" >Krane (Founders)</option><option value="FOU-031" >Lambda (Founders)</option><option value="FOU-007" >Marloo (Founders)</option><option value="FOU-012" >Metaforms (Founders)</option><option value="FOU-042" >Mistral AI (Founders)</option><option value="FOU-033" >Moonshot AI (Founders)</option><option value="FOU-001" >NeoCognition (Yu Su)</option><option value="FOU-002" >Parallel (Founders (ex-Paralle)</option><option value="FOU-006" >Performativ (Founders)</option><option value="FOU-020" >Questflow (Founders)</option><option value="FOU-032" >ROBOTERA (Founders)</option><option value="FOU-008" >RadixArk (Founders)</option><option value="FOU-022" >RunSybil (Founders)</option><option value="FOU-014" >Runloop AI (Founders)</option><option value="FOU-003" >SageOx (Founders (Amazon & A)</option><option value="FOU-039" >Scale AI (Founders)</option><option value="FOU-005" >Scout AI (Founders)</option><option value="FOU-028" >Star Catcher Industries (Founders)</option><option value="FOU-035" >Together AI (Founders)</option><option value="FOU-026" >Vapi (Founders)</option><option value="FOU-019" >Volca (Founders)</option></optgroup>
+<optgroup label="Investors"><option value="INV-031" >AIX Ventures</option><option value="INV-005" >Accel</option><option value="INV-015" >Andreessen Horowitz</option><option value="INV-012" >Angel / Ex-Google, Twitter</option><option value="INV-011" >Angel / Greylock</option><option value="INV-033" >Base10 Partners</option><option value="INV-006" >Benchmark</option><option value="INV-027" >Bessemer Venture Partners</option><option value="INV-019" >Coatue Management</option><option value="INV-001" >Conviction</option><option value="INV-024" >DCVC</option><option value="INV-010" >Felicis Ventures</option><option value="INV-008" >First Round Capital</option><option value="INV-018" >Founders Fund</option><option value="INV-021" >GV</option><option value="INV-002" >General Catalyst</option><option value="INV-023" >Gradient Ventures</option><option value="INV-020" >Greylock Partners</option><option value="INV-026" >Index Ventures</option><option value="INV-022" >Insight Partners</option><option value="INV-016" >Khosla Ventures</option><option value="INV-007" >Kleiner Perkins</option><option value="INV-004" >Lightspeed Venture Partners</option><option value="INV-009" >Menlo Ventures</option><option value="INV-028" >NEA</option><option value="INV-003" >NFX</option><option value="INV-032" >Peak XV Partners</option><option value="INV-029" >Sapphire Ventures</option><option value="INV-035" >Scout Ventures</option><option value="INV-014" >Sequoia Capital</option><option value="INV-025" >Spark Capital</option><option value="INV-034" >Temasek</option><option value="INV-017" >Thrive Capital</option><option value="INV-030" >Wing Venture Capital</option><option value="INV-013" >Y Combinator</option></optgroup>
 </select>
 
-<select id="country-filter" onchange="filterCountry()">
-<option value="all">All Countries</option><option value="Europe">Europe</option><option value="Singapore">Singapore</option><option value="UK">UK</option><option value="US">US</option>
-</select>
+<select id="country-filter" onchange="filterCountry()"><option value="all">🌍 All Countries</option><option value="Europe">Europe</option><option value="France">France</option><option value="Poland">Poland</option><option value="Singapore">Singapore</option><option value="UK">UK</option><option value="US">US</option></select>
 
 <input type="text" id="search" class="search-box" placeholder="🔍 Search investors, founders, companies...">
 <select id="sort" onchange="sortCards()">
@@ -155,9 +138,9 @@ input::placeholder{color:var(--dim)}
 </div>
 
 <div style="max-width:1200px;margin:0 auto;padding:16px 24px 40px">
-<div class="page-title">Top 30 Matches</div>
+<div class="page-title" id="page-title">Top 30 Matches</div>
 <div id="matches">
-<div class="match-card" data-score="76.7" data-investor="Andreessen Horowitz" data-founder="Parallel" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="76.7" data-investor="Andreessen Horowitz" data-founder="Parallel" data-fcountry="US" data-icountry="US" data-uid="FOU-002__INV-015">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#1</div>
     <div class="match-title">
@@ -165,6 +148,7 @@ input::placeholder{color:var(--dim)}
       <div class="match-sub">Founders (ex-Parallel team) · Series A ($230M total, $2B valuation) · Web-search infrastructure for AI agents</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-002__INV-015',this)" title="Save this match">☆</button>
       <span class="badge badge-hot">🔥 HOT</span>
       <div class="match-score" style="color:#22c55e">77</div>
     </div>
@@ -216,7 +200,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="76.2" data-investor="General Catalyst" data-founder="Parallel" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="76.2" data-investor="General Catalyst" data-founder="Parallel" data-fcountry="US" data-icountry="US" data-uid="FOU-002__INV-002">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#2</div>
     <div class="match-title">
@@ -224,6 +208,7 @@ Best,
       <div class="match-sub">Founders (ex-Parallel team) · Series A ($230M total, $2B valuation) · Web-search infrastructure for AI agents</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-002__INV-002',this)" title="Save this match">☆</button>
       <span class="badge badge-hot">🔥 HOT</span>
       <div class="match-score" style="color:#22c55e">76</div>
     </div>
@@ -275,7 +260,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="75.9" data-investor="Sapphire Ventures" data-founder="Scale AI" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="75.9" data-investor="Sapphire Ventures" data-founder="Scale AI" data-fcountry="US" data-icountry="US" data-uid="FOU-039__INV-029">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#3</div>
     <div class="match-title">
@@ -283,6 +268,7 @@ Best,
       <div class="match-sub">Founders · Growth · AI data labeling and infrastructure platform</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-039__INV-029',this)" title="Save this match">☆</button>
       <span class="badge badge-hot">🔥 HOT</span>
       <div class="match-score" style="color:#22c55e">76</div>
     </div>
@@ -334,7 +320,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="75.4" data-investor="Coatue Management" data-founder="Scale AI" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="75.4" data-investor="Coatue Management" data-founder="Scale AI" data-fcountry="US" data-icountry="US" data-uid="FOU-039__INV-019">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#4</div>
     <div class="match-title">
@@ -342,6 +328,7 @@ Best,
       <div class="match-sub">Founders · Growth · AI data labeling and infrastructure platform</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-039__INV-019',this)" title="Save this match">☆</button>
       <span class="badge badge-hot">🔥 HOT</span>
       <div class="match-score" style="color:#22c55e">75</div>
     </div>
@@ -393,7 +380,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="74.5" data-investor="Andreessen Horowitz" data-founder="Judgment Labs" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="74.5" data-investor="Andreessen Horowitz" data-founder="Judgment Labs" data-fcountry="US" data-icountry="US" data-uid="FOU-021__INV-015">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#5</div>
     <div class="match-title">
@@ -401,6 +388,7 @@ Best,
       <div class="match-sub">Alex Shan, Andrew Li, Joseph Camyre · Seed & Series A ($32M) · AI agent improvement infrastructure</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-021__INV-015',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">74</div>
     </div>
@@ -452,7 +440,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="74.4" data-investor="Sapphire Ventures" data-founder="Glean" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="74.4" data-investor="Sapphire Ventures" data-founder="Glean" data-fcountry="US" data-icountry="US" data-uid="FOU-037__INV-029">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#6</div>
     <div class="match-title">
@@ -460,6 +448,7 @@ Best,
       <div class="match-sub">Founders · Series C · AI-powered enterprise search and knowledge management</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-037__INV-029',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">74</div>
     </div>
@@ -511,7 +500,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="74.2" data-investor="General Catalyst" data-founder="NeoCognition" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="74.2" data-investor="General Catalyst" data-founder="NeoCognition" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-002">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#7</div>
     <div class="match-title">
@@ -519,6 +508,7 @@ Best,
       <div class="match-sub">Yu Su · Seed ($40M) · Self-learning AI agents for enterprise</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-001__INV-002',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">74</div>
     </div>
@@ -570,7 +560,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="74.2" data-investor="Andreessen Horowitz" data-founder="Together AI" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="74.2" data-investor="Andreessen Horowitz" data-founder="Together AI" data-fcountry="US" data-icountry="US" data-uid="FOU-035__INV-015">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#8</div>
     <div class="match-title">
@@ -578,6 +568,7 @@ Best,
       <div class="match-sub">Founders · Series A · AI infrastructure — open-source model training and inference</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-035__INV-015',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">74</div>
     </div>
@@ -629,7 +620,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.9" data-investor="Andreessen Horowitz" data-founder="CopilotKit" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.9" data-investor="Andreessen Horowitz" data-founder="CopilotKit" data-fcountry="US" data-icountry="US" data-uid="FOU-004__INV-015">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#9</div>
     <div class="match-title">
@@ -637,6 +628,7 @@ Best,
       <div class="match-sub">Founders · Series A ($27M) · AI agent protocol — open-source framework</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-004__INV-015',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">74</div>
     </div>
@@ -688,7 +680,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.9" data-investor="Conviction" data-founder="Together AI" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.9" data-investor="Conviction" data-founder="Together AI" data-fcountry="US" data-icountry="US" data-uid="FOU-035__INV-001">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#10</div>
     <div class="match-title">
@@ -696,6 +688,7 @@ Best,
       <div class="match-sub">Founders · Series A · AI infrastructure — open-source model training and inference</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-035__INV-001',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">74</div>
     </div>
@@ -747,7 +740,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.9" data-investor="Lightspeed Venture Partners" data-founder="Together AI" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.9" data-investor="Lightspeed Venture Partners" data-founder="Together AI" data-fcountry="US" data-icountry="US" data-uid="FOU-035__INV-004">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#11</div>
     <div class="match-title">
@@ -755,6 +748,7 @@ Best,
       <div class="match-sub">Founders · Series A · AI infrastructure — open-source model training and inference</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-035__INV-004',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">74</div>
     </div>
@@ -806,7 +800,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.8" data-investor="Angel / Ex-Google, Twitter" data-founder="Together AI" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.8" data-investor="Angel / Ex-Google, Twitter" data-founder="Together AI" data-fcountry="US" data-icountry="US" data-uid="FOU-035__INV-012">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#12</div>
     <div class="match-title">
@@ -814,6 +808,7 @@ Best,
       <div class="match-sub">Founders · Series A · AI infrastructure — open-source model training and inference</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-035__INV-012',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">74</div>
     </div>
@@ -865,7 +860,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.7" data-investor="Angel / Ex-Google, Twitter" data-founder="Parallel" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.7" data-investor="Angel / Ex-Google, Twitter" data-founder="Parallel" data-fcountry="US" data-icountry="US" data-uid="FOU-002__INV-012">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#13</div>
     <div class="match-title">
@@ -873,6 +868,7 @@ Best,
       <div class="match-sub">Founders (ex-Parallel team) · Series A ($230M total, $2B valuation) · Web-search infrastructure for AI agents</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-002__INV-012',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">74</div>
     </div>
@@ -924,7 +920,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.4" data-investor="Sequoia Capital" data-founder="Together AI" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.4" data-investor="Sequoia Capital" data-founder="Together AI" data-fcountry="US" data-icountry="US" data-uid="FOU-035__INV-014">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#14</div>
     <div class="match-title">
@@ -932,6 +928,7 @@ Best,
       <div class="match-sub">Founders · Series A · AI infrastructure — open-source model training and inference</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-035__INV-014',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -983,7 +980,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.3" data-investor="Angel / Ex-Google, Twitter" data-founder="NeoCognition" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.3" data-investor="Angel / Ex-Google, Twitter" data-founder="NeoCognition" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-012">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#15</div>
     <div class="match-title">
@@ -991,6 +988,7 @@ Best,
       <div class="match-sub">Yu Su · Seed ($40M) · Self-learning AI agents for enterprise</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-001__INV-012',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1042,7 +1040,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.3" data-investor="Sequoia Capital" data-founder="Parallel" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.3" data-investor="Sequoia Capital" data-founder="Parallel" data-fcountry="US" data-icountry="US" data-uid="FOU-002__INV-014">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#16</div>
     <div class="match-title">
@@ -1050,6 +1048,7 @@ Best,
       <div class="match-sub">Founders (ex-Parallel team) · Series A ($230M total, $2B valuation) · Web-search infrastructure for AI agents</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-002__INV-014',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1101,7 +1100,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.3" data-investor="Sequoia Capital" data-founder="Mistral AI" data-fcountry="Europe" data-icountry="US">
+<div class="match-card" data-score="73.3" data-investor="Sequoia Capital" data-founder="Mistral AI" data-fcountry="France" data-icountry="US" data-uid="FOU-042__INV-014">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#17</div>
     <div class="match-title">
@@ -1109,6 +1108,7 @@ Best,
       <div class="match-sub">Founders · Series B · Open-source foundation models — European AI</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-042__INV-014',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1160,7 +1160,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.2" data-investor="Y Combinator" data-founder="NeoCognition" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.2" data-investor="Y Combinator" data-founder="NeoCognition" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-013">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#18</div>
     <div class="match-title">
@@ -1168,6 +1168,7 @@ Best,
       <div class="match-sub">Yu Su · Seed ($40M) · Self-learning AI agents for enterprise</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-001__INV-013',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1219,7 +1220,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.2" data-investor="Base10 Partners" data-founder="Greenboard" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.2" data-investor="Base10 Partners" data-founder="Greenboard" data-fcountry="US" data-icountry="US" data-uid="FOU-025__INV-033">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#19</div>
     <div class="match-title">
@@ -1227,6 +1228,7 @@ Best,
       <div class="match-sub">Founders · Series A ($20M) · AI-powered securities compliance automation</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-025__INV-033',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1278,7 +1280,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.1" data-investor="Conviction" data-founder="Parallel" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.1" data-investor="Conviction" data-founder="Parallel" data-fcountry="US" data-icountry="US" data-uid="FOU-002__INV-001">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#20</div>
     <div class="match-title">
@@ -1286,6 +1288,7 @@ Best,
       <div class="match-sub">Founders (ex-Parallel team) · Series A ($230M total, $2B valuation) · Web-search infrastructure for AI agents</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-002__INV-001',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1337,7 +1340,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.1" data-investor="Khosla Ventures" data-founder="Parallel" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.1" data-investor="Khosla Ventures" data-founder="Parallel" data-fcountry="US" data-icountry="US" data-uid="FOU-002__INV-016">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#21</div>
     <div class="match-title">
@@ -1345,6 +1348,7 @@ Best,
       <div class="match-sub">Founders (ex-Parallel team) · Series A ($230M total, $2B valuation) · Web-search infrastructure for AI agents</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-002__INV-016',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1396,7 +1400,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.1" data-investor="Founders Fund" data-founder="Parallel" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.1" data-investor="Founders Fund" data-founder="Parallel" data-fcountry="US" data-icountry="US" data-uid="FOU-002__INV-018">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#22</div>
     <div class="match-title">
@@ -1404,6 +1408,7 @@ Best,
       <div class="match-sub">Founders (ex-Parallel team) · Series A ($230M total, $2B valuation) · Web-search infrastructure for AI agents</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-002__INV-018',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1455,7 +1460,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.1" data-investor="Andreessen Horowitz" data-founder="RadixArk" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.1" data-investor="Andreessen Horowitz" data-founder="RadixArk" data-fcountry="US" data-icountry="US" data-uid="FOU-008__INV-015">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#23</div>
     <div class="match-title">
@@ -1463,6 +1468,7 @@ Best,
       <div class="match-sub">Founders · Seed ($100M) · SGLang software — reduces computing costs for AI models</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-008__INV-015',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1514,7 +1520,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.1" data-investor="Insight Partners" data-founder="Glean" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.1" data-investor="Insight Partners" data-founder="Glean" data-fcountry="US" data-icountry="US" data-uid="FOU-037__INV-022">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#24</div>
     <div class="match-title">
@@ -1522,6 +1528,7 @@ Best,
       <div class="match-sub">Founders · Series C · AI-powered enterprise search and knowledge management</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-037__INV-022',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1573,7 +1580,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.0" data-investor="Index Ventures" data-founder="Scale AI" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.0" data-investor="Index Ventures" data-founder="Scale AI" data-fcountry="US" data-icountry="US" data-uid="FOU-039__INV-026">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#25</div>
     <div class="match-title">
@@ -1581,6 +1588,7 @@ Best,
       <div class="match-sub">Founders · Growth · AI data labeling and infrastructure platform</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-039__INV-026',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1632,7 +1640,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="73.0" data-investor="NEA" data-founder="Scale AI" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="73.0" data-investor="NEA" data-founder="Scale AI" data-fcountry="US" data-icountry="US" data-uid="FOU-039__INV-028">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#26</div>
     <div class="match-title">
@@ -1640,6 +1648,7 @@ Best,
       <div class="match-sub">Founders · Growth · AI data labeling and infrastructure platform</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-039__INV-028',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1691,7 +1700,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="72.9" data-investor="Andreessen Horowitz" data-founder="NeoCognition" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="72.9" data-investor="Andreessen Horowitz" data-founder="NeoCognition" data-fcountry="US" data-icountry="US" data-uid="FOU-001__INV-015">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#27</div>
     <div class="match-title">
@@ -1699,6 +1708,7 @@ Best,
       <div class="match-sub">Yu Su · Seed ($40M) · Self-learning AI agents for enterprise</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-001__INV-015',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1750,7 +1760,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="72.9" data-investor="GV" data-founder="Together AI" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="72.9" data-investor="GV" data-founder="Together AI" data-fcountry="US" data-icountry="US" data-uid="FOU-035__INV-021">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#28</div>
     <div class="match-title">
@@ -1758,6 +1768,7 @@ Best,
       <div class="match-sub">Founders · Series A · AI infrastructure — open-source model training and inference</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-035__INV-021',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1809,7 +1820,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="72.9" data-investor="General Catalyst" data-founder="Adept AI" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="72.9" data-investor="General Catalyst" data-founder="Adept AI" data-fcountry="US" data-icountry="US" data-uid="FOU-040__INV-002">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#29</div>
     <div class="match-title">
@@ -1817,6 +1828,7 @@ Best,
       <div class="match-sub">Founders · Series A · AI agent platform for enterprise workflow automation</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-040__INV-002',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1868,7 +1880,7 @@ Best,
     </div>
   </div>
 </div>
-<div class="match-card" data-score="72.8" data-investor="Lightspeed Venture Partners" data-founder="Parallel" data-fcountry="US" data-icountry="US">
+<div class="match-card" data-score="72.8" data-investor="Lightspeed Venture Partners" data-founder="Parallel" data-fcountry="US" data-icountry="US" data-uid="FOU-002__INV-004">
   <div class="match-header" onclick="this.nextElementSibling.classList.toggle('open')">
     <div class="match-rank">#30</div>
     <div class="match-title">
@@ -1876,6 +1888,7 @@ Best,
       <div class="match-sub">Founders (ex-Parallel team) · Series A ($230M total, $2B valuation) · Web-search infrastructure for AI agents</div>
     </div>
     <div class="match-meta">
+      <button class="save-btn" onclick="event.stopPropagation();toggleSave('FOU-002__INV-004',this)" title="Save this match">☆</button>
       <span class="badge badge-warm">⚡ WARM</span>
       <div class="match-score" style="color:#eab308">73</div>
     </div>
@@ -1930,29 +1943,78 @@ Best,
 </div>
 
 <div class="footer">
-AI Venture Intelligence v2.0 · 42 founders × 35 investors = 1470 pairs · 14-dimension scoring · Many-to-many matching
+AI Venture Intelligence v3.0 · 42 founders × 35 investors = 1470 pairs · Auto-refreshes every 48h · Saves persist in browser
 </div>
 
 <script>
-// Theme
+// ── ALL MATCH DATA for saved view ──
+const ALL_MATCHES = {"FOU-002__INV-015": {"f": "Parallel", "i": "Andreessen Horowitz", "s": 76.7}, "FOU-002__INV-002": {"f": "Parallel", "i": "General Catalyst", "s": 76.2}, "FOU-039__INV-029": {"f": "Scale AI", "i": "Sapphire Ventures", "s": 75.9}, "FOU-039__INV-019": {"f": "Scale AI", "i": "Coatue Management", "s": 75.4}, "FOU-021__INV-015": {"f": "Judgment Labs", "i": "Andreessen Horowitz", "s": 74.5}, "FOU-037__INV-029": {"f": "Glean", "i": "Sapphire Ventures", "s": 74.4}, "FOU-001__INV-002": {"f": "NeoCognition", "i": "General Catalyst", "s": 74.2}, "FOU-035__INV-015": {"f": "Together AI", "i": "Andreessen Horowitz", "s": 74.2}, "FOU-004__INV-015": {"f": "CopilotKit", "i": "Andreessen Horowitz", "s": 73.9}, "FOU-035__INV-001": {"f": "Together AI", "i": "Conviction", "s": 73.9}, "FOU-035__INV-004": {"f": "Together AI", "i": "Lightspeed Venture Partners", "s": 73.9}, "FOU-035__INV-012": {"f": "Together AI", "i": "Angel / Ex-Google, Twitter", "s": 73.8}, "FOU-002__INV-012": {"f": "Parallel", "i": "Angel / Ex-Google, Twitter", "s": 73.7}, "FOU-035__INV-014": {"f": "Together AI", "i": "Sequoia Capital", "s": 73.4}, "FOU-001__INV-012": {"f": "NeoCognition", "i": "Angel / Ex-Google, Twitter", "s": 73.3}, "FOU-002__INV-014": {"f": "Parallel", "i": "Sequoia Capital", "s": 73.3}, "FOU-042__INV-014": {"f": "Mistral AI", "i": "Sequoia Capital", "s": 73.3}, "FOU-001__INV-013": {"f": "NeoCognition", "i": "Y Combinator", "s": 73.2}, "FOU-025__INV-033": {"f": "Greenboard", "i": "Base10 Partners", "s": 73.2}, "FOU-002__INV-001": {"f": "Parallel", "i": "Conviction", "s": 73.1}, "FOU-002__INV-016": {"f": "Parallel", "i": "Khosla Ventures", "s": 73.1}, "FOU-002__INV-018": {"f": "Parallel", "i": "Founders Fund", "s": 73.1}, "FOU-008__INV-015": {"f": "RadixArk", "i": "Andreessen Horowitz", "s": 73.1}, "FOU-037__INV-022": {"f": "Glean", "i": "Insight Partners", "s": 73.1}, "FOU-039__INV-026": {"f": "Scale AI", "i": "Index Ventures", "s": 73.0}, "FOU-039__INV-028": {"f": "Scale AI", "i": "NEA", "s": 73.0}, "FOU-001__INV-015": {"f": "NeoCognition", "i": "Andreessen Horowitz", "s": 72.9}, "FOU-035__INV-021": {"f": "Together AI", "i": "GV", "s": 72.9}, "FOU-040__INV-002": {"f": "Adept AI", "i": "General Catalyst", "s": 72.9}, "FOU-002__INV-004": {"f": "Parallel", "i": "Lightspeed Venture Partners", "s": 72.8}, "FOU-002__INV-005": {"f": "Parallel", "i": "Accel", "s": 72.8}, "FOU-002__INV-021": {"f": "Parallel", "i": "GV", "s": 72.8}, "FOU-039__INV-016": {"f": "Scale AI", "i": "Khosla Ventures", "s": 72.8}, "FOU-042__INV-004": {"f": "Mistral AI", "i": "Lightspeed Venture Partners", "s": 72.8}, "FOU-001__INV-005": {"f": "NeoCognition", "i": "Accel", "s": 72.6}, "FOU-002__INV-010": {"f": "Parallel", "i": "Felicis Ventures", "s": 72.6}, "FOU-003__INV-005": {"f": "SageOx", "i": "Accel", "s": 72.6}, "FOU-037__INV-017": {"f": "Glean", "i": "Thrive Capital", "s": 72.6}, "FOU-003__INV-012": {"f": "SageOx", "i": "Angel / Ex-Google, Twitter", "s": 72.5}, "FOU-039__INV-022": {"f": "Scale AI", "i": "Insight Partners", "s": 72.5}, "FOU-001__INV-021": {"f": "NeoCognition", "i": "GV", "s": 72.4}, "FOU-004__INV-002": {"f": "CopilotKit", "i": "General Catalyst", "s": 72.4}, "FOU-021__INV-002": {"f": "Judgment Labs", "i": "General Catalyst", "s": 72.4}, "FOU-026__INV-002": {"f": "Vapi", "i": "General Catalyst", "s": 72.4}, "FOU-002__INV-009": {"f": "Parallel", "i": "Menlo Ventures", "s": 72.3}, "FOU-002__INV-024": {"f": "Parallel", "i": "DCVC", "s": 72.3}, "FOU-002__INV-026": {"f": "Parallel", "i": "Index Ventures", "s": 72.3}, "FOU-002__INV-027": {"f": "Parallel", "i": "Bessemer Venture Partners", "s": 72.3}, "FOU-002__INV-028": {"f": "Parallel", "i": "NEA", "s": 72.3}, "FOU-002__INV-032": {"f": "Parallel", "i": "Peak XV Partners", "s": 72.3}, "FOU-004__INV-012": {"f": "CopilotKit", "i": "Angel / Ex-Google, Twitter", "s": 72.3}, "FOU-035__INV-030": {"f": "Together AI", "i": "Wing Venture Capital", "s": 72.1}, "FOU-002__INV-030": {"f": "Parallel", "i": "Wing Venture Capital", "s": 72.0}, "FOU-002__INV-031": {"f": "Parallel", "i": "AIX Ventures", "s": 72.0}, "FOU-003__INV-014": {"f": "SageOx", "i": "Sequoia Capital", "s": 72.0}, "FOU-003__INV-026": {"f": "SageOx", "i": "Index Ventures", "s": 72.0}, "FOU-008__INV-012": {"f": "RadixArk", "i": "Angel / Ex-Google, Twitter", "s": 72.0}, "FOU-037__INV-009": {"f": "Glean", "i": "Menlo Ventures", "s": 72.0}, "FOU-039__INV-027": {"f": "Scale AI", "i": "Bessemer Venture Partners", "s": 72.0}, "FOU-040__INV-020": {"f": "Adept AI", "i": "Greylock Partners", "s": 72.0}, "FOU-001__INV-026": {"f": "NeoCognition", "i": "Index Ventures", "s": 71.8}, "FOU-003__INV-001": {"f": "SageOx", "i": "Conviction", "s": 71.8}, "FOU-003__INV-030": {"f": "SageOx", "i": "Wing Venture Capital", "s": 71.8}, "FOU-004__INV-014": {"f": "CopilotKit", "i": "Sequoia Capital", "s": 71.8}, "FOU-035__INV-005": {"f": "Together AI", "i": "Accel", "s": 71.8}, "FOU-035__INV-031": {"f": "Together AI", "i": "AIX Ventures", "s": 71.8}, "FOU-042__INV-015": {"f": "Mistral AI", "i": "Andreessen Horowitz", "s": 71.8}, "FOU-001__INV-016": {"f": "NeoCognition", "i": "Khosla Ventures", "s": 71.6}, "FOU-001__INV-030": {"f": "NeoCognition", "i": "Wing Venture Capital", "s": 71.6}, "FOU-004__INV-001": {"f": "CopilotKit", "i": "Conviction", "s": 71.6}, "FOU-008__INV-001": {"f": "RadixArk", "i": "Conviction", "s": 71.6}, "FOU-036__INV-033": {"f": "Harvey AI", "i": "Base10 Partners", "s": 71.6}, "FOU-040__INV-015": {"f": "Adept AI", "i": "Andreessen Horowitz", "s": 71.6}, "FOU-003__INV-004": {"f": "SageOx", "i": "Lightspeed Venture Partners", "s": 71.5}, "FOU-003__INV-021": {"f": "SageOx", "i": "GV", "s": 71.5}, "FOU-008__INV-004": {"f": "RadixArk", "i": "Lightspeed Venture Partners", "s": 71.5}, "FOU-031__INV-027": {"f": "Lambda", "i": "Bessemer Venture Partners", "s": 71.5}, "FOU-031__INV-028": {"f": "Lambda", "i": "NEA", "s": 71.5}, "FOU-039__INV-034": {"f": "Scale AI", "i": "Temasek", "s": 71.5}, "FOU-034__INV-029": {"f": "Elliptic", "i": "Sapphire Ventures", "s": 71.4}, "FOU-003__INV-008": {"f": "SageOx", "i": "First Round Capital", "s": 71.3}, "FOU-003__INV-015": {"f": "SageOx", "i": "Andreessen Horowitz", "s": 71.3}, "FOU-003__INV-023": {"f": "SageOx", "i": "Gradient Ventures", "s": 71.3}, "FOU-004__INV-004": {"f": "CopilotKit", "i": "Lightspeed Venture Partners", "s": 71.3}, "FOU-004__INV-005": {"f": "CopilotKit", "i": "Accel", "s": 71.3}, "FOU-004__INV-021": {"f": "CopilotKit", "i": "GV", "s": 71.3}, "FOU-031__INV-016": {"f": "Lambda", "i": "Khosla Ventures", "s": 71.3}, "FOU-035__INV-016": {"f": "Together AI", "i": "Khosla Ventures", "s": 71.3}, "FOU-035__INV-026": {"f": "Together AI", "i": "Index Ventures", "s": 71.3}, "FOU-035__INV-032": {"f": "Together AI", "i": "Peak XV Partners", "s": 71.3}, "FOU-040__INV-005": {"f": "Adept AI", "i": "Accel", "s": 71.3}, "FOU-040__INV-033": {"f": "Adept AI", "i": "Base10 Partners", "s": 71.3}, "FOU-038__INV-020": {"f": "Character.ai", "i": "Greylock Partners", "s": 71.2}, "FOU-001__INV-008": {"f": "NeoCognition", "i": "First Round Capital", "s": 71.1}, "FOU-010__INV-002": {"f": "Elastics", "i": "General Catalyst", "s": 71.1}, "FOU-003__INV-032": {"f": "SageOx", "i": "Peak XV Partners", "s": 71.0}, "FOU-008__INV-014": {"f": "RadixArk", "i": "Sequoia Capital", "s": 71.0}, "FOU-008__INV-021": {"f": "RadixArk", "i": "GV", "s": 71.0}, "FOU-008__INV-024": {"f": "RadixArk", "i": "DCVC", "s": 71.0}, "FOU-021__INV-012": {"f": "Judgment Labs", "i": "Angel / Ex-Google, Twitter", "s": 71.0}};
+
+// ── Theme ──
 function setTheme(t){
   document.documentElement.setAttribute('data-theme',t);
   localStorage.setItem('theme',t);
   document.getElementById('btn-dark').classList.toggle('active',t==='dark');
   document.getElementById('btn-geeky').classList.toggle('active',t==='geeky');
-  document.getElementById('btn-geeky').classList.toggle('geeky-active',t==='geeky');
 }
 (function(){setTheme(localStorage.getItem('theme')||'dark')})();
 
-// Views
-function setView(v){
-  if(v==='all')window.location.href='/';
-  else if(v==='by-founder'){
-    document.getElementById('entity-select').style.display='block';
-    document.getElementById('entity-select').innerHTML='<option value="">Select founder...</option><option value="FOU-040" >Adept AI (Founders)</option><option value="FOU-041" >AssemblyAI (Founders)</option><option value="FOU-013" >Caseflood.ai (Founders)</option><option value="FOU-030" >Casimir (Founders)</option><option value="FOU-018" >Cervo AI (Founders)</option><option value="FOU-038" >Character.ai (Founders)</option><option value="FOU-017" >Charta Health (Founders)</option><option value="FOU-004" >CopilotKit (Founders)</option><option value="FOU-011" >Counsel Health (Founders)</option><option value="FOU-010" >Elastics (Mati Staniszewski & )</option><option value="FOU-034" >Elliptic (Founders)</option><option value="FOU-023" >Exaforce (Founders)</option><option value="FOU-037" >Glean (Founders)</option><option value="FOU-025" >Greenboard (Founders)</option><option value="FOU-036" >Harvey AI (Founders)</option><option value="FOU-027" >Havoc (Founders)</option><option value="FOU-016" >Hyprnote (YC S25) (Founders)</option><option value="FOU-024" >Isomorphic Labs (Founders)</option><option value="FOU-021" >Judgment Labs (Alex Shan, Andrew Li)</option><option value="FOU-015" >Julius AI (Founders)</option><option value="FOU-029" >Knit Health (Founders)</option><option value="FOU-009" >Krane (Founders)</option><option value="FOU-031" >Lambda (Founders)</option><option value="FOU-007" >Marloo (Founders)</option><option value="FOU-012" >Metaforms (Founders)</option><option value="FOU-042" >Mistral AI (Founders)</option><option value="FOU-033" >Moonshot AI (Founders)</option><option value="FOU-001" >NeoCognition (Yu Su)</option><option value="FOU-002" >Parallel (Founders (ex-Paralle)</option><option value="FOU-006" >Performativ (Founders)</option><option value="FOU-020" >Questflow (Founders)</option><option value="FOU-032" >ROBOTERA (Founders)</option><option value="FOU-008" >RadixArk (Founders)</option><option value="FOU-022" >RunSybil (Founders)</option><option value="FOU-014" >Runloop AI (Founders)</option><option value="FOU-003" >SageOx (Founders (Amazon & A)</option><option value="FOU-039" >Scale AI (Founders)</option><option value="FOU-005" >Scout AI (Founders)</option><option value="FOU-028" >Star Catcher Industries (Founders)</option><option value="FOU-035" >Together AI (Founders)</option><option value="FOU-026" >Vapi (Founders)</option><option value="FOU-019" >Volca (Founders)</option>';
-  } else if(v==='by-investor'){
-    document.getElementById('entity-select').style.display='block';
-    document.getElementById('entity-select').innerHTML='<option value="">Select investor...</option><option value="INV-031" >AIX Ventures</option><option value="INV-005" >Accel</option><option value="INV-015" >Andreessen Horowitz</option><option value="INV-012" >Angel / Ex-Google, Twitter</option><option value="INV-011" >Angel / Greylock</option><option value="INV-033" >Base10 Partners</option><option value="INV-006" >Benchmark</option><option value="INV-027" >Bessemer Venture Partners</option><option value="INV-019" >Coatue Management</option><option value="INV-001" >Conviction</option><option value="INV-024" >DCVC</option><option value="INV-010" >Felicis Ventures</option><option value="INV-008" >First Round Capital</option><option value="INV-018" >Founders Fund</option><option value="INV-021" >GV</option><option value="INV-002" >General Catalyst</option><option value="INV-023" >Gradient Ventures</option><option value="INV-020" >Greylock Partners</option><option value="INV-026" >Index Ventures</option><option value="INV-022" >Insight Partners</option><option value="INV-016" >Khosla Ventures</option><option value="INV-007" >Kleiner Perkins</option><option value="INV-004" >Lightspeed Venture Partners</option><option value="INV-009" >Menlo Ventures</option><option value="INV-028" >NEA</option><option value="INV-003" >NFX</option><option value="INV-032" >Peak XV Partners</option><option value="INV-029" >Sapphire Ventures</option><option value="INV-035" >Scout Ventures</option><option value="INV-014" >Sequoia Capital</option><option value="INV-025" >Spark Capital</option><option value="INV-034" >Temasek</option><option value="INV-017" >Thrive Capital</option><option value="INV-030" >Wing Venture Capital</option><option value="INV-013" >Y Combinator</option>';
+// ── Saved matches ──
+function getSaved(){return JSON.parse(localStorage.getItem('saved_matches')||'{}')}
+function saveSaved(s){localStorage.setItem('saved_matches',JSON.stringify(s));updateSavedCount()}
+function toggleSave(uid,btn){
+  const s=getSaved();
+  if(s[uid]){delete s[uid];btn.classList.remove('saved');btn.textContent='☆'}
+  else{
+    const card=btn.closest('.match-card');
+    s[uid]={f:card.dataset.founder,i:card.dataset.investor,s:card.dataset.score,ts:Date.now()};
+    btn.classList.add('saved');btn.textContent='★';
+  }
+  saveSaved(s);
+}
+function updateSavedCount(){
+  const n=Object.keys(getSaved()).length;
+  const el=document.getElementById('saved-count');
+  el.style.display=n>0?'flex':'none';
+  el.textContent=n;
+}
+// Init save buttons
+(function(){
+  const s=getSaved();
+  document.querySelectorAll('.match-card').forEach(c=>{
+    const uid=c.dataset.uid;
+    const btn=c.querySelector('.save-btn');
+    if(s[uid]){btn.classList.add('saved');btn.textContent='★';c.classList.add('saved')}
+  });
+  updateSavedCount();
+})();
+
+// ── Filter saved ──
+let showingSaved=false;
+function filterSaved(){
+  showingSaved=!showingSaved;
+  const s=getSaved();
+  const btn=document.getElementById('btn-saved');
+  btn.classList.toggle('active',showingSaved);
+  if(showingSaved){
+    document.querySelectorAll('.match-card').forEach(c=>{
+      c.style.display=s[c.dataset.uid]?'':'none';
+    });
+    document.getElementById('page-title').textContent='⭐ Saved Matches ('+Object.keys(s).length+')';
+  } else {
+    document.querySelectorAll('.match-card').forEach(c=>{c.style.display=''});
+    document.getElementById('page-title').textContent='Top 30 Matches';
+  }
+}
+
+// ── Views ──
+function showSelect(type){
+  const sel=document.getElementById('entity-select');
+  sel.style.display='block';
+  if(type==='founder'){
+    sel.innerHTML='<option value="">Select founder...</option><optgroup label="Founders"><option value="FOU-040" >Adept AI (Founders)</option><option value="FOU-041" >AssemblyAI (Founders)</option><option value="FOU-013" >Caseflood.ai (Founders)</option><option value="FOU-030" >Casimir (Founders)</option><option value="FOU-018" >Cervo AI (Founders)</option><option value="FOU-038" >Character.ai (Founders)</option><option value="FOU-017" >Charta Health (Founders)</option><option value="FOU-004" >CopilotKit (Founders)</option><option value="FOU-011" >Counsel Health (Founders)</option><option value="FOU-010" >Elastics (Mati Staniszewski & )</option><option value="FOU-034" >Elliptic (Founders)</option><option value="FOU-023" >Exaforce (Founders)</option><option value="FOU-037" >Glean (Founders)</option><option value="FOU-025" >Greenboard (Founders)</option><option value="FOU-036" >Harvey AI (Founders)</option><option value="FOU-027" >Havoc (Founders)</option><option value="FOU-016" >Hyprnote (YC S25) (Founders)</option><option value="FOU-024" >Isomorphic Labs (Founders)</option><option value="FOU-021" >Judgment Labs (Alex Shan, Andrew Li)</option><option value="FOU-015" >Julius AI (Founders)</option><option value="FOU-029" >Knit Health (Founders)</option><option value="FOU-009" >Krane (Founders)</option><option value="FOU-031" >Lambda (Founders)</option><option value="FOU-007" >Marloo (Founders)</option><option value="FOU-012" >Metaforms (Founders)</option><option value="FOU-042" >Mistral AI (Founders)</option><option value="FOU-033" >Moonshot AI (Founders)</option><option value="FOU-001" >NeoCognition (Yu Su)</option><option value="FOU-002" >Parallel (Founders (ex-Paralle)</option><option value="FOU-006" >Performativ (Founders)</option><option value="FOU-020" >Questflow (Founders)</option><option value="FOU-032" >ROBOTERA (Founders)</option><option value="FOU-008" >RadixArk (Founders)</option><option value="FOU-022" >RunSybil (Founders)</option><option value="FOU-014" >Runloop AI (Founders)</option><option value="FOU-003" >SageOx (Founders (Amazon & A)</option><option value="FOU-039" >Scale AI (Founders)</option><option value="FOU-005" >Scout AI (Founders)</option><option value="FOU-028" >Star Catcher Industries (Founders)</option><option value="FOU-035" >Together AI (Founders)</option><option value="FOU-026" >Vapi (Founders)</option><option value="FOU-019" >Volca (Founders)</option></optgroup>';
+  } else {
+    sel.innerHTML='<option value="">Select investor...</option><optgroup label="Investors"><option value="INV-031" >AIX Ventures</option><option value="INV-005" >Accel</option><option value="INV-015" >Andreessen Horowitz</option><option value="INV-012" >Angel / Ex-Google, Twitter</option><option value="INV-011" >Angel / Greylock</option><option value="INV-033" >Base10 Partners</option><option value="INV-006" >Benchmark</option><option value="INV-027" >Bessemer Venture Partners</option><option value="INV-019" >Coatue Management</option><option value="INV-001" >Conviction</option><option value="INV-024" >DCVC</option><option value="INV-010" >Felicis Ventures</option><option value="INV-008" >First Round Capital</option><option value="INV-018" >Founders Fund</option><option value="INV-021" >GV</option><option value="INV-002" >General Catalyst</option><option value="INV-023" >Gradient Ventures</option><option value="INV-020" >Greylock Partners</option><option value="INV-026" >Index Ventures</option><option value="INV-022" >Insight Partners</option><option value="INV-016" >Khosla Ventures</option><option value="INV-007" >Kleiner Perkins</option><option value="INV-004" >Lightspeed Venture Partners</option><option value="INV-009" >Menlo Ventures</option><option value="INV-028" >NEA</option><option value="INV-003" >NFX</option><option value="INV-032" >Peak XV Partners</option><option value="INV-029" >Sapphire Ventures</option><option value="INV-035" >Scout Ventures</option><option value="INV-014" >Sequoia Capital</option><option value="INV-025" >Spark Capital</option><option value="INV-034" >Temasek</option><option value="INV-017" >Thrive Capital</option><option value="INV-030" >Wing Venture Capital</option><option value="INV-013" >Y Combinator</option></optgroup>';
   }
 }
 function goToEntity(){
@@ -1964,13 +2026,13 @@ function goToEntity(){
   window.location.href='/?view='+(isF?'founder':'investor')+'&id='+v;
 }
 
-// Search
+// ── Search ──
 document.getElementById('search').addEventListener('input',function(q){
   const t=q.target.value.toLowerCase();
   document.querySelectorAll('.match-card').forEach(c=>{c.style.display=c.textContent.toLowerCase().includes(t)?'':'none'});
 });
 
-// Sort
+// ── Sort ──
 function sortCards(){
   const v=document.getElementById('sort').value;
   const c=document.getElementById('matches'),cards=[...c.children];
@@ -1984,7 +2046,7 @@ function sortCards(){
   [...c.children].forEach((x,i)=>{const r=x.querySelector('.match-rank');if(r)r.textContent='#'+(i+1)});
 }
 
-// Filter by score
+// ── Filters ──
 function filterScore(){
   const m=document.getElementById('filter').value;
   document.querySelectorAll('.match-card').forEach(c=>{
@@ -1992,8 +2054,6 @@ function filterScore(){
     c.style.display=(m==='all')?'':(m==='hot'&&s>=75)?'':(m==='warm'&&s>=65&&s<75)?'':(m==='good'&&s>=55&&s<65)?'':'none';
   });
 }
-
-// Filter by country
 function filterCountry(){
   const country=document.getElementById('country-filter').value;
   document.querySelectorAll('.match-card').forEach(c=>{
@@ -2002,5 +2062,4 @@ function filterCountry(){
     c.style.display=(fc===country||ic===country)?'':'none';
   });
 }
-</script>
-</body></html>
+</script></body></html>

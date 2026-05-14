@@ -1,57 +1,64 @@
-name: Daily AI Venture Intel Report
-
+name: Auto-Refresh Venture Intel
 on:
   schedule:
-    # Run every day at 9:00 AM UTC
-    - cron: '0 9 * * *'
-  workflow_dispatch:  # Allow manual trigger
+    # Every 48 hours (every other day at 9 AM UTC)
+    - cron: '0 9 */2 * *'
+  workflow_dispatch:
     inputs:
       top_matches:
-        description: 'Number of top matches to generate'
-        default: '10'
+        description: 'Number of top matches'
+        default: '30'
         type: string
 
 jobs:
-  generate-report:
+  refresh:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
 
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+      - run: pip install -r requirements.txt
 
-      - name: Run matching engine
+      - name: Generate fresh matches and static site
         env:
           SMTP_HOST: ${{ secrets.SMTP_HOST }}
           SMTP_PORT: ${{ secrets.SMTP_PORT }}
           SMTP_USER: ${{ secrets.SMTP_USER }}
-          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_PASSWORD: *** secrets.SMTP_PASSWORD }}
           EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
           EMAIL_TO: ${{ secrets.EMAIL_TO }}
         run: |
-          python main.py \
-            --top ${{ inputs.top_matches || '10' }} \
-            --output reports/$(date +%Y-%m-%d)-daily-digest.md
+          # Generate match report
+          python main.py --top ${{ inputs.top_matches || '30' }} --match-only
 
-      - name: Upload report as artifact
-        uses: actions/upload-artifact@v4
+          # Generate static site
+          python -c "
+          import sys, os
+          sys.path.insert(0, '.')
+          from web import render_page
+          os.makedirs('docs', exist_ok=True)
+          html = render_page(view='all', top_n=30)
+          with open('docs/index.html', 'w') as f:
+              f.write(html)
+          print(f'Generated docs/index.html ({len(html)} bytes)')
+          "
+
+      - uses: actions/upload-artifact@v4
         with:
-          name: daily-report-${{ github.run_number }}
-          path: reports/*-daily-digest.*
+          name: venture-intel-${{ github.run_number }}
+          path: |
+            reports/*-daily-digest.*
+            docs/index.html
           retention-days: 90
 
-      - name: Commit report to repository
+      - name: Commit refreshed site
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add reports/
-          git diff --staged --quiet || git commit -m "📊 Daily report $(date +%Y-%m-%d)"
+          git add docs/index.html reports/
+          git diff --staged --quiet || git commit -m "🔄 Auto-refresh $(date +%Y-%m-%d)"
           git push
