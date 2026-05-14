@@ -346,16 +346,16 @@ input::placeholder{{color:var(--dim)}}
 .chat-toggle .close-icon{{display:none}}
 .chat-toggle.open .chat-icon{{display:none}}
 .chat-toggle.open .close-icon{{display:inline}}
-.chat-window{{position:fixed;bottom:90px;right:24px;width:380px;max-height:520px;background:var(--card);border:1px solid var(--border);border-radius:16px;z-index:998;display:none;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,.4);overflow:hidden}}
+.chat-window{{position:fixed;bottom:90px;right:24px;width:380px;max-height:520px;background:var(--card);border:1px solid var(--border);border-radius:16px;z-index:998;display:none;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,.4)}}
 .chat-window.open{{display:flex}}
-.chat-header{{padding:16px 20px;background:var(--header-bg);border-bottom:1px solid var(--border);font-size:14px;font-weight:600}}
-.chat-messages{{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}}
+.chat-header{{padding:16px 20px;background:var(--header-bg);border-bottom:1px solid var(--border);font-size:14px;font-weight:600;flex-shrink:0}}
+.chat-messages{{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:0}}
 .chat-msg{{max-width:85%;padding:10px 14px;border-radius:12px;font-size:13px;line-height:1.5;animation:fadeIn .3s}}
 @keyframes fadeIn{{from{{opacity:0;transform:translateY(8px)}}to{{opacity:1;transform:translateY(0)}}}}
 .chat-msg.bot{{background:var(--bg2);border:1px solid var(--border);align-self:flex-start;border-bottom-left-radius:4px}}
 .chat-msg.user{{background:var(--accent);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}}
 .chat-msg.user .chat-msg-text{{color:#fff}}
-.chat-options{{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 12px}}
+.chat-options{{display:flex;flex-wrap:wrap;gap:6px;padding:8px 16px 12px;flex-shrink:0}}
 .chat-opt{{padding:8px 14px;border-radius:20px;border:1px solid var(--border);background:var(--btn-bg);color:var(--text);cursor:pointer;font-size:12px;transition:all .15s}}
 .chat-opt:hover{{border-color:var(--accent);background:var(--accent);color:#fff}}
 .chat-opt.selected{{background:var(--accent);border-color:var(--accent);color:#fff}}
@@ -570,10 +570,9 @@ function filterCountry(){{
 const CHAT_STEPS = [
   {{id:'sector',q:'What kind of AI startup are you looking to invest in?',options:['AI Infrastructure','Healthcare AI','Fintech AI','Defense AI','Developer Tools','Legal AI','Consumer AI','Robotics','Foundation Models','All Sectors']}},
   {{id:'stage',q:'What stage do you prefer?',options:['Pre-Seed / Seed','Series A','Series B','Growth','Any Stage']}},
-  {{id:'region',q:'Which region?',options:['US','Europe','Global','Any Region']}},
+  {{id:'region',q:'Which region?',options:['US','India','Singapore','Europe','Asia (excl. India/Singapore)','Global','Any Region']}},
   {{id:'priority',q:'What matters most to you?',options:['Highest Traction','Best Team','Fastest Growth','Strongest Brand','Top Social Proof','Show Me Everything']}},
 ];
-
 let chatStep=0;
 let chatAnswers={{}};
 let chatOpen=false;
@@ -660,7 +659,10 @@ function applyFilters(){{
     if(region && region!=='Any Region'){{
       const fc=c.dataset.fcountry||'';const ic=c.dataset.icountry||'';
       if(region==='US'){{if(fc!=='US'&&ic!=='US')show=false;}}
+      else if(region==='India'){{if(fc!=='India'&&ic!=='India')show=false;}}
+      else if(region==='Singapore'){{if(fc!=='Singapore'&&ic!=='Singapore')show=false;}}
       else if(region==='Europe'){{if(!['Europe','UK','France','Poland'].includes(fc)&&!['Europe','UK','France','Poland'].includes(ic))show=false;}}
+      else if(region==='Asia (excl. India/Singapore)'){{if(!['Asia','Singapore','India'].includes(fc)&&!['Asia','Singapore','India'].includes(ic))show=false;}}
       else if(region==='Global'){{show=true;}}
     }}
 
