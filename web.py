@@ -315,6 +315,33 @@ input::placeholder{{color:var(--dim)}}
 .refresh-badge{{display:inline-block;padding:3px 8px;border-radius:6px;background:rgba(34,197,94,.15);color:#22c55e;font-size:10px;font-weight:600;margin-left:8px;animation:pulse 2s infinite}}
 @keyframes pulse{{0%,100%{{opacity:1}}50%{{opacity:.5}}}}
 @media(max-width:768px){{.details-grid,.scores-grid{{grid-template-columns:1fr}}.header-inner{{flex-direction:column;gap:12px}}.controls{{flex-direction:column}}}}
+
+/* ── Chat Widget ── */
+.chat-toggle{{position:fixed;bottom:24px;right:24px;width:56px;height:56px;border-radius:50%;background:var(--accent);color:#fff;border:none;font-size:24px;cursor:pointer;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,.3);transition:all .2s;display:flex;align-items:center;justify-content:center}}
+.chat-toggle:hover{{transform:scale(1.1);background:var(--accent2)}}
+.chat-toggle .close-icon{{display:none}}
+.chat-toggle.open .chat-icon{{display:none}}
+.chat-toggle.open .close-icon{{display:inline}}
+.chat-window{{position:fixed;bottom:90px;right:24px;width:380px;max-height:520px;background:var(--card);border:1px solid var(--border);border-radius:16px;z-index:998;display:none;flex-direction:column;box-shadow:0 8px 40px rgba(0,0,0,.4);overflow:hidden}}
+.chat-window.open{{display:flex}}
+.chat-header{{padding:16px 20px;background:var(--header-bg);border-bottom:1px solid var(--border);font-size:14px;font-weight:600}}
+.chat-messages{{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:10px}}
+.chat-msg{{max-width:85%;padding:10px 14px;border-radius:12px;font-size:13px;line-height:1.5;animation:fadeIn .3s}}
+@keyframes fadeIn{{from{{opacity:0;transform:translateY(8px)}}to{{opacity:1;transform:translateY(0)}}}}
+.chat-msg.bot{{background:var(--bg2);border:1px solid var(--border);align-self:flex-start;border-bottom-left-radius:4px}}
+.chat-msg.user{{background:var(--accent);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}}
+.chat-msg.user .chat-msg-text{{color:#fff}}
+.chat-options{{display:flex;flex-wrap:wrap;gap:6px;padding:0 16px 12px}}
+.chat-opt{{padding:8px 14px;border-radius:20px;border:1px solid var(--border);background:var(--btn-bg);color:var(--text);cursor:pointer;font-size:12px;transition:all .15s}}
+.chat-opt:hover{{border-color:var(--accent);background:var(--accent);color:#fff}}
+.chat-opt.selected{{background:var(--accent);border-color:var(--accent);color:#fff}}
+.chat-result{{margin:8px 16px;padding:10px 14px;background:var(--bg2);border:1px solid var(--border);border-radius:8px;font-size:12px;color:var(--muted)}}
+.chat-result strong{{color:var(--text);font-size:13px}}
+.chat-reset{{margin:8px 16px 16px;padding:8px;border-radius:8px;border:1px solid var(--border);background:var(--btn-bg);color:var(--text);cursor:pointer;font-size:12px;text-align:center;transition:all .15s}}
+.chat-reset:hover{{border-color:var(--accent)}}
+[data-theme="pastel"] .chat-toggle{{box-shadow:0 2px 12px rgba(155,142,196,.3)}}
+[data-theme="cyberpunk"] .chat-toggle{{box-shadow:0 4px 20px rgba(255,45,149,.3)}}
+@media(max-width:480px){{.chat-window{{right:8px;left:8px;width:auto;bottom:80px}}}}
 </style></head><body>
 
 <div class="header">
@@ -484,7 +511,145 @@ function filterCountry(){{
     c.style.display=(fc===country||ic===country)?'':'none';
   }});
 }}
-</script></body></html>'''
+
+// ── Chat Widget ──
+const CHAT_STEPS = [
+  {{id:'sector',q:'What kind of AI startup are you looking to invest in?',options:['AI Infrastructure','Healthcare AI','Fintech AI','Defense AI','Developer Tools','Legal AI','Consumer AI','Robotics','Foundation Models','All Sectors']}},
+  {{id:'stage',q:'What stage do you prefer?',options:['Pre-Seed / Seed','Series A','Series B','Growth','Any Stage']}},
+  {{id:'region',q:'Which region?',options:['US','Europe','Global','Any Region']}},
+  {{id:'priority',q:'What matters most to you?',options:['Highest Traction','Best Team','Fastest Growth','Strongest Brand','Top Social Proof','Show Me Everything']}},
+];
+
+let chatStep=0;
+let chatAnswers={{}};
+let chatOpen=false;
+
+function toggleChat(){{
+  chatOpen=!chatOpen;
+  document.getElementById('chat-window').classList.toggle('open',chatOpen);
+  document.getElementById('chat-toggle').classList.toggle('open',chatOpen);
+  if(chatOpen && chatStep===0) startChat();
+}}
+
+function startChat(){{
+  chatStep=0; chatAnswers={{}};
+  const msgs=document.getElementById('chat-messages');
+  const opts=document.getElementById('chat-options');
+  msgs.innerHTML='';
+  addBotMsg('Hey! 👋 I can help you find the perfect AI startup matches. Let me ask you a few questions.');
+  setTimeout(()=>showStep(0),600);
+}}
+
+function addBotMsg(text){{
+  const msgs=document.getElementById('chat-messages');
+  const d=document.createElement('div');d.className='chat-msg bot';d.innerHTML=text;
+  msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
+}}
+
+function addUserMsg(text){{
+  const msgs=document.getElementById('chat-messages');
+  const d=document.createElement('div');d.className='chat-msg user';d.innerHTML='<span class="chat-msg-text">'+text+'</span>';
+  msgs.appendChild(d);msgs.scrollTop=msgs.scrollHeight;
+}}
+
+function showStep(idx){{
+  if(idx>=CHAT_STEPS.length){{applyFilters();return;}}
+  const step=CHAT_STEPS[idx];
+  addBotMsg(step.q);
+  const opts=document.getElementById('chat-options');
+  opts.innerHTML='';
+  step.options.forEach(o=>{{
+    const btn=document.createElement('button');btn.className='chat-opt';btn.textContent=o;
+    btn.onclick=()=>selectOption(step.id,o,btn);
+    opts.appendChild(btn);
+  }});
+}}
+
+function selectOption(stepId,value,btn){{
+  document.querySelectorAll('.chat-opt').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  chatAnswers[stepId]=value;
+  addUserMsg(value);
+  setTimeout(()=>{{
+    document.getElementById('chat-options').innerHTML='';
+    chatStep++;
+    showStep(chatStep);
+  }},400);
+}}
+
+function applyFilters(){{
+  const cards=[...document.querySelectorAll('.match-card')];
+  let visible=0;
+
+  cards.forEach(c=>{{
+    let show=true;
+    const text=c.textContent.toLowerCase();
+
+    // Sector filter
+    const sector=chatAnswers.sector;
+    if(sector && sector!=='All Sectors'){{
+      const sectorMap={{'ai infrastructure':['infra','compute','gpu','cloud','developer','agent','protocol','search'],'healthcare ai':['health','medical','clinical','drug','pharma'],'fintech ai':['finance','fintech','wealth','compliance','banking','payment'],'defense ai':['defense','military','autonomous','fleet','security'],'developer tools':['developer','devtools','coding','api','sdk','open-source'],'legal ai':['legal','law'],'consumer ai':['consumer','social','creator','entertainment','voice','character'],'robotics':['robot','humanoid','physical'],'foundation models':['foundation','llm','language model','moonshot','mistral']}};
+      const kws=sectorMap[sector.toLowerCase()]||[];
+      if(!kws.some(k=>text.includes(k))) show=false;
+    }}
+
+    // Stage filter
+    const stage=chatAnswers.stage;
+    if(stage && stage!=='Any Stage'){{
+      const stageKws={{'pre-seed / seed':['pre-seed','seed','yc-backed'],'series a':['series a'],'series b':['series b'],'growth':['growth','series c','series d','series b ($']}};
+      const kws=stageKws[stage.toLowerCase()]||[];
+      if(!kws.some(k=>text.includes(k))) show=false;
+    }}
+
+    // Region filter
+    const region=chatAnswers.region;
+    if(region && region!=='Any Region'){{
+      const fc=c.dataset.fcountry||'';const ic=c.dataset.icountry||'';
+      if(region==='US'){{if(fc!=='US'&&ic!=='US')show=false;}}
+      else if(region==='Europe'){{if(!['Europe','UK','France','Poland'].includes(fc)&&!['Europe','UK','France','Poland'].includes(ic))show=false;}}
+      else if(region==='Global'){{show=true;}}
+    }}
+
+    if(show){{visible++;c.style.display='';}}
+    else c.style.display='none';
+  }});
+
+  // Priority sort
+  const priority=chatAnswers.priority;
+  if(priority && priority!=='Show Me Everything'){{
+    const container=document.getElementById('matches');
+    const sorted=[...container.children].filter(c=>c.style.display!=='none');
+    sorted.sort((a,b)=>{{
+      if(priority==='Highest Traction'){{
+        const aT=parseFloat(a.dataset.score);const bT=parseFloat(b.dataset.score);
+        return bT-aT;
+      }}
+      return parseFloat(b.dataset.score)-parseFloat(a.dataset.score);
+    }});
+    sorted.forEach(x=>container.appendChild(x));
+    [...container.children].forEach((x,i)=>{{if(x.style.display!=='none'){{const r=x.querySelector('.match-rank');if(r)r.textContent='#'+(i+1)}}}});
+  }}
+
+  // Show result
+  const resultDiv=document.getElementById('chat-result');
+  resultDiv.style.display='block';
+  resultDiv.innerHTML=`<strong>${{visible}} matches found</strong> for ${{chatAnswers.sector||'All'}} · ${{chatAnswers.stage||'Any'}} · ${{chatAnswers.region||'Anywhere'}}`;document.getElementById('page-title').textContent=`Filtered: ${{visible}} matches`;const opts=document.getElementById('chat-options');opts.innerHTML='';const resetBtn=document.createElement('button');resetBtn.className='chat-reset';resetBtn.textContent='🔄 Start Over';resetBtn.onclick=()=>{{document.getElementById('chat-result').style.display='none';startChat();cards.forEach(c=>c.style.display='');document.getElementById('page-title').textContent='{page_title}'}};opts.appendChild(resetBtn);
+}}
+</script>
+
+<!-- Chat Widget -->
+<button class="chat-toggle" id="chat-toggle" onclick="toggleChat()">
+  <span class="chat-icon">💬</span>
+  <span class="close-icon">✕</span>
+</button>
+<div class="chat-window" id="chat-window">
+  <div class="chat-header">🤖 Investment Preference Finder</div>
+  <div class="chat-messages" id="chat-messages"></div>
+  <div class="chat-options" id="chat-options"></div>
+  <div class="chat-result" id="chat-result" style="display:none"></div>
+</div>
+
+</body></html>'''
 
 
 class Handler(BaseHTTPRequestHandler):
