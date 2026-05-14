@@ -58,8 +58,8 @@ def score_bar(val, width=100):
     return f'<div style="display:flex;align-items:center;gap:6px"><div style="width:{width}px;height:6px;background:var(--bar-bg);border-radius:3px;overflow:hidden"><div style="width:{val}%;height:100%;background:{color};border-radius:3px"></div></div><span class="score-num">{val:.0f}</span></div>'
 
 def badge(score):
-    if score >= 75: return '<span class="badge badge-hot">🔥 HOT</span>'
-    elif score >= 65: return '<span class="badge badge-warm">⚡ WARM</span>'
+    if score >= 70: return '<span class="badge badge-hot">🔥 HOT</span>'
+    elif score >= 66: return '<span class="badge badge-warm">⚡ WARM</span>'
     return '<span class="badge badge-good">✓ GOOD</span>'
 
 def score_color(score):
@@ -197,7 +197,7 @@ country_options = '<option value="all">🌍 All Countries</option>' + "".join(
 
 last_updated = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
 
-def render_page(view="all", entity_id=None, top_n=30):
+def render_page(view="all", entity_id=None, top_n=500):
     now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
 
     if view == "founder" and entity_id and entity_id in founder_map:
@@ -211,8 +211,8 @@ def render_page(view="all", entity_id=None, top_n=30):
         page_title = f"Top {len(matches)} Founders for {inv.firm}"
         show_entity = "founder"
     else:
-        matches = find_top_matches(founders, investors, top_n=top_n)
-        page_title = f"Top {len(matches)} Matches"
+        matches = find_top_matches(founders, investors, top_n=top_n, min_score=65)
+        page_title = f"All {len(matches)} Matches (score ≥ 65)"
         show_entity = "both"
 
     founder_opts = "".join(
@@ -423,7 +423,7 @@ input::placeholder{{color:var(--dim)}}
 <select id="sort" onchange="sortCards()">
 <option value="score">Score ↓</option><option value="score-asc">Score ↑</option><option value="investor">Investor</option><option value="founder">Founder</option></select>
 <select id="filter" onchange="filterScore()">
-<option value="all">All</option><option value="hot">🔥 Hot (75+)</option><option value="warm">⚡ Warm (65-74)</option><option value="good">✓ Good (55-64)</option></select>
+<option value="all">All</option><option value="hot">🔥 Hot (70+)</option><option value="warm">⚡ Warm (66-69)</option><option value="good">✓ Good (65)</option></select>
 <button class="btn" onclick="document.querySelectorAll('.details').forEach(d=>d.classList.add('open'))">Expand All</button>
 <button class="btn" onclick="document.querySelectorAll('.details').forEach(d=>d.classList.remove('open'))">Collapse</button>
 </div>
@@ -471,6 +471,22 @@ function updateSavedCount(){{
   el.style.display=n>0?'flex':'none';
   el.textContent=n;
 }}
+// Auto-save hot matches
+function autoSaveHot(){{
+  const s=getSaved();
+  document.querySelectorAll('.match-card .badge-hot').forEach(badge=>{{
+    const card=badge.closest('.match-card');
+    if(!card)return;
+    const uid=card.dataset.uid;
+    if(!s[uid]){{
+      s[uid]={{f:card.dataset.founder,i:card.dataset.investor,s:card.dataset.score,ts:Date.now(),auto:true}};
+      card.classList.add('saved');
+      const btn=card.querySelector('.save-btn');
+      if(btn){{btn.classList.add('saved');btn.textContent='★';}}
+    }}
+  }});
+  saveSaved(s);
+}}
 // Init save buttons
 (function(){{
   const s=getSaved();
@@ -480,6 +496,7 @@ function updateSavedCount(){{
     if(s[uid]){{btn.classList.add('saved');btn.textContent='★';c.classList.add('saved')}}
   }});
   updateSavedCount();
+  autoSaveHot();
 }})();
 
 // ── Filter saved ──
@@ -574,7 +591,7 @@ function filterScore(){{
   const m=document.getElementById('filter').value;
   document.querySelectorAll('.match-card').forEach(c=>{{
     const s=parseFloat(c.dataset.score);
-    c.style.display=(m==='all')?'':(m==='hot'&&s>=75)?'':(m==='warm'&&s>=65&&s<75)?'':(m==='good'&&s>=55&&s<65)?'':'none';
+    c.style.display=(m==='all')?'':(m==='hot'&&s>=70)?'':(m==='warm'&&s>=66&&s<70)?'':(m==='good'&&s>=65&&s<66)?'':'none';
   }});
 }}
 function filterCountry(){{
@@ -766,7 +783,7 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(html.encode())
         elif path == "/api/matches":
-            matches = find_top_matches(founders, investors, top_n=30)
+            matches = find_top_matches(founders, investors, top_n=500, min_score=65)
             data = [{"rank": i+1, "founder": m.founder.company, "investor": m.investor.firm, "score": m.total_score} for i, m in enumerate(matches)]
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
