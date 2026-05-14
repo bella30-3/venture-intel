@@ -13,3 +13,4 @@ jinja2>=3.1.0
 # Scheduling (optional, for local runs)
 schedule>=1.2.0
 python-dotenv>=1.0.0
+flask>=3.0.0
