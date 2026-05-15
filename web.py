@@ -204,7 +204,7 @@ country_options = '<option value="all">🌍 All Countries</option>' + "".join(
 
 last_updated = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
 
-def render_page(view="all", entity_id=None, top_n=10):
+def render_page(view="all", entity_id=None, top_n=500):
     now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
 
     if view == "founder" and entity_id and entity_id in founder_map:
@@ -245,9 +245,10 @@ def render_page(view="all", entity_id=None, top_n=10):
     hot = sum(1 for m in matches if m.total_score >= 75)
     warm = sum(1 for m in matches if 65 <= m.total_score < 75)
 
-    # Build saved matches data for JS (max 10)
-    saved_data = json.dumps({match_uid(m): {"f": m.founder.company, "i": m.investor.firm, "s": m.total_score}
-                             for m in find_top_matches(founders, investors, top_n=10)})
+    # Auto-save: find top 10 highest-scoring matches for JS persistence
+    top10_matches = find_top_matches(founders, investors, top_n=10, min_score=65)
+    saved_data = json.dumps({match_uid(m): {"f": m.founder.company, "i": m.investor.firm, "s": m.total_score, "auto": True}
+                             for m in top10_matches})
 
     return f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -479,34 +480,35 @@ function toggleSave(uid,btn){{
   saveSaved(s);
 }}
 function updateSavedCount(){{
-  const n=Object.keys(getSaved()).length;
+  let s=getSaved();
+  // Always cap at 10 — keep highest scores
+  const entries=Object.entries(s).sort((a,b)=>(b[1].s||0)-(a[1].s||0));
+  if(entries.length>10){{
+    const trimmed=Object.fromEntries(entries.slice(0,10));
+    localStorage.setItem('saved_matches',JSON.stringify(trimmed));
+    s=trimmed;
+  }}
+  const n=Object.keys(s).length;
   const el=document.getElementById('saved-count');
   el.style.display=n>0?'flex':'none';
   el.textContent=n;
 }}
-// Auto-save hot matches
-function autoSaveHot(){{
-  const s=getSaved();
-  document.querySelectorAll('.match-card .badge-hot').forEach(badge=>{{
-    const card=badge.closest('.match-card');
-    if(!card)return;
-    const uid=card.dataset.uid;
-    if(!s[uid]){{
-      s[uid]={{f:card.dataset.founder,i:card.dataset.investor,s:card.dataset.score,ts:Date.now(),auto:true}};
-      card.classList.add('saved');
-      const btn=card.querySelector('.save-btn');
-      if(btn){{btn.classList.add('saved');btn.textContent='★';}}
+// Auto-save top 10 on load — merge with existing, keep highest scores
+(function(){{
+  const AUTO_SAVE_DATA={saved_data};
+  let s=getSaved();
+  // Merge auto-saved top 10 into existing saved
+  Object.entries(AUTO_SAVE_DATA).forEach(([uid,data])=>{{
+    if(!s[uid]||(data.s||0)>(s[uid].s||0)){{
+      s[uid]=data;
     }}
   }});
-  saveSaved(s);
-}}
-// Init save buttons — cap saved at 10
-(function(){{
-  let s=getSaved();
-  const keys=Object.keys(s);
-  if(keys.length>10){{
-    const trimmed={{}};keys.slice(-10).forEach(k=>trimmed[k]=s[k]);s=trimmed;saveSaved(s);
-  }}
+  // Cap at 10 — keep highest scores
+  const entries=Object.entries(s).sort((a,b)=>(b[1].s||0)-(a[1].s||0));
+  const capped=Object.fromEntries(entries.slice(0,10));
+  localStorage.setItem('saved_matches',JSON.stringify(capped));
+  s=capped;
+  // Mark saved buttons on cards
   document.querySelectorAll('.match-card').forEach(c=>{{
     const uid=c.dataset.uid;
     const btn=c.querySelector('.save-btn');
@@ -799,7 +801,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/" or path == "":
             view = params.get("view", ["all"])[0]
             entity_id = params.get("id", [None])[0]
-            top_n = int(params.get("top", [30])[0])
+            top_n = int(params.get("top", [500])[0])
             if view in ("founder", "investor") and entity_id:
                 html = render_page(view=view, entity_id=entity_id, top_n=top_n)
             else:
