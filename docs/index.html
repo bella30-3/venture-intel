@@ -153,7 +153,7 @@ input::placeholder{color:var(--dim)}
 <div class="header-inner">
 <div>
 <div class="logo">🤖 AI Venture Intelligence</div>
-<div class="subtitle">Many-to-Many · 50 founders seeking capital (100 total) · 100 investors · Last updated: 2026-05-15 10:24 UTC <span class="refresh-badge">🔄 Auto-refreshes every 48h</span></div>
+<div class="subtitle">Many-to-Many · 50 founders seeking capital (100 total) · 100 investors · Last updated: 2026-05-15 10:35 UTC <span class="refresh-badge">🔄 Auto-refreshes every 48h</span></div>
 </div>
 <div class="stats">
 <div class="stat"><div class="stat-num">10</div><div class="stat-label">Matches</div></div>
@@ -899,16 +899,19 @@ function autoSaveHot(){
   });
   saveSaved(s);
 }
-// Init save buttons
+// Init save buttons — cap saved at 10
 (function(){
-  const s=getSaved();
+  let s=getSaved();
+  const keys=Object.keys(s);
+  if(keys.length>10){
+    const trimmed={};keys.slice(-10).forEach(k=>trimmed[k]=s[k]);s=trimmed;saveSaved(s);
+  }
   document.querySelectorAll('.match-card').forEach(c=>{
     const uid=c.dataset.uid;
     const btn=c.querySelector('.save-btn');
     if(s[uid]){btn.classList.add('saved');btn.textContent='★';c.classList.add('saved')}
   });
   updateSavedCount();
-  autoSaveHot();
 })();
 
 // ── Filter saved ──

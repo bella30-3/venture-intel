@@ -500,16 +500,19 @@ function autoSaveHot(){{
   }});
   saveSaved(s);
 }}
-// Init save buttons
+// Init save buttons — cap saved at 10
 (function(){{
-  const s=getSaved();
+  let s=getSaved();
+  const keys=Object.keys(s);
+  if(keys.length>10){{
+    const trimmed={{}};keys.slice(-10).forEach(k=>trimmed[k]=s[k]);s=trimmed;saveSaved(s);
+  }}
   document.querySelectorAll('.match-card').forEach(c=>{{
     const uid=c.dataset.uid;
     const btn=c.querySelector('.save-btn');
     if(s[uid]){{btn.classList.add('saved');btn.textContent='★';c.classList.add('saved')}}
   }});
   updateSavedCount();
-  autoSaveHot();
 }})();
 
 // ── Filter saved ──
