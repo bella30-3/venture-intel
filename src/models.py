@@ -58,6 +58,9 @@ class Founder:
     moat: str = ""  # Data moats, network effects, IP, domain expertise
     team_composition: str = ""  # AI PhDs + domain experts + GTM balance
     regulatory_readiness: str = ""  # Compliance, ethics, data governance
+    needs_capital: bool = True  # Whether founder is actively seeking capital
+    capital_stage: str = "actively_raising"  # actively_raising | monitor | well_capitalized
+    capital_notes: str = ""  # Why this capital stage assessment
     linkedin_url: Optional[str] = None
     twitter_url: Optional[str] = None
     website: Optional[str] = None

@@ -42,6 +42,121 @@ AI_SUBSECTORS = {
 }
 
 
+# ── Capital Needs Assessment ──
+
+def _extract_total_raised_millions(stage_text: str) -> float:
+    """Extract total raised amount in millions from stage text like 'Growth ($352M raised)'."""
+    text = stage_text.lower().strip()
+    # Match patterns like "$352m raised", "$230m total", "$1.5b"
+    m = re.search(r'\$([\d.]+)\s*([bm])\b', text)
+    if m:
+        val = float(m.group(1))
+        unit = m.group(2)
+        return val * 1000 if unit == 'b' else val
+    return 0.0
+
+
+def _extract_stage_label(stage_text: str) -> str:
+    """Extract normalized stage label from stage text."""
+    stage = stage_text.lower()
+    stage_map = [
+        ("pre-seed", ["pre-seed", "preseed"]),
+        ("seed", ["seed"]),
+        ("series_a", ["series a"]),
+        ("series_b", ["series b"]),
+        ("series_c", ["series c"]),
+        ("growth", ["growth", "series d", "series e", "late stage"]),
+    ]
+    for label, keywords in stage_map:
+        if any(kw in stage for kw in keywords):
+            return label
+    return "unknown"
+
+
+def assess_capital_needs(founder: Founder) -> Founder:
+    """Assess whether a founder needs capital and set needs_capital/capital_stage.
+    
+    Rules:
+    - Stage: Pre-Seed through Series A ($0-$50M raised) → actively_raising
+    - Stage: Series B ($50-100M) → monitor  
+    - Stage: Growth ($100M+) → well_capitalized
+    - Year incorporated: before 2015 AND growth stage → well_capitalized
+    - Projected sales $50M+ → well_capitalized
+    - Projected sales $0-10M + early stage → actively_raising
+    
+    Regional note: $100M+ threshold applied globally (works for India too —
+    companies like Freshworks, Postman raised $100M+ are well-capitalized).
+    """
+    total_raised = _extract_total_raised_millions(founder.stage)
+    stage_label = _extract_stage_label(founder.stage)
+    sales_mag = _extract_sales_magnitude(founder.projected_sales_y1)
+    
+    year_ok = True
+    if founder.year_incorporated:
+        try:
+            year = int(founder.year_incorporated)
+            year_ok = year >= 2015
+        except ValueError:
+            year_ok = True
+    
+    notes = []
+    capital_stage = "actively_raising"
+    needs_capital = True
+    
+    # Primary signal: total raised + stage
+    if total_raised >= 100 or stage_label == "growth":
+        capital_stage = "well_capitalized"
+        needs_capital = False
+        notes.append(f"${total_raised:.0f}M raised, {stage_label} stage")
+    elif total_raised >= 50 or stage_label in ("series_b", "series_c"):
+        capital_stage = "monitor"
+        needs_capital = True  # Might be raising next round
+        notes.append(f"${total_raised:.0f}M raised, {stage_label} — monitor for next round")
+    elif total_raised > 0:
+        capital_stage = "actively_raising"
+        needs_capital = True
+        notes.append(f"${total_raised:.0f}M raised, {stage_label} — likely seeking capital")
+    
+    # Secondary signal: projected sales (only upgrade, never downgrade from stage logic)
+    if sales_mag >= 50 and capital_stage == "actively_raising":
+        capital_stage = "well_capitalized"
+        needs_capital = False
+        notes.append(f"${sales_mag:.0f}M projected sales — self-sustaining")
+    elif sales_mag >= 50 and capital_stage == "monitor":
+        # High sales + mid-stage → upgrade to well_capitalized
+        capital_stage = "well_capitalized"
+        needs_capital = False
+        notes.append(f"${sales_mag:.0f}M projected sales — self-sustaining despite mid-stage")
+    elif sales_mag >= 10 and capital_stage == "actively_raising":
+        capital_stage = "monitor"
+        notes.append(f"${sales_mag:.0f}M projected sales — approaching sustainability")
+    elif sales_mag >= 10:
+        notes.append(f"${sales_mag:.0f}M projected sales — approaching sustainability")
+    
+    # Tertiary signal: company age (only finalize, never override stage+sales)
+    if not year_ok and capital_stage == "monitor":
+        capital_stage = "well_capitalized"
+        needs_capital = False
+        notes.append(f"Founded {founder.year_incorporated} — established company")
+    
+    founder.needs_capital = needs_capital
+    founder.capital_stage = capital_stage
+    founder.capital_notes = "; ".join(notes)
+    return founder
+
+
+def filter_capital_ready(founders: List[Founder]) -> List[Founder]:
+    """Filter founders to only those who likely need capital.
+    Applies capital assessment first if not already done."""
+    result = []
+    for f in founders:
+        if not f.capital_notes:  # Not yet assessed
+            assess_capital_needs(f)
+        if f.needs_capital:
+            result.append(f)
+    return result
+
+
 def _classify_subsector(text: str) -> List[str]:
     """Classify text into AI subsectors."""
     text_lower = text.lower()
@@ -628,13 +743,63 @@ def _build_match(founder: Founder, investor: Investor, scores: MatchScore, total
     )
 
 
+def _smart_top_n(matches: List[Match], top_n: int = 10) -> List[Match]:
+    """Select top N matches using tier-based logic.
+    
+    Keeps ALL matches at the highest score tier, then fills remaining
+    slots from the next tier(s). Example with top_n=10:
+    - If 1 match at 74, keep it (1/10 used)
+    - If 6 matches at 73, keep all 6 (7/10 used)
+    - Fill remaining 3 from 72s, then 71s, etc.
+    """
+    if not matches or top_n <= 0:
+        return []
+    
+    # Group by integer score tier
+    from collections import defaultdict
+    tiers = defaultdict(list)
+    for m in matches:
+        tier = int(m.total_score)  # 73.5 -> 73
+        tiers[tier].append(m)
+    
+    # Sort tiers descending
+    sorted_tiers = sorted(tiers.keys(), reverse=True)
+    
+    result = []
+    for tier in sorted_tiers:
+        tier_matches = tiers[tier]
+        remaining = top_n - len(result)
+        if remaining <= 0:
+            break
+        if len(tier_matches) <= remaining:
+            result.extend(tier_matches)
+        else:
+            # Take top N from this tier by exact score
+            tier_matches.sort(key=lambda m: m.total_score, reverse=True)
+            result.extend(tier_matches[:remaining])
+    
+    return result
+
+
 def find_top_matches(
     founders: List[Founder],
     investors: List[Investor],
-    top_n: int = 20,
+    top_n: int = 10,
     min_score: float = 55.0,
+    filter_capital: bool = True,
 ) -> List[Match]:
-    """Find top N matches across ALL founders and investors (many-to-many)."""
+    """Find top N matches across ALL founders and investors (many-to-many).
+    
+    By default, filters out well-capitalized founders who don't need capital.
+    Uses smart tiering: keeps all matches at highest score tier, then fills
+    remaining slots from next tiers.
+    """
+    # Assess capital needs and filter
+    if filter_capital:
+        founders = filter_capital_ready(founders)
+        if not founders:
+            return []
+    
     all_matches = []
     for founder in founders:
         for investor in investors:
@@ -643,7 +808,7 @@ def find_top_matches(
             if total >= min_score:
                 all_matches.append(_build_match(founder, investor, scores, total))
     all_matches.sort(key=lambda m: m.total_score, reverse=True)
-    return all_matches[:top_n]
+    return _smart_top_n(all_matches, top_n)
 
 
 def find_top_matches_for_founder(

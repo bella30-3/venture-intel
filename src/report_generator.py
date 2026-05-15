@@ -81,6 +81,16 @@ def generate_markdown_report(matches: List[Match], report_date: str = None) -> s
         lines.append(f"**Founder:** {f.name} ({f.company})")
         lines.append(f"**Investor:** {i.name} ({i.firm})")
         lines.append(f"**Stage:** {f.stage} | **Focus:** {f.ai_subsector}")
+        # Capital stage badge
+        capital_badge = {
+            "actively_raising": "🟢 Actively Raising",
+            "monitor": "🟡 Monitor",
+            "well_capitalized": "🔴 Well-Capitalized",
+        }
+        badge = capital_badge.get(f.capital_stage, "⚪ Unknown")
+        lines.append(f"**Capital Status:** {badge}")
+        if f.capital_notes:
+            lines.append(f"*{f.capital_notes}*")
         lines.append("")
 
         # Score breakdown

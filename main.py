@@ -37,7 +37,8 @@ def main():
     parser = argparse.ArgumentParser(
         description="AI Venture Relationship Intelligence Agent"
     )
-    parser.add_argument("--top", type=int, default=10, help="Number of top matches")
+    parser.add_argument("--top", type=int, default=10, help="Number of top matches (smart tiering)")
+    parser.add_argument("--all-capital", action="store_true", help="Include well-capitalized founders")
     parser.add_argument("--output", type=str, help="Output file path")
     parser.add_argument("--investors", type=str, help="Investors JSON path")
     parser.add_argument("--founders", type=str, help="Founders JSON path")
@@ -65,8 +66,13 @@ def main():
     print(f"   → {len(investors)} investors, {len(founders)} founders loaded")
 
     # Run matching
-    print(f"\n🔍 Finding top {args.top} matches...")
-    matches = find_top_matches(founders, investors, top_n=args.top)
+    filter_cap = not args.all_capital
+    if filter_cap:
+        print("💰 Filtering for founders who need capital...")
+    else:
+        print("💰 Including all founders (including well-capitalized)")
+    print(f"\n🔍 Finding top {args.top} matches (smart tiering)...")
+    matches = find_top_matches(founders, investors, top_n=args.top, filter_capital=filter_cap)
     print(f"   → {len(matches)} high-quality matches found")
 
     # Display summary
