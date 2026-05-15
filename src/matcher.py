@@ -814,33 +814,38 @@ def find_top_matches(
 def find_top_matches_for_founder(
     founder: Founder,
     investors: List[Investor],
-    top_n: int = 20,
+    top_n: int = 10,
+    min_score: float = 65.0,
 ) -> List[Match]:
     """Find top N investor matches for a specific founder."""
     matches = []
     for investor in investors:
         scores = calculate_match_score(founder, investor)
         total = scores.total
-        if total >= 50:
+        if total >= min_score:
             matches.append(_build_match(founder, investor, scores, total))
     matches.sort(key=lambda m: m.total_score, reverse=True)
-    return matches[:top_n]
+    return _smart_top_n(matches, top_n)
 
 
 def find_top_matches_for_investor(
     investor: Investor,
     founders: List[Founder],
-    top_n: int = 20,
+    top_n: int = 10,
+    min_score: float = 65.0,
+    filter_capital: bool = True,
 ) -> List[Match]:
     """Find top N founder matches for a specific investor."""
+    if filter_capital:
+        founders = filter_capital_ready(founders)
     matches = []
     for founder in founders:
         scores = calculate_match_score(founder, investor)
         total = scores.total
-        if total >= 50:
+        if total >= min_score:
             matches.append(_build_match(founder, investor, scores, total))
     matches.sort(key=lambda m: m.total_score, reverse=True)
-    return matches[:top_n]
+    return _smart_top_n(matches, top_n)
 
 
 def get_all_matches_matrix(

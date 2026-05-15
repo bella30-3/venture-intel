@@ -17,10 +17,17 @@ from src.matcher import (
     find_top_matches_for_investor,
 )
 
+from src.matcher import assess_capital_needs, filter_capital_ready
+
 investors = load_investors()
 founders = load_founders()
 investor_map = {i.id: i for i in investors}
 founder_map = {f.id: f for f in founders}
+
+# Assess capital needs on load
+for f in founders:
+    assess_capital_needs(f)
+founders_needing_capital = [f for f in founders if f.needs_capital]
 
 
 def extract_country(location):
@@ -197,27 +204,33 @@ country_options = '<option value="all">🌍 All Countries</option>' + "".join(
 
 last_updated = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
 
-def render_page(view="all", entity_id=None, top_n=500):
+def render_page(view="all", entity_id=None, top_n=10):
     now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
 
     if view == "founder" and entity_id and entity_id in founder_map:
         f = founder_map[entity_id]
         matches = find_top_matches_for_founder(f, investors, top_n=top_n)
-        page_title = f"Top {len(matches)} Investors for {f.company}"
+        if matches:
+            page_title = f"Top {len(matches)} Investors for {f.company}"
+        else:
+            page_title = f"No active investor matches for {f.company} (well-capitalized or no fit ≥ 65)"
         show_entity = "investor"
     elif view == "investor" and entity_id and entity_id in investor_map:
         inv = investor_map[entity_id]
         matches = find_top_matches_for_investor(inv, founders, top_n=top_n)
-        page_title = f"Top {len(matches)} Founders for {inv.firm}"
+        if matches:
+            page_title = f"Top {len(matches)} Founders for {inv.firm}"
+        else:
+            page_title = f"No active founder matches for {inv.firm} (all filtered or no fit ≥ 65)"
         show_entity = "founder"
     else:
         matches = find_top_matches(founders, investors, top_n=top_n, min_score=65)
-        page_title = f"All {len(matches)} Matches (score ≥ 65)"
+        page_title = f"Top {len(matches)} Matches"
         show_entity = "both"
 
     founder_opts = "".join(
         f'<option value="{f.id}" {"selected" if entity_id == f.id else ""}>{f.company} ({f.name[:20]})</option>'
-        for f in sorted(founders, key=lambda x: x.company)
+        for f in sorted(founders_needing_capital, key=lambda x: x.company)
     )
     investor_opts = "".join(
         f'<option value="{i.id}" {"selected" if entity_id == i.id else ""}>{i.firm}</option>'
@@ -232,9 +245,9 @@ def render_page(view="all", entity_id=None, top_n=500):
     hot = sum(1 for m in matches if m.total_score >= 75)
     warm = sum(1 for m in matches if 65 <= m.total_score < 75)
 
-    # Build saved matches data for JS
+    # Build saved matches data for JS (max 10)
     saved_data = json.dumps({match_uid(m): {"f": m.founder.company, "i": m.investor.firm, "s": m.total_score}
-                             for m in find_top_matches(founders, investors, top_n=100)})
+                             for m in find_top_matches(founders, investors, top_n=10)})
 
     return f'''<!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -391,7 +404,7 @@ input::placeholder{{color:var(--dim)}}
 <div class="header-inner">
 <div>
 <div class="logo">🤖 AI Venture Intelligence</div>
-<div class="subtitle">Many-to-Many · {len(founders)} founders · {len(investors)} investors · {len(founders)*len(investors)} pairs · Last updated: {last_updated} <span class="refresh-badge">🔄 Auto-refreshes every 48h</span></div>
+<div class="subtitle">Many-to-Many · {len(founders_needing_capital)} founders seeking capital ({len(founders)} total) · {len(investors)} investors · Last updated: {last_updated} <span class="refresh-badge">🔄 Auto-refreshes every 48h</span></div>
 </div>
 <div class="stats">
 <div class="stat"><div class="stat-num">{len(matches)}</div><div class="stat-label">Matches</div></div>
@@ -549,19 +562,29 @@ function goToEntity(){{
       if(c.dataset.founderId===id){{c.style.display='';count++}}
       else c.style.display='none';
     }});
-    document.getElementById('page-title').textContent='🏢 '+id+' — Top '+count+' investor matches';
+    const nameEl=document.querySelector('[data-founder-id="'+id+'"] .match-name');
+    const fname=nameEl?nameEl.textContent:id;
+    document.getElementById('page-title').textContent=count>0?'🏢 '+fname+' — Top '+count+' investor matches':'🏢 '+fname+' — No active matches (may be well-capitalized or below threshold)';
   }} else if(view==='investor'&&id){{
     cards.forEach(c=>{{
       if(c.dataset.investorId===id){{c.style.display='';count++}}
       else c.style.display='none';
     }});
-    document.getElementById('page-title').textContent='💰 '+id+' — Top '+count+' founder matches';
+    const nameEl=document.querySelector('[data-investor-id="'+id+'"] .match-name');
+    const iname=nameEl?nameEl.textContent:id;
+    document.getElementById('page-title').textContent=count>0?'💰 '+iname+' — Top '+count+' founder matches':'💰 '+iname+' — No active matches found';
   }}
   if(count>0){{
     const notice=document.createElement('div');
     notice.className='controls';
     notice.style.cssText='justify-content:center;background:var(--bg2);margin:0 auto;max-width:1200px;padding:8px 24px';
     notice.innerHTML='<span style="color:var(--muted);font-size:12px">Showing '+count+' matches · <a href="?view=all" style="color:var(--accent)">← Back to all matches</a></span>';
+    document.querySelector('.controls').after(notice);
+  }} else {{
+    const notice=document.createElement('div');
+    notice.className='controls';
+    notice.style.cssText='justify-content:center;background:var(--bg2);margin:0 auto;max-width:1200px;padding:12px 24px';
+    notice.innerHTML='<span style="color:var(--muted);font-size:13px">This founder/investor has no matches above the threshold. <a href="?view=all" style="color:var(--accent)">← Back to all matches</a></span>';
     document.querySelector('.controls').after(notice);
   }}
 }})();
