@@ -204,12 +204,12 @@ country_options = '<option value="all">🌍 All Countries</option>' + "".join(
 
 last_updated = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
 
-def render_page(view="all", entity_id=None, top_n=500):
+def render_page(view="all", entity_id=None, top_n=10000):
     now = datetime.utcnow().strftime("%Y-%m-%d %H:%M UTC")
 
     if view == "founder" and entity_id and entity_id in founder_map:
         f = founder_map[entity_id]
-        matches = find_top_matches_for_founder(f, investors, top_n=top_n)
+        matches = find_top_matches_for_founder(f, investors, top_n=top_n or 9999)
         if matches:
             page_title = f"Top {len(matches)} Investors for {f.company}"
         else:
@@ -242,8 +242,8 @@ def render_page(view="all", entity_id=None, top_n=500):
 
     cards = "".join(render_match_card(m, idx, show_entity) for idx, m in enumerate(matches, 1))
     avg_score = sum(m.total_score for m in matches) / len(matches) if matches else 0
-    hot = sum(1 for m in matches if m.total_score >= 75)
-    warm = sum(1 for m in matches if 65 <= m.total_score < 75)
+    hot = sum(1 for m in matches if m.total_score >= 70)
+    warm = sum(1 for m in matches if 66 <= m.total_score < 70)
 
     # Auto-save: find top 10 highest-scoring matches for JS persistence
     top10_matches = find_top_matches(founders, investors, top_n=10, min_score=65)
@@ -801,7 +801,7 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/" or path == "":
             view = params.get("view", ["all"])[0]
             entity_id = params.get("id", [None])[0]
-            top_n = int(params.get("top", [500])[0])
+            top_n = int(params.get("top", [10000])[0])
             if view in ("founder", "investor") and entity_id:
                 html = render_page(view=view, entity_id=entity_id, top_n=top_n)
             else:
@@ -811,7 +811,7 @@ class Handler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(html.encode())
         elif path == "/api/matches":
-            matches = find_top_matches(founders, investors, top_n=500, min_score=65)
+            matches = find_top_matches(founders, investors, top_n=10000, min_score=65)
             data = [{"rank": i+1, "founder": m.founder.company, "investor": m.investor.firm, "score": m.total_score} for i, m in enumerate(matches)]
             self.send_response(200)
             self.send_header("Content-Type", "application/json")
